@@ -2,16 +2,55 @@ import type React from "react"
 import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
-import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Suspense } from "react"
 import { Providers } from "@/components/providers"
 
 export const metadata: Metadata = {
-  title: "KARARA Nabil – Portfolio Web & Mobile Developer",
+  title: "Nabil KARARA – Portfolio Web & Mobile Developer",
   description:
-    "Portfolio personnel de KARARA Nabil, étudiant MIAGE à l'EMSI, spécialisé en développement web et mobile.",
-  generator: "v0.app",
+    "Portfolio personnel de Nabil KARARA, développeur web et mobile passionné. Découvrez mes projets en React, Node.js, Java et plus.",
+  keywords: ["développeur web", "développeur mobile", "React", "Node.js", "Java", "portfolio", "Nabil KARARA"],
+  authors: [{ name: "Nabil KARARA" }],
+  creator: "Nabil KARARA",
+  publisher: "Nabil KARARA",
+  openGraph: {
+    title: "Nabil KARARA – Portfolio Web & Mobile Developer",
+    description: "Portfolio personnel de Nabil KARARA, développeur web et mobile passionné.",
+    url: "https://your-github-username.github.io/portfolio-main",
+    siteName: "Nabil KARARA Portfolio",
+    images: [
+      {
+        url: "/NABIL_Profil.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Nabil KARARA - Portfolio",
+      },
+    ],
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nabil KARARA – Portfolio Web & Mobile Developer",
+    description: "Portfolio personnel de Nabil KARARA, développeur web et mobile passionné.",
+    images: ["/NABIL_Profil.jpg"],
+    creator: "@nabilkarara",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code",
+  },
 }
 
 export default function RootLayout({
@@ -25,7 +64,6 @@ export default function RootLayout({
         <Providers>
           <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
         </Providers>
-        <Analytics />
       </body>
     </html>
   )
