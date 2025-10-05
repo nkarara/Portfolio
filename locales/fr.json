@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "certifications": "Certifications",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "title": "Étudiant MIAGE",
+    "subtitle": "Développeur Web & Mobile",
+    "description": "Passionné par le développement d'applications web et mobile modernes. À la recherche d'un stage PFE pour 2025 afin de mettre en pratique mes compétences et contribuer à des projets innovants.",
+    "downloadCV": "Télécharger CV",
+    "contactMe": "Me contacter",
+    "viewProjects": "Voir mes projets"
+  },
+  "about": {
+    "title": "À propos",
+    "description1": "Étudiant en Master MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises), je combine des compétences techniques solides en développement avec une compréhension approfondie des enjeux business.",
+    "description2": "Passionné par les technologies web et mobile, je m'efforce de créer des applications performantes, intuitives et élégantes. Mon objectif est de contribuer à des projets innovants qui ont un impact réel.",
+    "downloadCV": "Télécharger mon CV",
+    "education": "Formation",
+    "educationDesc": "Master MIAGE - Spécialisation en développement d'applications et gestion de projets",
+    "expertise": "Expertise",
+    "expertiseDesc": "Développement Full-Stack avec React, Node.js, et technologies modernes",
+    "objective": "Objectif",
+    "objectiveDesc": "Stage PFE 2025 - Développement Web/Mobile dans une entreprise innovante"
+  },
+  "projects": {
+    "title": "Projets",
+    "description": "Une sélection de mes projets académiques et personnels démontrant mes compétences en développement web et mobile.",
+    "github": "GitHub",
+    "liveDemo": "Live Demo",
+    "viewGallery": "Voir la galerie",
+    "connectify": {
+      "title": "Connectify",
+      "description": "Application de réseau social permettant aux utilisateurs de se connecter, partager du contenu et interagir en temps réel."
+    },
+    "gestionEmployes": {
+      "title": "Gestion Employés",
+      "description": "Système de gestion des employés avec suivi des présences, gestion des congés et génération de rapports."
+    },
+    "transRoto": {
+      "title": "Trans Roto",
+      "description": "Application de gestion logistique pour le transport et la rotation des marchandises avec suivi en temps réel."
+    },
+    "todoApp": {
+      "title": "To-Do List App",
+      "description": "Application de gestion de tâches moderne avec catégorisation, priorités et synchronisation cloud."
+    },
+    "androidApp": {
+      "title": "Gestion Employés Android",
+      "description": "Application mobile Android pour la gestion des employés avec Firebase pour la synchronisation en temps réel."
+    },
+    "dotnetApp": {
+      "title": "Gestion Employés ASP.NET",
+      "description": "Application web de gestion des employés développée avec ASP.NET et SQL Server."
+    }
+  },
+  "skills": {
+    "title": "Compétences",
+    "technical": "Compétences Techniques",
+    "soft": "Compétences Humaines",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "mobile": "Mobile",
+    "database": "Database",
+    "cloudDevops": "Cloud/DevOps",
+    "tools": "Tools",
+    "teamwork": "Travail d'équipe",
+    "teamworkDesc": "Collaboration efficace en équipe agile et communication claire",
+    "problemSolving": "Résolution de problèmes",
+    "problemSolvingDesc": "Approche analytique et créative pour résoudre des défis techniques",
+    "continuousLearning": "Apprentissage continu",
+    "continuousLearningDesc": "Veille technologique et adaptation rapide aux nouvelles technologies"
+  },
+  "certifications": {
+    "title": "Certifications",
+    "description": "Formations et certifications professionnelles validant mes compétences techniques.",
+    "viewCertification": "View certification",
+    "oracle": {
+      "title": "Oracle Cloud Infrastructure 2025 Certified DevOps Professional",
+      "issuer": "Oracle",
+      "date": "2024",
+      "description": "Certification professionnelle en DevOps sur Oracle Cloud Infrastructure"
+    },
+    "javaOOP": {
+      "title": "Introduction to Java and Object-Oriented Programming",
+      "issuer": "Coursera",
+      "date": "2023",
+      "description": "Formation complète en programmation Java et développement orienté objet"
+    },
+    "reactBasics": {
+      "title": "React Basics",
+      "issuer": "Coursera",
+      "date": "2023",
+      "description": "Fondamentaux de React, composants, hooks et développement d'applications modernes"
+    },
+    "azureNetworks": {
+      "title": "Virtual Networks in Azure",
+      "issuer": "Coursera",
+      "date": "2023",
+      "description": "Configuration et gestion des réseaux virtuels dans Microsoft Azure"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Vous avez un projet ou une opportunité de stage ? N'hésitez pas à me contacter !",
+    "contactMeButton": "Me contacter par email",
+    "orUseForm": "Ou utilisez le formulaire ci-dessous",
+    "name": "Nom",
+    "namePlaceholder": "Votre nom",
+    "email": "Email",
+    "emailPlaceholder": "votre.email@exemple.com",
+    "message": "Message",
+    "messagePlaceholder": "Votre message...",
+    "send": "Envoyer le message",
+    "sending": "Envoi en cours...",
+    "successTitle": "Message envoyé !",
+    "successDescription": "Je vous répondrai dans les plus brefs délais.",
+    "errorTitle": "Erreur",
+    "errorDescription": "Une erreur s'est produite. Veuillez réessayer.",
+    "emailLabel": "Email",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub"
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "madeWith": "Fait avec",
+    "by": "par"
+  }
+}

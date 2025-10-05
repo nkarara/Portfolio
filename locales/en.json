@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "certifications": "Certifications",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "title": "MIAGE Student",
+    "subtitle": "Web & Mobile Developer",
+    "description": "Passionate about developing modern web and mobile applications. Looking for a PFE internship for 2025 to apply my skills and contribute to innovative projects.",
+    "downloadCV": "Download CV",
+    "contactMe": "Contact me",
+    "viewProjects": "View my projects"
+  },
+  "about": {
+    "title": "About",
+    "description1": "MIAGE Master's student (Computer Methods Applied to Business Management), I combine strong technical development skills with a deep understanding of business challenges.",
+    "description2": "Passionate about web and mobile technologies, I strive to create high-performance, intuitive, and elegant applications. My goal is to contribute to innovative projects that have a real impact.",
+    "downloadCV": "Download my CV",
+    "education": "Education",
+    "educationDesc": "MIAGE Master's - Specialization in application development and project management",
+    "expertise": "Expertise",
+    "expertiseDesc": "Full-Stack Development with React, Node.js, and modern technologies",
+    "objective": "Objective",
+    "objectiveDesc": "PFE Internship 2025 - Web/Mobile Development in an innovative company"
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "A selection of my academic and personal projects demonstrating my web and mobile development skills.",
+    "github": "GitHub",
+    "liveDemo": "Live Demo",
+    "viewGallery": "View gallery",
+    "connectify": {
+      "title": "Connectify",
+      "description": "Social network application allowing users to connect, share content and interact in real time."
+    },
+    "gestionEmployes": {
+      "title": "Employee Management",
+      "description": "Employee management system with attendance tracking, leave management and report generation."
+    },
+    "transRoto": {
+      "title": "Trans Roto",
+      "description": "Logistics management application for goods transportation and rotation with real-time tracking."
+    },
+    "todoApp": {
+      "title": "To-Do List App",
+      "description": "Modern task management application with categorization, priorities and cloud synchronization."
+    },
+    "androidApp": {
+      "title": "Employee Management Android",
+      "description": "Android mobile application for employee management with Firebase for real-time synchronization."
+    },
+    "dotnetApp": {
+      "title": "Employee Management ASP.NET",
+      "description": "Employee management web application developed with ASP.NET and SQL Server."
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "technical": "Technical Skills",
+    "soft": "Soft Skills",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "mobile": "Mobile",
+    "database": "Database",
+    "cloudDevops": "Cloud/DevOps",
+    "tools": "Tools",
+    "teamwork": "Teamwork",
+    "teamworkDesc": "Effective collaboration in agile teams and clear communication",
+    "problemSolving": "Problem Solving",
+    "problemSolvingDesc": "Analytical and creative approach to solving technical challenges",
+    "continuousLearning": "Continuous Learning",
+    "continuousLearningDesc": "Technology watch and quick adaptation to new technologies"
+  },
+  "certifications": {
+    "title": "Certifications",
+    "description": "Professional training and certifications validating my technical skills.",
+    "viewCertification": "View certification",
+    "oracle": {
+      "title": "Oracle Cloud Infrastructure 2025 Certified DevOps Professional",
+      "issuer": "Oracle",
+      "date": "2024",
+      "description": "Professional DevOps certification on Oracle Cloud Infrastructure"
+    },
+    "javaOOP": {
+      "title": "Introduction to Java and Object-Oriented Programming",
+      "issuer": "Coursera",
+      "date": "2023",
+      "description": "Comprehensive training in Java programming and object-oriented development"
+    },
+    "reactBasics": {
+      "title": "React Basics",
+      "issuer": "Coursera",
+      "date": "2023",
+      "description": "React fundamentals, components, hooks and modern application development"
+    },
+    "azureNetworks": {
+      "title": "Virtual Networks in Azure",
+      "issuer": "Coursera",
+      "date": "2023",
+      "description": "Configuration and management of virtual networks in Microsoft Azure"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Do you have a project or an internship opportunity? Feel free to contact me!",
+    "contactMeButton": "Contact me by email",
+    "orUseForm": "Or use the form below",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your.email@example.com",
+    "message": "Message",
+    "messagePlaceholder": "Your message...",
+    "send": "Send message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successDescription": "I will reply to you as soon as possible.",
+    "errorTitle": "Error",
+    "errorDescription": "An error occurred. Please try again.",
+    "emailLabel": "Email",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "madeWith": "Made with",
+    "by": "by"
+  }
+}
