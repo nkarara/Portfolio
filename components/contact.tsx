@@ -1,13 +1,8 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
-import { Mail, Linkedin, Github, Send } from "lucide-react"
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { Mail, Linkedin, Github, Send, ArrowUpRight } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import { useLanguage } from "@/contexts/language-context"
 
@@ -23,7 +18,6 @@ export function Contact() {
     const form = e.target as HTMLFormElement
     const formData = new FormData(form)
 
-    // Convert FormData to JSON for Web3Forms
     const object: Record<string, string> = {}
     formData.forEach((value, key) => {
       object[key] = value.toString()
@@ -63,143 +57,127 @@ export function Contact() {
     }
   }
 
+  const contactLinks = [
+    {
+      Icon: Mail,
+      label: t.contact.emailLabel,
+      value: "nabilkarara2002@gmail.com",
+      href: "mailto:nabilkarara2002@gmail.com",
+    },
+    {
+      Icon: Linkedin,
+      label: t.contact.linkedinLabel,
+      value: "linkedin.com/in/nabil-karara-374552372",
+      href: "https://www.linkedin.com/in/nabil-karara-374552372/",
+    },
+    {
+      Icon: Github,
+      label: t.contact.githubLabel,
+      value: "github.com/nkarara",
+      href: "https://github.com/nkarara",
+    },
+  ]
+
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto max-w-6xl">
-        <div className="space-y-12">
-          {/* Section Header */}
-          <div className="space-y-4 text-center">
-            <h2 className="text-4xl sm:text-5xl font-bold">{t.contact.title}</h2>
-            <div className="h-1 w-20 bg-primary rounded-full mx-auto"></div>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t.contact.description}</p>
+    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-5xl space-y-14">
+
+        {/* Section Header */}
+        <div className="text-center">
+          <span className="section-label">{t.contact.title}</span>
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-1">{t.contact.title}</h2>
+          <p className="text-base text-muted-foreground mt-3 max-w-2xl mx-auto">{t.contact.description}</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Contact Form */}
+          <div className="glass-depth-3 p-7 sm:p-9 rounded-3xl relative overflow-hidden">
+            <div className="liquid-glass-sheen" aria-hidden="true" />
+            <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
+              <div className="space-y-1.5">
+                <label htmlFor="name" className="text-sm font-semibold text-foreground">
+                  {t.contact.name}
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  placeholder={t.contact.namePlaceholder}
+                  required
+                  className="glass-input h-11 px-4 text-sm w-full text-foreground placeholder:text-muted-foreground/50 border-foreground/10"
+                />
+              </div>
+
+              <div className="space-y-1.5">
+                <label htmlFor="email" className="text-sm font-semibold text-foreground">
+                  {t.contact.email}
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder={t.contact.emailPlaceholder}
+                  required
+                  className="glass-input h-11 px-4 text-sm w-full text-foreground placeholder:text-muted-foreground/50 border-foreground/10"
+                />
+              </div>
+
+              <div className="space-y-1.5">
+                <label htmlFor="message" className="text-sm font-semibold text-foreground">
+                  {t.contact.message}
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder={t.contact.messagePlaceholder}
+                  rows={5}
+                  required
+                  className="glass-input px-4 py-3 text-sm w-full resize-none text-foreground placeholder:text-muted-foreground/50 border-foreground/10"
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="liquid-btn liquid-btn-primary w-full"
+              >
+                {isSubmitting ? (
+                  <span className="opacity-70">{t.contact.sending}</span>
+                ) : (
+                  <>
+                    <span>{t.contact.send}</span>
+                    <Send className="h-4 w-4" />
+                  </>
+                )}
+              </button>
+            </form>
           </div>
 
-          <div className="text-center">
-            <Button asChild size="lg" className="text-lg px-8 py-6 h-auto group">
-              <a href="mailto:nabilkarara2002@gmail.com?subject=Contact%20from%20Portfolio">
-                <Mail className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
-                {t.contact.contactMeButton}
+          {/* Contact Cards */}
+          <div className="space-y-4 flex flex-col justify-center">
+            {contactLinks.map(({ Icon, label, value, href }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                className="glass-depth-2 p-5 rounded-2xl group hover:border-primary/30 transition-all duration-300 relative overflow-hidden"
+              >
+                <div className="liquid-glass-sheen" aria-hidden="true" />
+                <div className="flex items-start gap-4 relative z-20">
+                  <div className="p-3 bg-primary/10 rounded-2xl flex-shrink-0 border border-foreground/5">
+                    <Icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-0.5">{label}</p>
+                    <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">{value}</p>
+                  </div>
+                  <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all flex-shrink-0 mt-0.5" />
+                </div>
               </a>
-            </Button>
-            <p className="text-sm text-muted-foreground mt-4">{t.contact.orUseForm}</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Contact Form */}
-            <Card className="p-6 md:p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium">
-                    {t.contact.name}
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    placeholder={t.contact.namePlaceholder}
-                    required
-                    className="bg-background"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">
-                    {t.contact.email}
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder={t.contact.emailPlaceholder}
-                    required
-                    className="bg-background"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">
-                    {t.contact.message}
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder={t.contact.messagePlaceholder}
-                    rows={5}
-                    required
-                    className="bg-background resize-none"
-                  />
-                </div>
-
-                <Button type="submit" className="w-full group" disabled={isSubmitting}>
-                  {isSubmitting ? (
-                    t.contact.sending
-                  ) : (
-                    <>
-                      {t.contact.send}
-                      <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </>
-                  )}
-                </Button>
-              </form>
-            </Card>
-
-            <div className="space-y-6">
-              <Card className="p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <Mail className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">{t.contact.emailLabel}</h3>
-                    <a
-                      href="mailto:nabilkarara2002@gmail.com"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      nabilkarara2002@gmail.com
-                    </a>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <Linkedin className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">{t.contact.linkedinLabel}</h3>
-                    <a
-                      href="https://www.linkedin.com/in/nabil-karara-374552372/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors break-all"
-                    >
-                      linkedin.com/in/nabil-karara-374552372
-                    </a>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <Github className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">{t.contact.githubLabel}</h3>
-                    <a
-                      href="https://github.com/nkarara"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      github.com/nkarara
-                    </a>
-                  </div>
-                </div>
-              </Card>
-            </div>
+            ))}
           </div>
         </div>
+
       </div>
     </section>
   )

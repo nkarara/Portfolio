@@ -1,9 +1,8 @@
 "use client"
 
 import { ExternalLink, ImageIcon, X } from "lucide-react"
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/language-context"
+import { getImagePath } from "@/lib/utils"
 import { useState } from "react"
 
 export function Certifications() {
@@ -46,83 +45,93 @@ export function Certifications() {
   ]
 
   return (
-    <section id="certifications" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-      <div className="container mx-auto max-w-6xl">
-        <div className="space-y-12">
-          {/* Section Header */}
-          <div className="space-y-4">
-            <h2 className="text-4xl sm:text-5xl font-bold">{t.certifications.title}</h2>
-            <div className="h-1 w-20 bg-primary rounded-full"></div>
-            <p className="text-lg text-muted-foreground max-w-2xl">{t.certifications.description}</p>
-          </div>
+    <section id="certifications" className="py-24 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-5xl space-y-14">
 
-          {/* Certifications Grid */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {certifications.map((cert, index) => (
-              <Card key={index} className="p-6 hover:border-primary hover:shadow-lg transition-all duration-300 group">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0">
-                    <div 
-                      className="w-32 h-32 rounded-lg overflow-hidden bg-muted flex items-center justify-center border-2 border-muted-foreground/20 cursor-pointer hover:border-primary transition-colors"
-                      onClick={() => cert.image && setSelectedImage(cert.image)}
-                    >
-                      {cert.image ? (
-                        <img
-                          src={cert.image}
-                          alt={cert.title}
-                          className="w-full h-full object-cover"
-                        />
-                      ) : (
+        {/* Section Header */}
+        <div>
+          <span className="section-label">{t.certifications.title}</span>
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-1">{t.certifications.title}</h2>
+          <p className="text-base text-muted-foreground mt-3 max-w-2xl">{t.certifications.description}</p>
+        </div>
+
+        {/* Certifications Grid */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {certifications.map((cert, index) => (
+            <div
+              key={index}
+              className="glass-depth-2 p-6 rounded-2xl group hover:border-primary/30 transition-all duration-300 relative overflow-hidden"
+            >
+              <div className="liquid-glass-sheen" aria-hidden="true" />
+              <div className="flex gap-4 relative z-10">
+                {/* Thumbnail */}
+                <div className="flex-shrink-0">
+                  <div
+                    className="w-28 h-28 rounded-xl overflow-hidden border border-white/10 cursor-pointer hover:border-primary/50 transition-colors"
+                    onClick={() => cert.image && setSelectedImage(cert.image)}
+                  >
+                    {cert.image ? (
+                      <img
+                        src={getImagePath(cert.image)}
+                        alt={cert.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="flex items-center justify-center h-full bg-muted">
                         <ImageIcon className="h-6 w-6 text-muted-foreground/30" />
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1 space-y-3">
-                    <div>
-                      <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">{cert.title}</h3>
-                      <p className="text-sm text-muted-foreground">
-                        {cert.issuer} • {cert.date}
-                      </p>
-                    </div>
-
-                    <p className="text-sm text-muted-foreground leading-relaxed">{cert.description}</p>
-
-                    <Button asChild variant="outline" size="sm" className="group/btn bg-transparent">
-                      <a href={cert.link} target="_blank" rel="noopener noreferrer">
-                        {t.certifications.viewCertification}
-                        <ExternalLink className="ml-2 h-3 w-3 group-hover/btn:translate-x-1 transition-transform" />
-                      </a>
-                    </Button>
+                      </div>
+                    )}
                   </div>
                 </div>
-              </Card>
-            ))}
-          </div>
+
+                {/* Content */}
+                <div className="flex-1 space-y-2.5">
+                  <div>
+                    <h3 className="font-bold text-sm sm:text-base text-foreground group-hover:text-primary transition-colors leading-snug">
+                      {cert.title}
+                    </h3>
+                    <p className="text-xs text-muted-foreground mt-0.5">
+                      {cert.issuer} · {cert.date}
+                    </p>
+                  </div>
+
+                  <p className="text-xs text-muted-foreground leading-relaxed">{cert.description}</p>
+
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline transition-colors"
+                  >
+                    {t.certifications.viewCertification}
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Image Viewer Modal */}
+      {/* Image Lightbox Modal */}
       {selectedImage && (
-        <div 
-          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-6"
+          style={{ background: "rgba(0,0,0,0.92)", backdropFilter: "blur(24px)" }}
           onClick={() => setSelectedImage(null)}
         >
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute top-4 right-4 text-white hover:bg-white/20"
+          <button
+            className="absolute top-5 right-5 p-2.5 glass-depth-2 rounded-full text-white hover:border-white/30 transition-all"
             onClick={() => setSelectedImage(null)}
           >
-            <X className="h-6 w-6" />
-          </Button>
+            <X className="h-5 w-5" />
+          </button>
 
           <div className="max-w-4xl max-h-[90vh] w-full" onClick={(e) => e.stopPropagation()}>
             <img
-              src={selectedImage}
+              src={getImagePath(selectedImage)}
               alt="Certification"
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain rounded-2xl"
             />
           </div>
         </div>

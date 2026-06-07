@@ -3,41 +3,41 @@ import { Github, Linkedin, Mail } from "lucide-react"
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
+  const socials = [
+    { Icon: Github, href: "https://github.com/nkarara", label: "GitHub" },
+    { Icon: Linkedin, href: "https://www.linkedin.com/in/nabil-karara-374552372/", label: "LinkedIn" },
+    { Icon: Mail, href: "mailto:nabilkarara2002@gmail.com", label: "Email" },
+  ]
+
   return (
-    <footer className="border-t border-border py-8 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          {/* Copyright */}
-          <p className="text-sm text-muted-foreground">© {currentYear} KARARA Nabil. Tous droits réservés.</p>
+    <footer className="py-10 px-4 sm:px-6 lg:px-8 border-t border-white/5 mt-16">
+      <div className="container mx-auto max-w-5xl">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+
+          {/* Brand */}
+          <div className="text-center md:text-left">
+            <p className="text-sm font-semibold gradient-text">KARARA Nabil</p>
+            <p className="text-xs text-muted-foreground mt-0.5">
+              © {currentYear} — All rights reserved.
+            </p>
+          </div>
 
           {/* Social Links */}
-          <div className="flex items-center gap-4">
-            <a
-              href="https://github.com/nabilkarara"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
-              aria-label="GitHub"
-            >
-              <Github className="h-5 w-5" />
-            </a>
-            <a
-              href="https://linkedin.com/in/nabil-karara"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="h-5 w-5" />
-            </a>
-            <a
-              href="mailto:nabil.karara@example.com"
-              className="text-muted-foreground hover:text-primary transition-colors"
-              aria-label="Email"
-            >
-              <Mail className="h-5 w-5" />
-            </a>
+          <div className="flex items-center gap-3">
+            {socials.map(({ Icon, href, label }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="p-2.5 glass-depth-1 rounded-full text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all duration-200"
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            ))}
           </div>
+
         </div>
       </div>
     </footer>

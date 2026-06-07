@@ -59,6 +59,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+        <div className="liquid-bg" aria-hidden="true" />
+        <div className="liquid-orb-cyan" aria-hidden="true" />
         <Providers>
           <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
         </Providers>

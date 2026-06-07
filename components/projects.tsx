@@ -1,10 +1,8 @@
 "use client"
 
-import { ExternalLink, Github, ImageIcon, X, ChevronLeft, ChevronRight } from "lucide-react"
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+import { Github, ImageIcon, X, ChevronLeft, ChevronRight } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
+import { getImagePath } from "@/lib/utils"
 import { useState } from "react"
 
 export function Projects() {
@@ -24,7 +22,7 @@ export function Projects() {
 
   const nextImage = () => {
     if (selectedProject !== null && projects[selectedProject].gallery) {
-      setCurrentImageIndex((prev) => 
+      setCurrentImageIndex((prev) =>
         prev < projects[selectedProject].gallery!.length - 1 ? prev + 1 : 0
       )
     }
@@ -32,7 +30,7 @@ export function Projects() {
 
   const prevImage = () => {
     if (selectedProject !== null && projects[selectedProject].gallery) {
-      setCurrentImageIndex((prev) => 
+      setCurrentImageIndex((prev) =>
         prev > 0 ? prev - 1 : projects[selectedProject].gallery!.length - 1
       )
     }
@@ -79,161 +77,155 @@ export function Projects() {
   ]
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-      <div className="container mx-auto max-w-6xl">
-        <div className="space-y-12">
-          {/* Section Header */}
-          <div className="space-y-4">
-            <h2 className="text-4xl sm:text-5xl font-bold">{t.projects.title}</h2>
-            <div className="h-1 w-20 bg-primary rounded-full"></div>
-            <p className="text-lg text-muted-foreground max-w-2xl">{t.projects.description}</p>
-          </div>
+    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-5xl space-y-14">
 
-          {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <Card
-                key={index}
-                className="overflow-hidden group hover:border-primary hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+        {/* Section Header */}
+        <div>
+          <span className="section-label">{t.projects.title}</span>
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-1">{t.projects.title}</h2>
+          <p className="text-base text-muted-foreground mt-3 max-w-2xl">{t.projects.description}</p>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="glass-depth-2 rounded-2xl overflow-hidden group hover:border-primary/30 hover:scale-[1.015] transition-all duration-300 relative"
+            >
+              {/* Project Image */}
+              <div
+                className={`relative h-48 overflow-hidden bg-muted ${project.gallery ? "cursor-pointer" : ""}`}
+                onClick={() => project.gallery && openGallery(index, 0)}
               >
-                <div 
-                  className="relative h-48 overflow-hidden bg-muted cursor-pointer group/image"
-                  onClick={() => project.gallery && openGallery(index, 0)}
-                >
-                  {project.image ? (
-                    <>
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover transition-transform group-hover/image:scale-110"
-                      />
-                      {project.gallery && (
-                        <div className="absolute inset-0 bg-black/0 group-hover/image:bg-black/20 transition-colors flex items-center justify-center">
-                          <ImageIcon className="h-12 w-12 text-white opacity-0 group-hover/image:opacity-100 transition-opacity" />
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <div className="flex items-center justify-center h-full">
-                      <div className="text-center space-y-2">
-                        <ImageIcon className="h-12 w-12 text-muted-foreground/40 mx-auto" />
-                        <p className="text-sm text-muted-foreground/60">Main Screenshot</p>
+                {project.image ? (
+                  <>
+                    <img
+                      src={getImagePath(project.image)}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    {project.gallery && (
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                        <ImageIcon className="h-10 w-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
                       </div>
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
-                </div>
-
-                {/* Project Content */}
-                <div className="p-6 space-y-4">
-                  <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">{project.title}</h3>
-
-                  <p className="text-muted-foreground leading-relaxed">{project.description}</p>
-
-                  {project.gallery && project.gallery.length > 0 && (
-                    <div className="flex gap-2 overflow-x-auto">
-                      {project.gallery.slice(0, 3).map((img, imgIndex) => (
-                        <div
-                          key={imgIndex}
-                          className="w-16 h-16 rounded border-2 border-muted-foreground/20 overflow-hidden flex-shrink-0 cursor-pointer hover:border-primary transition-colors"
-                          onClick={() => openGallery(index, imgIndex)}
-                        >
-                          <img
-                            src={img}
-                            alt={`${project.title} screenshot ${imgIndex + 1}`}
-                            className="w-full h-full object-cover hover:scale-110 transition-transform"
-                          />
-                        </div>
-                      ))}
-                      {project.gallery.length > 3 && (
-                        <div 
-                          className="flex items-center text-xs text-muted-foreground/50 ml-2 cursor-pointer hover:text-primary transition-colors"
-                          onClick={() => openGallery(index, 3)}
-                        >
-                          +{project.gallery.length - 3} {t.projects.viewGallery}
-                        </div>
-                      )}
-                    </div>
-                  )}
-
-                  {/* Technologies */}
-                  {project.technologies && (
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <Badge key={tech} variant="secondary">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Links */}
-                  <div className="flex gap-3 pt-2">
-                    <Button asChild variant="outline" size="sm" className="group/btn bg-transparent">
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-2 h-4 w-4 group-hover/btn:rotate-12 transition-transform" />
-                        {t.projects.github}
-                      </a>
-                    </Button>
+                    )}
+                  </>
+                ) : (
+                  <div className="flex items-center justify-center h-full">
+                    <ImageIcon className="h-12 w-12 text-muted-foreground/40" />
                   </div>
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              </div>
+
+              {/* Project Content */}
+              <div className="p-6 space-y-4">
+                <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-200">
+                  {project.title}
+                </h3>
+
+                <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
+
+                {/* Gallery Thumbnails */}
+                {project.gallery && project.gallery.length > 0 && (
+                  <div className="flex gap-2 overflow-x-auto pb-1">
+                    {project.gallery.slice(0, 3).map((img, imgIndex) => (
+                      <div
+                        key={imgIndex}
+                        className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0 cursor-pointer border border-white/10 hover:border-primary/50 transition-colors"
+                        onClick={() => openGallery(index, imgIndex)}
+                      >
+                        <img
+                          src={getImagePath(img)}
+                          alt={`${project.title} screenshot ${imgIndex + 1}`}
+                          className="w-full h-full object-cover hover:scale-110 transition-transform"
+                        />
+                      </div>
+                    ))}
+                    {project.gallery.length > 3 && (
+                      <div
+                        className="flex items-center text-xs text-muted-foreground/60 cursor-pointer hover:text-primary transition-colors px-2"
+                        onClick={() => openGallery(index, 3)}
+                      >
+                        +{project.gallery.length - 3} {t.projects.viewGallery}
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Tech Tags */}
+                {project.technologies && (
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.technologies.map((tech) => (
+                      <span key={tech} className="glass-depth-1 text-xs font-medium text-foreground/80 px-2.5 py-1 rounded-full">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Links */}
+                <div className="flex gap-3 pt-1">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="liquid-btn liquid-btn-secondary text-xs py-2 px-4"
+                  >
+                    <Github className="h-3.5 w-3.5" />
+                    <span>{t.projects.github}</span>
+                  </a>
                 </div>
-              </Card>
-            ))}
-          </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* Image Gallery Modal */}
       {selectedProject !== null && projects[selectedProject].gallery && (
-        <div 
-          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          style={{ background: "rgba(0,0,0,0.92)", backdropFilter: "blur(24px)" }}
           onClick={closeGallery}
         >
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute top-4 right-4 text-white hover:bg-white/20"
+          {/* Close */}
+          <button
+            className="absolute top-5 right-5 p-2.5 glass-depth-2 rounded-full text-white hover:border-white/30 transition-all"
             onClick={closeGallery}
           >
-            <X className="h-6 w-6" />
-          </Button>
+            <X className="h-5 w-5" />
+          </button>
 
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20"
-            onClick={(e) => {
-              e.stopPropagation()
-              prevImage()
-            }}
+          {/* Prev */}
+          <button
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 glass-depth-2 rounded-full text-white hover:border-white/30 transition-all"
+            onClick={(e) => { e.stopPropagation(); prevImage() }}
           >
-            <ChevronLeft className="h-8 w-8" />
-          </Button>
+            <ChevronLeft className="h-6 w-6" />
+          </button>
 
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20"
-            onClick={(e) => {
-              e.stopPropagation()
-              nextImage()
-            }}
-          >
-            <ChevronRight className="h-8 w-8" />
-          </Button>
-
-          <div className="max-w-6xl max-h-[90vh] w-full" onClick={(e) => e.stopPropagation()}>
+          {/* Image */}
+          <div className="max-w-5xl max-h-[88vh] w-full" onClick={(e) => e.stopPropagation()}>
             <img
-              src={projects[selectedProject].gallery![currentImageIndex]}
+              src={getImagePath(projects[selectedProject].gallery![currentImageIndex])}
               alt={`${projects[selectedProject].title} - Image ${currentImageIndex + 1}`}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain rounded-2xl"
             />
-            <div className="text-center text-white mt-4">
-              <p className="text-sm">
-                {currentImageIndex + 1} / {projects[selectedProject].gallery!.length}
-              </p>
-            </div>
+            <p className="text-center text-white/60 text-sm mt-3">
+              {currentImageIndex + 1} / {projects[selectedProject].gallery!.length}
+            </p>
           </div>
+
+          {/* Next */}
+          <button
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 glass-depth-2 rounded-full text-white hover:border-white/30 transition-all"
+            onClick={(e) => { e.stopPropagation(); nextImage() }}
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
         </div>
       )}
     </section>
