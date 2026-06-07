@@ -7,7 +7,7 @@ import { Suspense } from "react"
 import { Providers } from "@/components/providers"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nkarara.github.io/portfolio-main"),
+  metadataBase: new URL("https://nkarara.github.io/Portfolio"),
   title: "Nabil KARARA – Portfolio Web & Mobile Developer",
   description:
     "Portfolio personnel de Nabil KARARA, développeur web et mobile passionné. Découvrez mes projets en React, Node.js, Java et plus.",
@@ -18,11 +18,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nabil KARARA – Portfolio Web & Mobile Developer",
     description: "Portfolio personnel de Nabil KARARA, développeur web et mobile passionné.",
-    url: "https://nkarara.github.io/portfolio-main",
+    url: "https://nkarara.github.io/Portfolio",
     siteName: "Nabil KARARA Portfolio",
     images: [
       {
-        url: "/portfolio-main/NABIL_Profil.jpg",
+        url: "/Portfolio/NABIL_Profil.jpg",
         width: 1200,
         height: 630,
         alt: "Nabil KARARA - Portfolio",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nabil KARARA – Portfolio Web & Mobile Developer",
     description: "Portfolio personnel de Nabil KARARA, développeur web et mobile passionné.",
-    images: ["/portfolio-main/NABIL_Profil.jpg"],
+    images: ["/Portfolio/NABIL_Profil.jpg"],
     creator: "@nabilkarara",
   },
   robots: {
