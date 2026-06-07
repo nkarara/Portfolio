@@ -2,10 +2,12 @@
 
 import { Code2, Database, Smartphone, Cloud, Wrench, Users, Lightbulb, Zap } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 export function Skills() {
   const { t } = useLanguage()
-
+  const ref = useScrollAnimation()
+  
   const technicalSkills = [
     {
       category: t.skills.frontend,
@@ -58,7 +60,7 @@ export function Skills() {
   ]
 
   return (
-    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 fade-in-view" ref={ref}>
       <div className="container mx-auto max-w-5xl space-y-14">
 
         {/* Section Header */}

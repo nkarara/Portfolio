@@ -7,7 +7,7 @@
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
-    "deploy": "gh-pages -d out -t true"
+    "deploy": "gh-pages -d out -t"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

@@ -4,9 +4,11 @@ import { ExternalLink, ImageIcon, X } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 import { getImagePath } from "@/lib/utils"
 import { useState } from "react"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 export function Certifications() {
   const { t } = useLanguage()
+  const ref = useScrollAnimation()
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   const certifications = [
@@ -45,7 +47,7 @@ export function Certifications() {
   ]
 
   return (
-    <section id="certifications" className="py-24 px-4 sm:px-6 lg:px-8">
+    <section id="certifications" className="py-24 px-4 sm:px-6 lg:px-8 fade-in-view" ref={ref}>
       <div className="container mx-auto max-w-5xl space-y-14">
 
         {/* Section Header */}

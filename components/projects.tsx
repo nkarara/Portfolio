@@ -4,9 +4,11 @@ import { Github, ImageIcon, X, ChevronLeft, ChevronRight } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 import { getImagePath } from "@/lib/utils"
 import { useState } from "react"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 export function Projects() {
   const { t } = useLanguage()
+  const ref = useScrollAnimation()
   const [selectedProject, setSelectedProject] = useState<number | null>(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
@@ -77,7 +79,7 @@ export function Projects() {
   ]
 
   return (
-    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 fade-in-view" ref={ref}>
       <div className="container mx-auto max-w-5xl space-y-14">
 
         {/* Section Header */}

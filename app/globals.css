@@ -5,7 +5,7 @@
 
 /* ─── Design Tokens ──────────────────────────────── */
 :root {
-  --background: oklch(100% 0 0); /* White default */
+  --background: oklch(97% 0.005 250); /* Cleaner warm/cool light mode background */
   --foreground: oklch(20% 0 0);
   --card: rgba(255, 255, 255, 0.7);
   --card-foreground: oklch(20% 0 0);
@@ -269,7 +269,22 @@ body {
     inset 0 1px 2px 0 rgba(255, 255, 255, 0.9);
 }
 
-/* Generic alias for fallback compatibility */
+/* Complete Class Library Aliases */
+.glass {
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-sm);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.light .glass {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.02);
+}
+
 .glass-card {
   background: rgba(255, 255, 255, 0.055);
   backdrop-filter: blur(36px);
@@ -280,6 +295,42 @@ body {
     inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-md);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.light .glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.04),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 
+    0 24px 64px 0 rgba(0, 0, 0, 0.45),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-lg);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.light .liquid-glass {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 
+    0 24px 64px 0 rgba(0, 0, 0, 0.07),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.9);
+}
+
+.glass-highlight {
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 20px 0 rgba(var(--primary-rgb), 0.2);
+}
+.light .glass-highlight {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 20px 0 rgba(var(--primary-rgb), 0.08);
 }
 
 /* ─── Specular Refractions ────────────────────────── */
@@ -420,6 +471,30 @@ body {
 
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes fadeInView {

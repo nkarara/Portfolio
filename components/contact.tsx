@@ -5,8 +5,10 @@ import { useState } from "react"
 import { Mail, Linkedin, Github, Send, ArrowUpRight } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import { useLanguage } from "@/contexts/language-context"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 export function Contact() {
+  const ref = useScrollAnimation()
   const { toast } = useToast()
   const { t } = useLanguage()
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -79,7 +81,7 @@ export function Contact() {
   ]
 
   return (
-    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 fade-in-view" ref={ref}>
       <div className="container mx-auto max-w-5xl space-y-14">
 
         {/* Section Header */}
