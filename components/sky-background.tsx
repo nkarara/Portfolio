@@ -122,10 +122,10 @@ function SunSVG() {
       {/* Sun rays */}
       {Array.from({ length: 12 }, (_, i) => {
         const angle = (i * 30 * Math.PI) / 180
-        const x1 = 50 + Math.cos(angle) * 36
-        const y1 = 50 + Math.sin(angle) * 36
-        const x2 = 50 + Math.cos(angle) * 48
-        const y2 = 50 + Math.sin(angle) * 48
+        const x1 = (50 + Math.cos(angle) * 36).toFixed(3)
+        const y1 = (50 + Math.sin(angle) * 36).toFixed(3)
+        const x2 = (50 + Math.cos(angle) * 48).toFixed(3)
+        const y2 = (50 + Math.sin(angle) * 48).toFixed(3)
         return (
           <line
             key={i}
@@ -171,7 +171,12 @@ export function SkyBackground() {
   const { theme } = useTheme()
   const isDark = theme === "dark"
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const prevThemeRef = useRef(theme)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     if (prevThemeRef.current !== theme) {
@@ -234,7 +239,7 @@ export function SkyBackground() {
 
       {/* ── Stars ───────────────────────────────────────────────────────── */}
       <AnimatePresence>
-        {isDark && (
+        {mounted && isDark && (
           <motion.div
             className="absolute inset-0"
             initial={{ opacity: 0 }}
@@ -288,7 +293,7 @@ export function SkyBackground() {
 
       {/* ── Clouds ──────────────────────────────────────────────────────── */}
       <AnimatePresence>
-        {!isDark && (
+        {mounted && !isDark && (
           <motion.div
             className="absolute inset-0 overflow-hidden"
             initial={{ opacity: 0 }}
