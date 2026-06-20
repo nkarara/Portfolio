@@ -5,6 +5,7 @@ import { Menu, X, Languages } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 import { getNavPath } from "@/lib/utils"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { motion, AnimatePresence } from "framer-motion"
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -44,8 +45,8 @@ export function Navigation() {
   ]
 
   const isActive = (href: string) => {
-    if (href.endsWith("/") && activeSection === "/") return true;
-    return activeSection === href || (href.includes("/#") && activeSection.endsWith(href.substring(href.indexOf("/#"))));
+    if (href.endsWith("/") && activeSection === "/") return true
+    return activeSection === href || (href.includes("/#") && activeSection.endsWith(href.substring(href.indexOf("/#"))))
   }
 
   return (
@@ -54,12 +55,13 @@ export function Navigation() {
         isScrolled ? "pt-3" : ""
       }`}
     >
-      <nav
+      <motion.nav
         className={`w-full max-w-4xl rounded-2xl flex items-center justify-between px-5 py-2.5 transition-all duration-500 ${
-          isScrolled
-            ? "bg-card border border-border shadow-lg shadow-black/5 dark:shadow-black/20"
-            : "bg-transparent"
+          isScrolled ? "nav-glass shadow-lg shadow-black/20" : "bg-transparent"
         }`}
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
         {/* Logo */}
         <a
@@ -79,8 +81,8 @@ export function Navigation() {
                 href={item.href}
                 className={`text-[0.8125rem] font-medium px-3 py-1.5 rounded-lg transition-all duration-200 ${
                   active
-                    ? "text-foreground bg-foreground/8"
-                    : "text-muted-foreground hover:text-foreground hover:bg-foreground/4"
+                    ? "text-foreground bg-foreground/10"
+                    : "text-muted-foreground hover:text-foreground hover:bg-foreground/6"
                 }`}
               >
                 {item.name}
@@ -89,14 +91,14 @@ export function Navigation() {
           })}
         </div>
 
-        <div className="flex items-center gap-2">
-          {/* Theme Toggle */}
+        <div className="flex items-center gap-1.5">
+          {/* Theme Toggle (sky-integrated sun/moon) */}
           <ThemeToggle />
 
           {/* Language Toggle */}
           <button
             onClick={() => setLanguage(language === "fr" ? "en" : "fr")}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-foreground/5 transition-all duration-200 text-xs font-semibold"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-foreground/6 transition-all duration-200 text-xs font-semibold"
             title="Toggle language"
           >
             <Languages className="h-3.5 w-3.5" />
@@ -106,36 +108,44 @@ export function Navigation() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-foreground/5 md:hidden transition-all duration-200"
+            className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-foreground/6 md:hidden transition-all duration-200"
             title="Toggle menu"
           >
             {isMobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="absolute top-[72px] left-4 right-4 z-40 border border-border bg-card backdrop-blur-2xl p-4 rounded-2xl md:hidden flex flex-col gap-1 animate-fade-in-up shadow-2xl">
-          {navItems.map((item) => {
-            const active = isActive(item.href)
-            return (
-              <a
-                key={item.name}
-                href={item.href}
-                className={`w-full py-2.5 px-4 rounded-xl text-sm font-medium transition-all duration-200 ${
-                  active
-                    ? "bg-foreground/8 text-foreground"
-                    : "text-muted-foreground hover:text-foreground hover:bg-foreground/4"
-                }`}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.name}
-              </a>
-            )
-          })}
-        </div>
-      )}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            className="absolute top-[72px] left-4 right-4 z-40 nav-glass p-4 rounded-2xl md:hidden flex flex-col gap-1 shadow-2xl"
+            initial={{ opacity: 0, y: -8, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -8, scale: 0.97 }}
+            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          >
+            {navItems.map((item) => {
+              const active = isActive(item.href)
+              return (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={`w-full py-2.5 px-4 rounded-xl text-sm font-medium transition-all duration-200 ${
+                    active
+                      ? "bg-foreground/10 text-foreground"
+                      : "text-muted-foreground hover:text-foreground hover:bg-foreground/6"
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </a>
+              )
+            })}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   )
 }

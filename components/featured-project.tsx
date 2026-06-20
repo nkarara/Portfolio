@@ -21,7 +21,7 @@ export function FeaturedProject() {
   }
 
   return (
-    <section id="featured-project" className="py-32 px-4 sm:px-6 lg:px-8 fade-in-view bg-background" ref={ref}>
+    <section id="featured-project" className="py-32 px-4 sm:px-6 lg:px-8 fade-in-view sky-section" ref={ref}>
       <div className="container mx-auto max-w-6xl space-y-12">
         
         {/* Section Label */}

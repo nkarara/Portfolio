@@ -10,7 +10,7 @@ export function Footer() {
   ]
 
   return (
-    <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-border bg-background">
+    <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-border/60 backdrop-blur-md sky-section">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
 

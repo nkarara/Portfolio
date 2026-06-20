@@ -28,7 +28,7 @@ export function About() {
   ]
 
   return (
-    <section id="about" className="py-32 px-4 sm:px-6 lg:px-8 fade-in-view bg-background" ref={ref}>
+    <section id="about" className="py-32 px-4 sm:px-6 lg:px-8 fade-in-view sky-section" ref={ref}>
       <div className="container mx-auto max-w-6xl">
 
         {/* Section divider */}

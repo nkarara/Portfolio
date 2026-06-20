@@ -10,7 +10,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[100dvh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-background"
+      className="relative min-h-[100dvh] flex items-center justify-center px-4 sm:px-6 lg:px-8 sky-section"
     >
       <div className="container mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-12 gap-16 items-center">

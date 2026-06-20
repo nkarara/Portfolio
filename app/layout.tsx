@@ -5,6 +5,7 @@ import { GeistMono } from "geist/font/mono"
 import "./globals.css"
 import { Suspense } from "react"
 import { Providers } from "@/components/providers"
+import { SkyBackground } from "@/components/sky-background"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nkarara.github.io/Portfolio"),
@@ -51,17 +52,16 @@ export const metadata: Metadata = {
   },
 }
 
-import { SkyBackground } from "@/components/sky-background"
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <Providers>
+          {/* Living sky background — fixed, z-index -20, behind everything */}
           <SkyBackground />
           <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
         </Providers>

@@ -32,7 +32,7 @@ export function Experience() {
   ]
 
   return (
-    <section id="experience" className="py-32 px-4 sm:px-6 lg:px-8 fade-in-view bg-background" ref={ref}>
+    <section id="experience" className="py-32 px-4 sm:px-6 lg:px-8 fade-in-view sky-section" ref={ref}>
       <div className="container mx-auto max-w-6xl">
 
         <div className="section-divider mb-24" />
@@ -54,7 +54,7 @@ export function Experience() {
               {items.map((item, index) => (
                 <div key={index} className="relative pl-10 group">
                   {/* Timeline dot */}
-                  <div className="absolute left-0 top-2 w-[15px] h-[15px] rounded-full border-2 border-border bg-background flex items-center justify-center transition-all duration-400 group-hover:border-blue-500">
+                  <div className="absolute left-0 top-2 w-[15px] h-[15px] rounded-full border-2 border-border sky-section flex items-center justify-center transition-all duration-400 group-hover:border-blue-500">
                     <div className="w-[5px] h-[5px] rounded-full bg-muted-foreground/60 transition-colors duration-400 group-hover:bg-blue-500" />
                   </div>
 

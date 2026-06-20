@@ -78,7 +78,7 @@ export function Projects() {
   ]
 
   return (
-    <section id="projects" className="py-32 px-4 sm:px-6 lg:px-8 fade-in-view bg-background" ref={ref}>
+    <section id="projects" className="py-32 px-4 sm:px-6 lg:px-8 fade-in-view sky-section" ref={ref}>
       <div className="container mx-auto max-w-6xl">
 
         <div className="section-divider mb-24" />

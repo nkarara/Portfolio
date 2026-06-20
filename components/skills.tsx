@@ -32,7 +32,7 @@ export function Skills() {
   ]
 
   return (
-    <section id="skills" className="py-32 px-4 sm:px-6 lg:px-8 fade-in-view bg-background" ref={ref}>
+    <section id="skills" className="py-32 px-4 sm:px-6 lg:px-8 fade-in-view sky-section" ref={ref}>
       <div className="container mx-auto max-w-6xl">
 
         <div className="section-divider mb-24" />

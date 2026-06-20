@@ -5,60 +5,73 @@
 
 /* ─── Design Tokens ──────────────────────────────── */
 :root {
-  --background: #0A0A0A;
+  /* Night sky defaults */
+  --background: transparent;
   --foreground: #FFFFFF;
   
-  --card: #111111;
+  --card: rgba(8, 14, 40, 0.65);
   --card-foreground: #FFFFFF;
   
-  --popover: #111111;
+  --popover: rgba(10, 16, 45, 0.90);
   --popover-foreground: #FFFFFF;
 
-  --primary: #3B82F6;
+  --primary: #4F8EF7;
   --primary-foreground: #FFFFFF;
-  --primary-rgb: 59, 130, 246;
+  --primary-rgb: 79, 142, 247;
 
-  --secondary: #161616;
+  --secondary: rgba(15, 25, 65, 0.6);
   --secondary-foreground: #FFFFFF;
   
-  --muted: #161616;
-  --muted-foreground: #A1A1AA;
+  --muted: rgba(15, 25, 65, 0.5);
+  --muted-foreground: #94A8CC;
 
-  --accent: #2563EB;
+  --accent: #3B82F6;
   --accent-foreground: #FFFFFF;
 
   --destructive: #EF4444;
   --destructive-foreground: #FFFFFF;
 
-  --border: rgba(255, 255, 255, 0.06);
-  --input: #161616;
-  --ring: rgba(59, 130, 246, 0.4);
+  --border: rgba(140, 180, 255, 0.12);
+  --input: rgba(10, 18, 50, 0.8);
+  --ring: rgba(79, 142, 247, 0.45);
 
   --radius: 1rem;
   
-  /* Premium spacing */
   --section-gap: 8rem;
   --content-max: 72rem;
+  
+  /* Section overlay — subtle tint so sky shows but text is readable */
+  --section-overlay: rgba(4, 8, 24, 0.45);
 }
 
+/* ─── Night mode (default / .dark) ──────────────── */
 .dark {
-  --background: #0A0A0A;
-  --foreground: #FFFFFF;
-  --card: rgba(17, 17, 17, 0.85);
-  --card-foreground: #FFFFFF;
-  --primary: #3B82F6;
-  --muted-foreground: #A1A1AA;
-  --border: rgba(255, 255, 255, 0.08);
+  --background: transparent;
+  --foreground: #EEF2FF;
+  --card: rgba(8, 14, 40, 0.65);
+  --card-foreground: #EEF2FF;
+  --primary: #4F8EF7;
+  --muted-foreground: #94A8CC;
+  --border: rgba(140, 180, 255, 0.12);
+  --input: rgba(10, 18, 50, 0.8);
+  --section-overlay: rgba(4, 8, 24, 0.48);
 }
 
+/* ─── Day mode ───────────────────────────────────── */
 .light {
-  --background: #F8FAFC;
-  --foreground: #0F172A;
-  --card: rgba(255, 255, 255, 0.85);
-  --card-foreground: #0F172A;
-  --primary: #2563EB;
-  --muted-foreground: #64748B;
-  --border: rgba(15, 23, 42, 0.08);
+  --background: transparent;
+  --foreground: #0A1628;
+  --card: rgba(255, 255, 255, 0.72);
+  --card-foreground: #0A1628;
+  --primary: #1D6BE8;
+  --primary-foreground: #FFFFFF;
+  --muted-foreground: #3A5A8C;
+  --border: rgba(15, 40, 100, 0.10);
+  --input: rgba(240, 248, 255, 0.9);
+  --ring: rgba(29, 107, 232, 0.35);
+  --section-overlay: rgba(220, 238, 255, 0.30);
+  --secondary: rgba(200, 225, 255, 0.4);
+  --muted: rgba(200, 225, 255, 0.3);
 }
 
 @theme inline {
@@ -92,10 +105,10 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
-    background-color: var(--background);
+    @apply text-foreground antialiased selection:bg-primary/20 selection:text-primary;
+    background: transparent;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-    transition: background-color 1.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.6s ease;
+    transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -105,47 +118,28 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ─── Premium Background ───────────────────────────── */
-.liquid-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -20;
-  background-color: #0A0A0A;
-  /* Ultra-subtle dot grid */
-  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 32px 32px;
+/* ─── Sky Section Overlay ────────────────────────────
+   Each section gets a very subtle tinted backdrop so
+   content is readable against the animated sky behind.
+   The sky gradient still shows through. 
+──────────────────────────────────────────────────── */
+.sky-section {
+  position: relative;
+  background: var(--section-overlay);
+  backdrop-filter: blur(0px);
+  transition: background 1.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Ambient radial hero glow */
-.liquid-bg::after {
-  content: "";
-  position: absolute;
-  top: -100px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 900px;
-  height: 700px;
-  background: radial-gradient(ellipse 600px 400px at 50% 0px, rgba(59, 130, 246, 0.06), transparent 70%);
-  pointer-events: none;
-}
-
-.liquid-orb-cyan {
-  display: none;
-}
-
-/* ─── Premium Cards ────────────────────────────────── */
+/* ─── Premium Glass Cards ────────────────────────── */
 .vercel-card {
-  background-color: var(--card);
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
 }
 
 .vercel-card::before {
@@ -153,7 +147,7 @@ html {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 50%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 55%);
   pointer-events: none;
   z-index: 1;
 }
@@ -161,17 +155,17 @@ html {
 .vercel-card:hover {
   border-color: var(--primary);
   box-shadow: 
-    0 0 0 1px rgba(59, 130, 246, 0.08),
-    0 20px 50px -12px rgba(0, 0, 0, 0.25),
-    0 0 40px -8px rgba(59, 130, 246, 0.08);
+    0 0 0 1px rgba(79, 142, 247, 0.10),
+    0 20px 50px -12px rgba(0, 0, 0, 0.3),
+    0 0 40px -8px rgba(79, 142, 247, 0.10);
   transform: translateY(-3px);
 }
 
-.liquid-glass-sheen {
-  display: none;
-}
+.liquid-glass-sheen { display: none; }
+.liquid-bg { display: none; }
+.liquid-orb-cyan { display: none; }
 
-/* ─── Premium Buttons ──────────────────────────────── */
+/* ─── Premium Buttons ───────────────────────────── */
 .vercel-btn {
   display: inline-flex;
   align-items: center;
@@ -193,19 +187,19 @@ html {
   color: #FFFFFF;
   font-weight: 600;
 }
-
 .vercel-btn-primary:hover {
   filter: brightness(1.15);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
+  box-shadow: 0 0 24px rgba(79, 142, 247, 0.3);
   transform: translateY(-1px);
 }
 
 .vercel-btn-secondary {
-  background-color: var(--card);
+  background: var(--card);
   color: var(--muted-foreground);
   border-color: var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
-
 .vercel-btn-secondary:hover {
   border-color: var(--primary);
   color: var(--foreground);
@@ -213,56 +207,47 @@ html {
 }
 
 .vercel-btn-accent {
-  background-color: #3B82F6;
+  background-color: var(--primary);
   color: #FFFFFF;
   font-weight: 600;
 }
-
 .vercel-btn-accent:hover {
-  background-color: #2563EB;
-  box-shadow: 0 0 24px rgba(59, 130, 246, 0.3);
+  filter: brightness(1.12);
+  box-shadow: 0 0 24px rgba(79, 142, 247, 0.3);
   transform: translateY(-1px);
 }
 
-/* ─── Premium Inputs ───────────────────────────────── */
+/* ─── Premium Inputs ───────────────────────────── */
 .vercel-input {
-  background-color: var(--card);
+  background: var(--input);
   border: 1px solid var(--border);
   border-radius: 10px;
   color: var(--foreground);
   font-size: 0.875rem;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(8px);
 }
-
 .vercel-input:focus {
-  border-color: rgba(59, 130, 246, 0.5);
+  border-color: rgba(79, 142, 247, 0.5);
   box-shadow: 
-    0 0 0 3px rgba(59, 130, 246, 0.1),
-    0 0 20px rgba(59, 130, 246, 0.05);
+    0 0 0 3px rgba(79, 142, 247, 0.12),
+    0 0 20px rgba(79, 142, 247, 0.06);
   outline: none;
 }
 
-/* ─── Scroll Animations ────────────────────────────── */
+/* ─── Scroll Animations ─────────────────────────── */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-
 .animate-fade-in-up {
   animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes fadeIn {
   from { opacity: 0; }
-  to { opacity: 1; }
+  to   { opacity: 1; }
 }
-
 .animate-fade-in {
   animation: fadeIn 0.7s ease-out forwards;
 }
@@ -272,7 +257,6 @@ html {
   transform: translateY(24px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 .fade-in-view.is-visible {
   opacity: 1;
   transform: translateY(0);
@@ -286,32 +270,32 @@ html {
 .animate-delay-500 { animation-delay: 0.5s; }
 .animate-delay-600 { animation-delay: 0.6s; }
 
-/* ─── Typography System ────────────────────────────── */
+/* ─── Typography System ──────────────────────────── */
 .section-label {
   display: inline-block;
   font-size: 0.6875rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: #3B82F6;
+  color: var(--primary);
   margin-bottom: 0.75rem;
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #FFFFFF 0%, #71717A 100%);
+  background: linear-gradient(135deg, var(--foreground) 0%, var(--muted-foreground) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-hero {
-  background: linear-gradient(135deg, var(--foreground) 0%, var(--muted-foreground) 50%, var(--muted-foreground) 100%);
+  background: linear-gradient(135deg, var(--foreground) 0%, var(--muted-foreground) 55%, var(--muted-foreground) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* ─── Premium Section Divider ──────────────────────── */
+/* ─── Section Divider ────────────────────────────── */
 .section-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--border), transparent);
@@ -319,16 +303,15 @@ html {
   max-width: 80%;
 }
 
-/* ─── Subtle Glow Effects ──────────────────────────── */
+/* ─── Glow Effects ───────────────────────────────── */
 .glow-blue {
-  box-shadow: 0 0 60px -12px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 0 60px -12px rgba(79, 142, 247, 0.2);
 }
-
 .glow-soft {
-  box-shadow: 0 0 40px -8px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 40px -8px rgba(255, 255, 255, 0.06);
 }
 
-/* ─── Hero 3D Character Scene ──────────────────────── */
+/* ─── Hero 3D Character ──────────────────────────── */
 .hero-3d-scene {
   position: relative;
   isolation: isolate;
@@ -337,27 +320,25 @@ html {
 .hero-glow-bg {
   background: radial-gradient(
     ellipse 80% 70% at 50% 55%,
-    rgba(59, 130, 246, 0.10) 0%,
-    rgba(59, 130, 246, 0.04) 40%,
+    rgba(79, 142, 247, 0.12) 0%,
+    rgba(79, 142, 247, 0.04) 40%,
     transparent 70%
   );
-  filter: blur(20px);
+  filter: blur(24px);
   pointer-events: none;
   z-index: 0;
 }
 
-/* Subtle floating idle animation */
 @keyframes hero3dFloat {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  50%       { transform: translateY(-8px); }
 }
-
 .hero-3d-float {
   animation: hero3dFloat 5s ease-in-out infinite;
   will-change: transform;
 }
 
-/* ─── Tag / Badge System ───────────────────────────── */
+/* ─── Tech Tags ──────────────────────────────────── */
 .tech-tag {
   padding: 0.375rem 0.875rem;
   background: var(--card);
@@ -368,56 +349,47 @@ html {
   color: var(--muted-foreground);
   transition: all 0.2s ease;
   cursor: default;
+  backdrop-filter: blur(8px);
 }
-
 .tech-tag:hover {
   color: var(--foreground);
   border-color: var(--primary);
-  background: var(--card);
 }
 
 /* Legacy glass classes */
 .glass-depth-1, .glass-depth-2, .glass-depth-3, .glass, .glass-card, .liquid-glass {
-  background-color: var(--card);
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  backdrop-filter: blur(16px);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ─── Scrollbar ────────────────────────────────────── */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
+/* ─── Scrollbar ──────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb {
   background: var(--border);
   border-radius: 3px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(140, 180, 255, 0.3);
 }
 
-/* ─── Custom Sky Theme Animations ──────────────────── */
+/* ─── Sky Theme Animations ───────────────────────── */
 @keyframes pulse-subtle {
   0%, 100% { opacity: 0.15; transform: scale(0.9); }
-  50% { opacity: 1; transform: scale(1.1); }
+  50%       { opacity: 1;    transform: scale(1.1); }
 }
 .animate-pulse-subtle {
   animation: pulse-subtle 4s infinite ease-in-out;
 }
 
-@keyframes float-particles {
-  0% { transform: translateY(0px) translateX(0px); opacity: 0; }
-  25% { opacity: 0.45; }
-  75% { opacity: 0.45; }
-  100% { transform: translateY(-80px) translateX(15px); opacity: 0; }
+/* Navigation glass pill */
+.nav-glass {
+  background: var(--card);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px) saturate(1.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+  transition: background 1.8s ease, border-color 1.8s ease;
 }
-.animate-float-particles {
-  animation: float-particles 8s infinite linear;
-}
-
