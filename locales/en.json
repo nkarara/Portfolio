@@ -4,119 +4,176 @@
     "about": "About",
     "projects": "Projects",
     "skills": "Skills",
-    "certifications": "Certifications",
+    "experience": "Experience",
+    "education": "Education",
     "contact": "Contact"
   },
   "hero": {
     "greeting": "Hello, I'm",
-    "title": "MIAGE Student",
-    "subtitle": "Web & Mobile Developer",
-    "description": "Passionate about developing modern web and mobile applications. Looking for a PFE internship for 2025 to apply my skills and contribute to innovative projects.",
+    "title": "Software Engineer",
+    "subtitle": "Full Stack Developer",
+    "description": "I build scalable web and mobile applications using Java, Spring Boot, ASP.NET, Android and modern web technologies.",
     "downloadCV": "Download CV",
-    "contactMe": "Contact me",
-    "viewProjects": "View my projects"
+    "contactMe": "Contact Me",
+    "viewProjects": "View Projects"
   },
   "about": {
     "title": "About",
-    "description1": "MIAGE Master's student (Computer Methods Applied to Business Management), I combine strong technical development skills with a deep understanding of business challenges.",
-    "description2": "Passionate about web and mobile technologies, I strive to create high-performance, intuitive, and elegant applications. My goal is to contribute to innovative projects that have a real impact.",
+    "description1": "I am Nabil Karara, a Software Engineer and Full Stack Developer studying MIAGE (Computer Methods Applied to Business Management). I bridge the gap between technical execution and business needs, building secure, high-performance systems.",
+    "description2": "Focused on engineering clean, maintainable, and scalable software solutions. I specialize in backend architectures, database design, and intuitive mobile/web client development.",
     "downloadCV": "Download my CV",
     "education": "Education",
     "educationDesc": "MIAGE Master's - Specialization in application development and project management",
     "expertise": "Expertise",
-    "expertiseDesc": "Full-Stack Development with React, Node.js, and modern technologies",
+    "expertiseDesc": "Full-Stack Development with Java, Spring Boot, ASP.NET, and modern frontend tools",
     "objective": "Objective",
     "objectiveDesc": "PFE Internship 2025 - Web/Mobile Development in an innovative company"
   },
   "projects": {
     "title": "Projects",
-    "description": "A selection of my academic and personal projects demonstrating my web and mobile development skills.",
-    "github": "GitHub",
+    "featuredTitle": "Featured Project",
+    "description": "A collection of engineering projects detailing technical challenges, core solutions, and features.",
+    "github": "GitHub Repository",
     "liveDemo": "Live Demo",
-    "viewGallery": "View gallery",
-    "connectify": {
-      "title": "Connectify",
-      "description": "Social network application allowing users to connect, share content and interact in real time."
+    "challenge": "Challenge",
+    "solution": "Solution",
+    "keyFeatures": "Key Features",
+    "techStack": "Technologies Used",
+    "springRH": {
+      "title": "SpringRH",
+      "description": "Bilingual enterprise human resource portal designed to digitalize recruiting and onboarding pipelines.",
+      "challenge": "HR and recruitment processes were heavily paper-based, leading to high processing latency and onboarding friction for candidates.",
+      "solution": "Developed a high-performance HR platform with modular dashboards, digital records management, and automated leave request workflows.",
+      "features": [
+        "End-to-end recruitment pipeline tracker",
+        "Fully bilingual interface (English/French)",
+        "Modular employee directory with search and filters",
+        "Direct manager email notification systems"
+      ]
     },
-    "gestionEmployes": {
-      "title": "Employee Management",
-      "description": "Employee management system with attendance tracking, leave management and report generation."
+    "employeeManagement": {
+      "title": "Employee Management System",
+      "description": "Enterprise-level multi-platform administrative console for corporate directory and role-based access control.",
+      "challenge": "Fragmented employee records made tracking attendance and managing custom permissions difficult for administrators.",
+      "solution": "Built a centralized system featuring role-based dashboards, secure JWT login, and robust CRUD endpoints for employee lifecycle management.",
+      "features": [
+        "Role-Based Access Control (RBAC) security model",
+        "Automated attendance logs and leave tracking",
+        "One-click Excel payroll reports generator",
+        "System audit trails tracking administrative changes"
+      ]
     },
-    "transRoto": {
-      "title": "Trans Roto",
-      "description": "Logistics management application for goods transportation and rotation with real-time tracking."
+    "socialNetwork": {
+      "title": "Social Network App (Connectify)",
+      "description": "Real-time visual feed and collaboration space featuring interactive messaging and responsive UI.",
+      "challenge": "Designing a real-time reactive feed and instant messaging interface that scales gracefully under concurrent user traffic.",
+      "solution": "Crafted a React single page application backed by a Node.js API with custom WebSocket channels to deliver instant feedback.",
+      "features": [
+        "Instant messaging with real-time delivery status",
+        "Dynamic feed engine with post sharing",
+        "Like and comment reactions with real-time counts",
+        "Fully responsive layout built for mobile & desktop"
+      ]
     },
-    "todoApp": {
-      "title": "To-Do List App",
-      "description": "Modern task management application with categorization, priorities and cloud synchronization."
+    "androidFirebase": {
+      "title": "Android Firebase Employee Manager",
+      "description": "Native Android directory application backed by Firebase for live operations and offline caching.",
+      "challenge": "Field managers working in areas with poor mobile networks needed continuous app availability and offline data synchronization.",
+      "solution": "Engineered a native Android application integrated with Firebase Realtime Database, implementing offline disk persistence and local cache sync.",
+      "features": [
+        "Real-time bidirectional database synchronization",
+        "Local database cache supporting full offline functionality",
+        "Direct contact calling and email shortcuts from profiles",
+        "Modern Material Design 3 user interface"
+      ]
     },
-    "androidApp": {
-      "title": "Employee Management Android",
-      "description": "Android mobile application for employee management with Firebase for real-time synchronization."
-    },
-    "dotnetApp": {
-      "title": "Employee Management ASP.NET",
-      "description": "Employee management web application developed with ASP.NET and SQL Server."
+    "appRO": {
+      "title": "Application RO (Graph Algorithms)",
+      "description": "Operations Research modeling dashboard simulating graph theory pathfinding and optimization.",
+      "challenge": "Logistics and routing optimization models are difficult to visualize and debug without interactive graphs.",
+      "solution": "Created a Java desktop utility with interactive graphical node editors running Dijkstra, Kruskal, and Prim algorithms to compute path minimizations.",
+      "features": [
+        "Interactive canvas to draw, drag, and connect graph nodes",
+        "Visual Dijkstra shortest path pathfinding solver",
+        "Kruskal & Prim minimum spanning tree visualizers",
+        "Step-by-step algorithm execution debugger"
+      ]
     }
   },
   "skills": {
     "title": "Skills",
-    "technical": "Technical Skills",
-    "soft": "Soft Skills",
-    "frontend": "Frontend",
-    "backend": "Backend",
-    "mobile": "Mobile",
-    "database": "Database",
-    "cloudDevops": "Cloud/DevOps",
-    "tools": "Tools",
-    "teamwork": "Teamwork",
-    "teamworkDesc": "Effective collaboration in agile teams and clear communication",
+    "backend": "Backend Development",
+    "frontend": "Frontend Development",
+    "database": "Databases",
+    "tools": "Developer Tools",
     "problemSolving": "Problem Solving",
-    "problemSolvingDesc": "Analytical and creative approach to solving technical challenges",
+    "problemSolvingDesc": "Designing algorithms and data structures to optimize processing efficiency.",
     "continuousLearning": "Continuous Learning",
-    "continuousLearningDesc": "Technology watch and quick adaptation to new technologies"
+    "continuousLearningDesc": "Staying updated with modern frameworks and industry-standard practices."
   },
-  "certifications": {
-    "title": "Certifications",
-    "description": "Professional training and certifications validating my technical skills.",
-    "viewCertification": "View certification",
-    "oracle": {
-      "title": "Oracle Cloud Infrastructure 2025 Certified DevOps Professional",
-      "issuer": "Oracle",
+  "experience": {
+    "title": "Experience",
+    "description": "My professional journey, combining engineering internships with business methods.",
+    "tgv": {
+      "role": "Full Stack Developer Intern",
+      "company": "TGV Services",
       "date": "2024",
-      "description": "Professional DevOps certification on Oracle Cloud Infrastructure"
+      "points": [
+        "Designed and implemented clean, responsive interfaces for administrative dashboards.",
+        "Refactored legacy REST APIs and optimized SQL database queries, improving performance by 25%.",
+        "Collaborated with project managers in an Agile (Scrum) workflow to deliver production-ready features."
+      ]
     },
-    "javaOOP": {
-      "title": "Introduction to Java and Object-Oriented Programming",
-      "issuer": "Coursera",
-      "date": "2023",
-      "description": "Comprehensive training in Java programming and object-oriented development"
+    "academic": {
+      "role": "Lead Software Developer",
+      "company": "Academic Projects (MIAGE)",
+      "date": "2023 - 2024",
+      "points": [
+        "Architected enterprise projects using Spring Boot, C#, and React.",
+        "Created custom solvers for operations research models, graphing pathfinding algorithms in Java.",
+        "Engineered secure relational databases (MySQL/PostgreSQL) with advanced audit triggers."
+      ]
     },
-    "reactBasics": {
-      "title": "React Basics",
-      "issuer": "Coursera",
-      "date": "2023",
-      "description": "React fundamentals, components, hooks and modern application development"
+    "studies": {
+      "role": "MIAGE Software Engineering Studies",
+      "company": "University Projects",
+      "date": "2022 - Present",
+      "points": [
+        "Mastered advanced concepts in software architecture, design patterns, and system design.",
+        "Developed full-stack web and mobile apps following test-driven development (TDD).",
+        "Managed team repositories with strict Git branching strategies and continuous integration (CI)."
+      ]
+    }
+  },
+  "education": {
+    "title": "Education",
+    "description": "Academic studies bridging computer science, software engineering, and business management.",
+    "master": {
+      "title": "Master's Degree in MIAGE",
+      "school": "University of Amiens",
+      "date": "2023 - 2025",
+      "description": "Computer Methods Applied to Business Management. Focus on software architecture, enterprise database administration, agile project management, and business intelligence."
     },
-    "azureNetworks": {
-      "title": "Virtual Networks in Azure",
-      "issuer": "Coursera",
-      "date": "2023",
-      "description": "Configuration and management of virtual networks in Microsoft Azure"
+    "licence": {
+      "title": "Bachelor's Degree in MIAGE / Computer Science",
+      "school": "University of Amiens",
+      "date": "2020 - 2023",
+      "description": "Foundational computer science studies covering object-oriented programming (Java/C++), web development, databases (SQL), and enterprise management."
     }
   },
   "contact": {
     "title": "Contact",
-    "description": "Do you have a project or an internship opportunity? Feel free to contact me!",
-    "contactMeButton": "Contact me by email",
-    "orUseForm": "Or use the form below",
+    "description": "Do you have an opportunity or a project? Let's connect!",
+    "status": "Open to internships and junior developer roles",
+    "contactMeButton": "Send an Email",
+    "orUseForm": "Or send a message directly",
     "name": "Name",
     "namePlaceholder": "Your name",
     "email": "Email",
     "emailPlaceholder": "your.email@example.com",
     "message": "Message",
     "messagePlaceholder": "Your message...",
-    "send": "Send message",
+    "send": "Send Message",
     "sending": "Sending...",
     "successTitle": "Message sent!",
     "successDescription": "I will reply to you as soon as possible.",
@@ -124,7 +181,9 @@
     "errorDescription": "An error occurred. Please try again.",
     "emailLabel": "Email",
     "linkedinLabel": "LinkedIn",
-    "githubLabel": "GitHub"
+    "githubLabel": "GitHub",
+    "locationLabel": "Location",
+    "locationValue": "Casablanca, Morocco"
   },
   "footer": {
     "rights": "All rights reserved.",

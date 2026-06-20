@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowRight, Download } from "lucide-react"
+import { ArrowRight, Download, Github } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 import { getImagePath } from "@/lib/utils"
 
@@ -10,81 +10,94 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center py-32 px-4 sm:px-6 lg:px-8"
+      className="relative min-h-[100dvh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-background"
     >
-      <div className="container mx-auto max-w-5xl">
-        {/* Main Floating Glass Panel */}
-        <div className="glass-depth-3 p-8 sm:p-12 md:p-16 rounded-[2.5rem] relative overflow-hidden group">
-          <div className="liquid-glass-sheen" aria-hidden="true" />
+      <div className="container mx-auto max-w-6xl">
+        <div className="grid lg:grid-cols-12 gap-16 items-center">
           
-          <div className="grid md:grid-cols-5 gap-12 items-center relative z-10">
-            
-            {/* Left — Text content, editorial layout */}
-            <div className="md:col-span-3 space-y-6 sm:space-y-8 order-2 md:order-1 text-center md:text-left">
-              {/* Eyebrow label */}
-              <div className="animate-fade-in-up">
-                <span className="section-label">{t.hero.greeting}</span>
-              </div>
+          {/* Left — Editorial text block */}
+          <div className="lg:col-span-7 space-y-8 text-center lg:text-left order-2 lg:order-1">
+            {/* Eyebrow */}
+            <div className="animate-fade-in-up" style={{ animationFillMode: 'both' }}>
+              <span className="section-label">{t.hero.greeting}</span>
+            </div>
 
-              {/* Main headline */}
-              <div className="animate-fade-in-up animate-delay-100">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-balance">
-                  <span className="text-foreground">KARARA</span>
-                  {" "}
-                  <span className="gradient-text">Nabil</span>
-                </h1>
-              </div>
+            {/* Name — cinematic large type */}
+            <div className="animate-fade-in-up animate-delay-100 space-y-2" style={{ animationFillMode: 'both' }}>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-[-0.04em] leading-[0.95]">
+                <span className="text-white">Nabil</span>
+                <br />
+                <span className="gradient-text-hero">Karara</span>
+              </h1>
+            </div>
 
-              {/* Role line */}
-              <div className="animate-fade-in-up animate-delay-200">
-                <p className="text-base sm:text-lg font-medium text-foreground/80">
-                  {t.hero.title}
-                  <span className="mx-2 text-foreground/25">·</span>
-                  <span className="text-primary">{t.hero.subtitle}</span>
-                </p>
-              </div>
+            {/* Role */}
+            <div className="animate-fade-in-up animate-delay-200" style={{ animationFillMode: 'both' }}>
+              <p className="text-lg sm:text-xl font-medium text-zinc-300 tracking-[-0.01em]">
+                {t.hero.title} <span className="text-zinc-600">&</span> {t.hero.subtitle}
+              </p>
+            </div>
 
-              {/* Description */}
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-md mx-auto md:mx-0 animate-fade-in-up animate-delay-300">
+            {/* Description */}
+            <div className="animate-fade-in-up animate-delay-300" style={{ animationFillMode: 'both' }}>
+              <p className="text-base sm:text-lg text-zinc-500 leading-relaxed max-w-lg mx-auto lg:mx-0">
                 {t.hero.description}
               </p>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 animate-fade-in-up animate-delay-400">
-                <a
-                  href={getImagePath("/CV_Nabil_KARARA.pdf")}
-                  download="CV_Nabil_KARARA.pdf"
-                  className="liquid-btn liquid-btn-primary"
-                >
-                  <Download className="h-4 w-4" />
-                  <span>{t.hero.downloadCV}</span>
-                </a>
-                
-                <a
-                  href="#projects"
-                  className="liquid-btn liquid-btn-secondary"
-                >
-                  <span>{t.hero.viewProjects}</span>
-                  <ArrowRight className="h-4 w-4" />
-                </a>
-              </div>
             </div>
 
-            {/* Right — Profile Image container */}
-            <div className="md:col-span-2 order-1 md:order-2 flex justify-center">
-              <div className="relative w-48 h-48 sm:w-60 sm:h-60 rounded-full overflow-hidden glass-depth-2 p-2 border-2 border-white/10 flex items-center justify-center transition-transform duration-500 hover:scale-105">
-                <div className="absolute inset-0 bg-primary/10 rounded-full blur-2xl animate-pulse"></div>
-                <div className="w-full h-full rounded-full overflow-hidden border border-white/15 relative z-10">
-                  <img
-                    src={getImagePath("/NABIL_Profil.jpg")}
-                    alt="KARARA Nabil - Développeur Web & Mobile"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 animate-fade-in-up animate-delay-400" style={{ animationFillMode: 'both' }}>
+              <a
+                href="#projects"
+                className="vercel-btn vercel-btn-primary py-3 px-6"
+              >
+                <span>{t.hero.viewProjects}</span>
+                <ArrowRight className="h-4 w-4" />
+              </a>
 
+              <a
+                href={getImagePath("/CV_Nabil_KARARA.pdf")}
+                download="CV_Nabil_KARARA.pdf"
+                className="vercel-btn vercel-btn-secondary py-3 px-6"
+              >
+                <Download className="h-4 w-4" />
+                <span>{t.hero.downloadCV}</span>
+              </a>
+
+              <a
+                href="https://github.com/nkarara"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="vercel-btn vercel-btn-secondary py-3 px-6"
+              >
+                <Github className="h-4 w-4" />
+                <span>GitHub</span>
+              </a>
+            </div>
           </div>
+
+          {/* Right — Premium 3D character scene */}
+          <div className="lg:col-span-5 order-1 lg:order-2 flex justify-center items-center animate-fade-in animate-delay-300" style={{ animationFillMode: 'both' }}>
+            <div className="hero-3d-scene relative w-full max-w-md lg:max-w-lg xl:max-w-xl">
+              {/* Soft blue ambient glow */}
+              <div className="absolute inset-0 hero-glow-bg rounded-3xl" />
+              {/* 3D character illustration */}
+              <img
+                src={getImagePath("/hero-3d-character.png")}
+                alt="3D software engineer character at a modern coding desk"
+                className="relative z-10 w-full h-auto hero-3d-float"
+                loading="eager"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animate-delay-600" style={{ animationFillMode: 'both' }}>
+        <div className="w-6 h-10 rounded-full border border-white/10 flex items-start justify-center p-2">
+          <div className="w-1 h-2.5 bg-white/30 rounded-full animate-bounce" />
         </div>
       </div>
     </section>

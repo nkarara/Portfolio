@@ -4,110 +4,167 @@
     "about": "À propos",
     "projects": "Projets",
     "skills": "Compétences",
-    "certifications": "Certifications",
+    "experience": "Expérience",
+    "education": "Formation",
     "contact": "Contact"
   },
   "hero": {
     "greeting": "Bonjour, je suis",
-    "title": "Étudiant MIAGE",
-    "subtitle": "Développeur Web & Mobile",
-    "description": "Passionné par le développement d'applications web et mobile modernes. À la recherche d'un stage PFE pour 2025 afin de mettre en pratique mes compétences et contribuer à des projets innovants.",
+    "title": "Ingénieur Logiciel",
+    "subtitle": "Développeur Full Stack",
+    "description": "Je conçois et développe des applications web et mobiles scalables avec Java, Spring Boot, ASP.NET, Android et les technologies web modernes.",
     "downloadCV": "Télécharger CV",
-    "contactMe": "Me contacter",
-    "viewProjects": "Voir mes projets"
+    "contactMe": "Me Contacter",
+    "viewProjects": "Voir Projets"
   },
   "about": {
     "title": "À propos",
-    "description1": "Étudiant en Master MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises), je combine des compétences techniques solides en développement avec une compréhension approfondie des enjeux business.",
-    "description2": "Passionné par les technologies web et mobile, je m'efforce de créer des applications performantes, intuitives et élégantes. Mon objectif est de contribuer à des projets innovants qui ont un impact réel.",
+    "description1": "Je suis Nabil Karara, Ingénieur Logiciel et Développeur Full Stack en Master MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises). Je fais le lien entre le développement technique et les besoins fonctionnels, en concevant des systèmes sécurisés et hautement performants.",
+    "description2": "Orienté vers la conception de solutions logicielles propres, maintenables et évolutives. Je suis spécialisé dans les architectures backend, la modélisation de bases de données et le développement d'applications mobiles et web intuitives.",
     "downloadCV": "Télécharger mon CV",
     "education": "Formation",
     "educationDesc": "Master MIAGE - Spécialisation en développement d'applications et gestion de projets",
     "expertise": "Expertise",
-    "expertiseDesc": "Développement Full-Stack avec React, Node.js, et technologies modernes",
+    "expertiseDesc": "Développement Full-Stack avec Java, Spring Boot, ASP.NET et outils front-end modernes",
     "objective": "Objectif",
     "objectiveDesc": "Stage PFE 2025 - Développement Web/Mobile dans une entreprise innovante"
   },
   "projects": {
     "title": "Projets",
-    "description": "Une sélection de mes projets académiques et personnels démontrant mes compétences en développement web et mobile.",
-    "github": "GitHub",
-    "liveDemo": "Live Demo",
-    "viewGallery": "Voir la galerie",
-    "connectify": {
-      "title": "Connectify",
-      "description": "Application de réseau social permettant aux utilisateurs de se connecter, partager du contenu et interagir en temps réel."
+    "featuredTitle": "Projet Vedette",
+    "description": "Une sélection de projets d'ingénierie détaillant les défis techniques rencontrés, les solutions apportées et leurs fonctionnalités.",
+    "github": "Dépôt GitHub",
+    "liveDemo": "Démo Live",
+    "challenge": "Défi",
+    "solution": "Solution",
+    "keyFeatures": "Caractéristiques Clés",
+    "techStack": "Technologies Utilisées",
+    "springRH": {
+      "title": "SpringRH",
+      "description": "Portail d'entreprise bilingue de gestion des ressources humaines pour digitaliser le recrutement et l'onboarding.",
+      "challenge": "Les processus de recrutement et de ressources humaines étaient papier, entraînant des lenteurs de traitement et des frictions lors de l'intégration des candidats.",
+      "solution": "Développement d'une plateforme RH performante avec tableaux de bord modulaires, gestion numérique des dossiers et flux automatisé de validation des congés.",
+      "features": [
+        "Suivi de bout en bout du pipeline de recrutement",
+        "Interface entièrement bilingue (français/anglais)",
+        "Répertoire d'employés modulaire avec recherche et filtres",
+        "Notifications automatiques par email pour les managers"
+      ]
     },
-    "gestionEmployes": {
-      "title": "Gestion Employés",
-      "description": "Système de gestion des employés avec suivi des présences, gestion des congés et génération de rapports."
+    "employeeManagement": {
+      "title": "Employee Management System",
+      "description": "Console administrative d'entreprise pour la gestion de l'annuaire interne et le contrôle d'accès basé sur les rôles.",
+      "challenge": "Le stockage fragmenté des données des employés rendait difficile le suivi de l'assiduité et la gestion des permissions par les administrateurs.",
+      "solution": "Mise en place d'un système centralisé comprenant des tableaux de bord par rôle, une connexion sécurisée par JWT et des API CRUD robustes pour gérer le cycle de vie des employés.",
+      "features": [
+        "Modèle de sécurité basé sur le contrôle d'accès par rôles (RBAC)",
+        "Suivi des présences et gestion automatisée des congés",
+        "Générateur de rapports de paie Excel en un clic",
+        "Journal d'audit système traçant les modifications administratives"
+      ]
     },
-    "transRoto": {
-      "title": "Trans Roto",
-      "description": "Application de gestion logistique pour le transport et la rotation des marchandises avec suivi en temps réel."
+    "socialNetwork": {
+      "title": "Application Réseau Social (Connectify)",
+      "description": "Espace de collaboration et fil d'actualité en temps réel avec messagerie interactive et UI adaptative.",
+      "challenge": "Créer une interface utilisateur réactive en temps réel et une messagerie instantanée fluide capable de supporter des pics d'activité.",
+      "solution": "Conception d'une application React Single Page connectée à une API Node.js, utilisant des connexions WebSocket pour des communications instantanées.",
+      "features": [
+        "Messagerie instantanée avec statuts de distribution en temps réel",
+        "Moteur de fil d'actualité dynamique avec partage de posts",
+        "Réactions J'aime et commentaires mis à jour en temps réel",
+        "Design adaptatif optimisé pour mobile et bureau"
+      ]
     },
-    "todoApp": {
-      "title": "To-Do List App",
-      "description": "Application de gestion de tâches moderne avec catégorisation, priorités et synchronisation cloud."
+    "androidFirebase": {
+      "title": "Gestionnaire d'Employés Android Firebase",
+      "description": "Application Android native de gestion du personnel synchronisée avec Firebase et supportant le mode hors ligne.",
+      "challenge": "Les managers de terrain travaillant dans des zones à faible connectivité avaient besoin d'une continuité de service et d'une synchronisation fiable.",
+      "solution": "Développement d'une application mobile native en Java avec le SDK Android, intégrant Firebase Realtime Database et activant la persistance locale sur le disque.",
+      "features": [
+        "Synchronisation bidirectionnelle en temps réel",
+        "Persistance locale permettant une utilisation complète hors ligne",
+        "Raccourcis d'appels et d'envoi d'emails depuis les profils",
+        "Interface moderne suivant les directives Material Design 3"
+      ]
     },
-    "androidApp": {
-      "title": "Gestion Employés Android",
-      "description": "Application mobile Android pour la gestion des employés avec Firebase pour la synchronisation en temps réel."
-    },
-    "dotnetApp": {
-      "title": "Gestion Employés ASP.NET",
-      "description": "Application web de gestion des employés développée avec ASP.NET et SQL Server."
+    "appRO": {
+      "title": "Application RO (Algorithmes de Graphes)",
+      "description": "Tableau de bord de modélisation en Recherche Opérationnelle simulant les algorithmes d'optimisation de chemins.",
+      "challenge": "Les modèles d'optimisation logistique et de routage sont complexes à visualiser et à déboguer sans graphes interactifs.",
+      "solution": "Développement d'un outil Java de bureau avec éditeur de graphes interactif implémentant les algorithmes de Dijkstra, Kruskal et Prim.",
+      "features": [
+        "Zone de dessin interactive (drag & drop de nœuds et d'arêtes)",
+        "Résolveur visuel du chemin le plus court via Dijkstra",
+        "Calculateurs d'arbres couvrants minimaux (Kruskal et Prim)",
+        "Débogueur pas-à-pas pour suivre l'exécution des algorithmes"
+      ]
     }
   },
   "skills": {
     "title": "Compétences",
-    "technical": "Compétences Techniques",
-    "soft": "Compétences Humaines",
-    "frontend": "Frontend",
-    "backend": "Backend",
-    "mobile": "Mobile",
-    "database": "Database",
-    "cloudDevops": "Cloud/DevOps",
-    "tools": "Tools",
-    "teamwork": "Travail d'équipe",
-    "teamworkDesc": "Collaboration efficace en équipe agile et communication claire",
-    "problemSolving": "Résolution de problèmes",
-    "problemSolvingDesc": "Approche analytique et créative pour résoudre des défis techniques",
-    "continuousLearning": "Apprentissage continu",
-    "continuousLearningDesc": "Veille technologique et adaptation rapide aux nouvelles technologies"
+    "backend": "Développement Backend",
+    "frontend": "Développement Frontend",
+    "database": "Bases de Données",
+    "tools": "Outils de Développement",
+    "problemSolving": "Résolution de Problèmes",
+    "problemSolvingDesc": "Conception d'algorithmes et de structures de données pour optimiser l'efficacité des traitements.",
+    "continuousLearning": "Apprentissage Continu",
+    "continuousLearningDesc": "Veille technologique constante sur les frameworks modernes et les pratiques standards de l'industrie."
   },
-  "certifications": {
-    "title": "Certifications",
-    "description": "Formations et certifications professionnelles validant mes compétences techniques.",
-    "viewCertification": "View certification",
-    "oracle": {
-      "title": "Oracle Cloud Infrastructure 2025 Certified DevOps Professional",
-      "issuer": "Oracle",
+  "experience": {
+    "title": "Expérience",
+    "description": "Mon parcours professionnel, alliant stages d'ingénierie et méthodes informatiques.",
+    "tgv": {
+      "role": "Stagiaire Développeur Full Stack",
+      "company": "TGV Services",
       "date": "2024",
-      "description": "Certification professionnelle en DevOps sur Oracle Cloud Infrastructure"
+      "points": [
+        "Conception et intégration d'interfaces web réactives pour les tableaux de bord clients.",
+        "Refactoring d'API REST existantes et optimisation de requêtes SQL, améliorant les performances de 25%.",
+        "Collaboration au sein d'une équipe Agile (Scrum) pour livrer des fonctionnalités prêtes pour la production."
+      ]
     },
-    "javaOOP": {
-      "title": "Introduction to Java and Object-Oriented Programming",
-      "issuer": "Coursera",
-      "date": "2023",
-      "description": "Formation complète en programmation Java et développement orienté objet"
+    "academic": {
+      "role": "Développeur Logiciel Principal",
+      "company": "Projets Académiques (MIAGE)",
+      "date": "2023 - 2024",
+      "points": [
+        "Architecture et développement de projets d'études avec Spring Boot, C# et React.",
+        "Création de résolveurs personnalisés en recherche opérationnelle avec visualisation en Java.",
+        "Modélisation de bases de données relationnelles sécurisées (MySQL/PostgreSQL) avec triggers d'audit."
+      ]
     },
-    "reactBasics": {
-      "title": "React Basics",
-      "issuer": "Coursera",
-      "date": "2023",
-      "description": "Fondamentaux de React, composants, hooks et développement d'applications modernes"
+    "studies": {
+      "role": "Études en Ingénierie Logicielle MIAGE",
+      "company": "Projets Universitaires",
+      "date": "2022 - Présent",
+      "points": [
+        "Maîtrise de l'architecture logicielle, des patrons de conception (design patterns) et du design système.",
+        "Développement d'applications web et mobiles en suivant le développement piloté par les tests (TDD).",
+        "Gestion des dépôts Git d'équipe avec des stratégies de branches strictes et de l'intégration continue (CI)."
+      ]
+    }
+  },
+  "education": {
+    "title": "Formation",
+    "description": "Parcours académique alliant informatique, ingénierie logicielle et gestion d'entreprise.",
+    "master": {
+      "title": "Master MIAGE",
+      "school": "Université de Picardie Jules Verne",
+      "date": "2023 - 2025",
+      "description": "Méthodes Informatiques Appliquées à la Gestion des Entreprises. Spécialisation en architecture logicielle, administration de bases de données d'entreprise, gestion de projets agiles et business intelligence."
     },
-    "azureNetworks": {
-      "title": "Virtual Networks in Azure",
-      "issuer": "Coursera",
-      "date": "2023",
-      "description": "Configuration et gestion des réseaux virtuels dans Microsoft Azure"
+    "licence": {
+      "title": "Licence Informatique / MIAGE",
+      "school": "Université de Picardie Jules Verne",
+      "date": "2020 - 2023",
+      "description": "Bases fondamentales en informatique : programmation orientée objet (Java/C++), développement web, bases de données relationnelles (SQL) et gestion d'entreprise."
     }
   },
   "contact": {
     "title": "Contact",
     "description": "Vous avez un projet ou une opportunité de stage ? N'hésitez pas à me contacter !",
+    "status": "Disponible pour des stages et des postes de développeur junior",
     "contactMeButton": "Me contacter par email",
     "orUseForm": "Ou utilisez le formulaire ci-dessous",
     "name": "Nom",
@@ -124,7 +181,9 @@
     "errorDescription": "Une erreur s'est produite. Veuillez réessayer.",
     "emailLabel": "Email",
     "linkedinLabel": "LinkedIn",
-    "githubLabel": "GitHub"
+    "githubLabel": "GitHub",
+    "locationLabel": "Localisation",
+    "locationValue": "Casablanca, Maroc"
   },
   "footer": {
     "rights": "Tous droits réservés.",

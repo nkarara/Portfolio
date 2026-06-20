@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useState } from "react"
-import { Mail, Linkedin, Github, Send, ArrowUpRight } from "lucide-react"
+import { Mail, Linkedin, Github, Send, ArrowUpRight, MapPin } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import { useLanguage } from "@/contexts/language-context"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
@@ -69,7 +69,7 @@ export function Contact() {
     {
       Icon: Linkedin,
       label: t.contact.linkedinLabel,
-      value: "linkedin.com/in/nabil-karara-374552372",
+      value: "linkedin.com/in/nabil-karara",
       href: "https://www.linkedin.com/in/nabil-karara-374552372/",
     },
     {
@@ -78,105 +78,127 @@ export function Contact() {
       value: "github.com/nkarara",
       href: "https://github.com/nkarara",
     },
+    {
+      Icon: MapPin,
+      label: t.contact.locationLabel,
+      value: t.contact.locationValue,
+      href: "https://www.google.com/maps/place/Casablanca,+Morocco",
+    },
   ]
 
   return (
-    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 fade-in-view" ref={ref}>
-      <div className="container mx-auto max-w-5xl space-y-14">
+    <section id="contact" className="py-32 px-4 sm:px-6 lg:px-8 fade-in-view bg-background" ref={ref}>
+      <div className="container mx-auto max-w-6xl">
 
-        {/* Section Header */}
-        <div className="text-center">
-          <span className="section-label">{t.contact.title}</span>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-1">{t.contact.title}</h2>
-          <p className="text-base text-muted-foreground mt-3 max-w-2xl mx-auto">{t.contact.description}</p>
-        </div>
+        <div className="section-divider mb-24" />
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Contact Form */}
-          <div className="glass-depth-3 p-7 sm:p-9 rounded-3xl relative overflow-hidden">
-            <div className="liquid-glass-sheen" aria-hidden="true" />
-            <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
-              <div className="space-y-1.5">
-                <label htmlFor="name" className="text-sm font-semibold text-foreground">
-                  {t.contact.name}
-                </label>
-                <input
-                  id="name"
-                  name="name"
-                  placeholder={t.contact.namePlaceholder}
-                  required
-                  className="glass-input h-11 px-4 text-sm w-full text-foreground placeholder:text-muted-foreground/50 border-foreground/10"
-                />
-              </div>
-
-              <div className="space-y-1.5">
-                <label htmlFor="email" className="text-sm font-semibold text-foreground">
-                  {t.contact.email}
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder={t.contact.emailPlaceholder}
-                  required
-                  className="glass-input h-11 px-4 text-sm w-full text-foreground placeholder:text-muted-foreground/50 border-foreground/10"
-                />
-              </div>
-
-              <div className="space-y-1.5">
-                <label htmlFor="message" className="text-sm font-semibold text-foreground">
-                  {t.contact.message}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder={t.contact.messagePlaceholder}
-                  rows={5}
-                  required
-                  className="glass-input px-4 py-3 text-sm w-full resize-none text-foreground placeholder:text-muted-foreground/50 border-foreground/10"
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="liquid-btn liquid-btn-primary w-full"
-              >
-                {isSubmitting ? (
-                  <span className="opacity-70">{t.contact.sending}</span>
-                ) : (
-                  <>
-                    <span>{t.contact.send}</span>
-                    <Send className="h-4 w-4" />
-                  </>
-                )}
-              </button>
-            </form>
+        <div className="space-y-16">
+          {/* Section Header */}
+          <div className="text-center space-y-5">
+            <div>
+              <span className="section-label">{t.contact.title}</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-white mt-2">{t.contact.title}</h2>
+            </div>
+            
+            <p className="text-base text-zinc-500 max-w-xl mx-auto leading-relaxed">{t.contact.description}</p>
+            
+            {/* Availability Badge */}
+            <div className="flex items-center justify-center gap-2.5 pt-2">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              </span>
+              <span className="text-[0.6875rem] font-semibold text-emerald-400 uppercase tracking-[0.15em]">
+                {t.contact.status}
+              </span>
+            </div>
           </div>
 
-          {/* Contact Cards */}
-          <div className="space-y-4 flex flex-col justify-center">
-            {contactLinks.map(({ Icon, label, value, href }) => (
-              <a
-                key={label}
-                href={href}
-                target={href.startsWith("http") ? "_blank" : undefined}
-                rel="noopener noreferrer"
-                className="glass-depth-2 p-5 rounded-2xl group hover:border-primary/30 transition-all duration-300 relative overflow-hidden"
-              >
-                <div className="liquid-glass-sheen" aria-hidden="true" />
-                <div className="flex items-start gap-4 relative z-20">
-                  <div className="p-3 bg-primary/10 rounded-2xl flex-shrink-0 border border-foreground/5">
-                    <Icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-0.5">{label}</p>
-                    <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">{value}</p>
-                  </div>
-                  <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all flex-shrink-0 mt-0.5" />
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Contact Form */}
+            <div className="vercel-card p-7 sm:p-9 rounded-2xl">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="space-y-2">
+                  <label htmlFor="name" className="text-sm font-medium text-zinc-300">
+                    {t.contact.name}
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    placeholder={t.contact.namePlaceholder}
+                    required
+                    className="vercel-input h-12 px-4 text-sm w-full text-white placeholder:text-zinc-600"
+                  />
                 </div>
-              </a>
-            ))}
+
+                <div className="space-y-2">
+                  <label htmlFor="email" className="text-sm font-medium text-zinc-300">
+                    {t.contact.email}
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder={t.contact.emailPlaceholder}
+                    required
+                    className="vercel-input h-12 px-4 text-sm w-full text-white placeholder:text-zinc-600"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-sm font-medium text-zinc-300">
+                    {t.contact.message}
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder={t.contact.messagePlaceholder}
+                    rows={5}
+                    required
+                    className="vercel-input px-4 py-3.5 text-sm w-full resize-none text-white placeholder:text-zinc-600"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="vercel-btn vercel-btn-accent w-full py-3 cursor-pointer disabled:opacity-50"
+                >
+                  {isSubmitting ? (
+                    <span className="opacity-70">{t.contact.sending}</span>
+                  ) : (
+                    <>
+                      <span>{t.contact.send}</span>
+                      <Send className="h-3.5 w-3.5" />
+                    </>
+                  )}
+                </button>
+              </form>
+            </div>
+
+            {/* Contact Cards */}
+            <div className="space-y-3 flex flex-col justify-center">
+              {contactLinks.map(({ Icon, label, value, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="vercel-card p-5 group"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 bg-white/3 border border-white/6 rounded-xl flex-shrink-0 transition-all duration-300 group-hover:bg-blue-500/8 group-hover:border-blue-500/15">
+                      <Icon className="h-5 w-5 text-zinc-500 group-hover:text-blue-400 transition-colors duration-300" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[0.6875rem] font-semibold text-zinc-600 uppercase tracking-[0.12em] mb-0.5">{label}</p>
+                      <p className="text-sm font-medium text-zinc-300 group-hover:text-white transition-colors duration-200 truncate">{value}</p>
+                    </div>
+                    <ArrowUpRight className="h-4 w-4 text-zinc-700 group-hover:text-blue-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200 flex-shrink-0" />
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
