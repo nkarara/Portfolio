@@ -97,10 +97,10 @@ export function Contact() {
           <div className="text-center space-y-5">
             <div>
               <span className="section-label">{t.contact.title}</span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-white mt-2">{t.contact.title}</h2>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-foreground mt-2">{t.contact.title}</h2>
             </div>
             
-            <p className="text-base text-zinc-500 max-w-xl mx-auto leading-relaxed">{t.contact.description}</p>
+            <p className="text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">{t.contact.description}</p>
             
             {/* Availability Badge */}
             <div className="flex items-center justify-center gap-2.5 pt-2">
@@ -119,7 +119,7 @@ export function Contact() {
             <div className="vercel-card p-7 sm:p-9 rounded-2xl">
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-zinc-300">
+                  <label htmlFor="name" className="text-sm font-medium text-muted-foreground">
                     {t.contact.name}
                   </label>
                   <input
@@ -127,12 +127,12 @@ export function Contact() {
                     name="name"
                     placeholder={t.contact.namePlaceholder}
                     required
-                    className="vercel-input h-12 px-4 text-sm w-full text-white placeholder:text-zinc-600"
+                    className="vercel-input h-12 px-4 text-sm w-full text-foreground placeholder:text-muted-foreground/40"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-zinc-300">
+                  <label htmlFor="email" className="text-sm font-medium text-muted-foreground">
                     {t.contact.email}
                   </label>
                   <input
@@ -141,12 +141,12 @@ export function Contact() {
                     type="email"
                     placeholder={t.contact.emailPlaceholder}
                     required
-                    className="vercel-input h-12 px-4 text-sm w-full text-white placeholder:text-zinc-600"
+                    className="vercel-input h-12 px-4 text-sm w-full text-foreground placeholder:text-muted-foreground/40"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium text-zinc-300">
+                  <label htmlFor="message" className="text-sm font-medium text-muted-foreground">
                     {t.contact.message}
                   </label>
                   <textarea
@@ -155,7 +155,7 @@ export function Contact() {
                     placeholder={t.contact.messagePlaceholder}
                     rows={5}
                     required
-                    className="vercel-input px-4 py-3.5 text-sm w-full resize-none text-white placeholder:text-zinc-600"
+                    className="vercel-input px-4 py-3.5 text-sm w-full resize-none text-foreground placeholder:text-muted-foreground/40"
                   />
                 </div>
 
@@ -187,14 +187,14 @@ export function Contact() {
                   className="vercel-card p-5 group"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="p-3 bg-white/3 border border-white/6 rounded-xl flex-shrink-0 transition-all duration-300 group-hover:bg-blue-500/8 group-hover:border-blue-500/15">
-                      <Icon className="h-5 w-5 text-zinc-500 group-hover:text-blue-400 transition-colors duration-300" />
+                    <div className="p-3 bg-white/3 border border-border rounded-xl flex-shrink-0 transition-all duration-300 group-hover:bg-blue-500/8 group-hover:border-blue-500/15 dark:bg-white/3">
+                      <Icon className="h-5 w-5 text-muted-foreground group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors duration-300" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-[0.6875rem] font-semibold text-zinc-600 uppercase tracking-[0.12em] mb-0.5">{label}</p>
-                      <p className="text-sm font-medium text-zinc-300 group-hover:text-white transition-colors duration-200 truncate">{value}</p>
+                      <p className="text-[0.6875rem] font-semibold text-muted-foreground/75 uppercase tracking-[0.12em] mb-0.5">{label}</p>
+                      <p className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-200 truncate">{value}</p>
                     </div>
-                    <ArrowUpRight className="h-4 w-4 text-zinc-700 group-hover:text-blue-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200 flex-shrink-0" />
+                    <ArrowUpRight className="h-4 w-4 text-muted-foreground/45 group-hover:text-blue-500 dark:group-hover:text-blue-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200 flex-shrink-0" />
                   </div>
                 </a>
               ))}

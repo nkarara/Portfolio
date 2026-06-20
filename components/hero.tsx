@@ -25,7 +25,7 @@ export function Hero() {
             {/* Name — cinematic large type */}
             <div className="animate-fade-in-up animate-delay-100 space-y-2" style={{ animationFillMode: 'both' }}>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-[-0.04em] leading-[0.95]">
-                <span className="text-white">Nabil</span>
+                <span className="text-foreground">Nabil</span>
                 <br />
                 <span className="gradient-text-hero">Karara</span>
               </h1>
@@ -33,14 +33,14 @@ export function Hero() {
 
             {/* Role */}
             <div className="animate-fade-in-up animate-delay-200" style={{ animationFillMode: 'both' }}>
-              <p className="text-lg sm:text-xl font-medium text-zinc-300 tracking-[-0.01em]">
-                {t.hero.title} <span className="text-zinc-600">&</span> {t.hero.subtitle}
+              <p className="text-lg sm:text-xl font-medium text-muted-foreground tracking-[-0.01em]">
+                {t.hero.title} <span className="opacity-40">&</span> {t.hero.subtitle}
               </p>
             </div>
 
             {/* Description */}
             <div className="animate-fade-in-up animate-delay-300" style={{ animationFillMode: 'both' }}>
-              <p className="text-base sm:text-lg text-zinc-500 leading-relaxed max-w-lg mx-auto lg:mx-0">
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0">
                 {t.hero.description}
               </p>
             </div>
@@ -96,8 +96,8 @@ export function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animate-delay-600" style={{ animationFillMode: 'both' }}>
-        <div className="w-6 h-10 rounded-full border border-white/10 flex items-start justify-center p-2">
-          <div className="w-1 h-2.5 bg-white/30 rounded-full animate-bounce" />
+        <div className="w-6 h-10 rounded-full border border-border flex items-start justify-center p-2">
+          <div className="w-1 h-2.5 bg-foreground/30 rounded-full animate-bounce" />
         </div>
       </div>
     </section>

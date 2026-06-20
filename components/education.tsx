@@ -35,8 +35,8 @@ export function Education() {
           {/* Section Header */}
           <div className="max-w-2xl">
             <span className="section-label">{t.education.title}</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-white mt-2">{t.education.title}</h2>
-            <p className="text-base text-zinc-500 mt-4 leading-relaxed">{t.education.description}</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-foreground mt-2">{t.education.title}</h2>
+            <p className="text-base text-muted-foreground mt-4 leading-relaxed">{t.education.description}</p>
           </div>
 
           {/* Cards */}
@@ -45,24 +45,24 @@ export function Education() {
               <div key={index} className="vercel-card p-7 sm:p-9 flex flex-col justify-between gap-8 group">
                 <div className="space-y-5">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-blue-500/8 border border-blue-500/10 rounded-xl text-blue-400 flex-shrink-0 transition-colors duration-300 group-hover:bg-blue-500/12">
+                    <div className="p-3 bg-blue-500/8 border border-blue-500/10 rounded-xl text-blue-600 dark:text-blue-400 flex-shrink-0 transition-colors duration-300 group-hover:bg-blue-500/12">
                       <GraduationCap className="h-6 w-6" />
                     </div>
                     <div className="space-y-1">
-                      <h3 className="text-lg font-bold text-white tracking-[-0.01em] leading-snug">
+                      <h3 className="text-lg font-bold text-foreground tracking-[-0.01em] leading-snug">
                         {item.title}
                       </h3>
-                      <p className="text-sm font-semibold text-blue-400">
+                      <p className="text-sm font-semibold text-blue-600 dark:text-blue-400">
                         {item.school}
                       </p>
                     </div>
                   </div>
-                  <p className="text-sm text-zinc-500 leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {item.description}
                   </p>
                 </div>
 
-                <span className="text-xs font-mono font-medium px-3 py-1.5 bg-white/3 border border-white/6 text-zinc-500 rounded-lg w-fit">
+                <span className="text-xs font-mono font-medium px-3 py-1.5 bg-card border border-border text-muted-foreground rounded-lg w-fit">
                   {item.date}
                 </span>
               </div>

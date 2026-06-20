@@ -27,7 +27,7 @@ export function FeaturedProject() {
         {/* Section Label */}
         <div>
           <span className="section-label">{t.projects.featuredTitle}</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-white mt-2">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-foreground mt-2">
             {springRHInfo.title}
           </h2>
         </div>
@@ -51,28 +51,28 @@ export function FeaturedProject() {
             <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-center space-y-8">
               
               {/* Description */}
-              <p className="text-base text-zinc-400 leading-relaxed">
+              <p className="text-base text-muted-foreground leading-relaxed">
                 {springRHInfo.description}
               </p>
 
               {/* Challenge & Solution */}
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <h4 className="text-xs font-bold text-white uppercase tracking-[0.15em]">{t.projects.challenge}</h4>
-                  <p className="text-sm text-zinc-500 leading-relaxed">{springRHInfo.challenge}</p>
+                  <h4 className="text-xs font-bold text-foreground uppercase tracking-[0.15em]">{t.projects.challenge}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{springRHInfo.challenge}</p>
                 </div>
                 <div className="space-y-2">
-                  <h4 className="text-xs font-bold text-white uppercase tracking-[0.15em]">{t.projects.solution}</h4>
-                  <p className="text-sm text-zinc-500 leading-relaxed">{springRHInfo.solution}</p>
+                  <h4 className="text-xs font-bold text-foreground uppercase tracking-[0.15em]">{t.projects.solution}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{springRHInfo.solution}</p>
                 </div>
               </div>
 
               {/* Key Features */}
-              <div className="space-y-3 pt-4 border-t border-white/6">
-                <h4 className="text-xs font-bold text-white uppercase tracking-[0.15em]">{t.projects.keyFeatures}</h4>
+              <div className="space-y-3 pt-4 border-t border-border">
+                <h4 className="text-xs font-bold text-foreground uppercase tracking-[0.15em]">{t.projects.keyFeatures}</h4>
                 <div className="grid sm:grid-cols-2 gap-2">
                   {springRHInfo.features.map((feat: string, i: number) => (
-                    <div key={i} className="flex items-center gap-2.5 text-sm text-zinc-400">
+                    <div key={i} className="flex items-center gap-2.5 text-sm text-muted-foreground">
                       <span className="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0" />
                       <span>{feat}</span>
                     </div>
@@ -81,7 +81,7 @@ export function FeaturedProject() {
               </div>
 
               {/* Tech + Actions */}
-              <div className="space-y-5 pt-4 border-t border-white/6">
+              <div className="space-y-5 pt-4 border-t border-border">
                 <div className="flex flex-wrap gap-2">
                   {springRHInfo.technologies.map((tech) => (
                     <span key={tech} className="tech-tag text-xs">

@@ -38,7 +38,7 @@ export function About() {
           {/* Section Header */}
           <div className="max-w-2xl">
             <span className="section-label">{t.about.title}</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-white mt-2">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-foreground mt-2">
               {t.about.title}
             </h2>
           </div>
@@ -47,8 +47,8 @@ export function About() {
           <div className="grid lg:grid-cols-5 gap-16">
             {/* Left — Text */}
             <div className="lg:col-span-2 space-y-6">
-              <p className="text-base text-zinc-400 leading-[1.8]">{t.about.description1}</p>
-              <p className="text-base text-zinc-500 leading-[1.8]">{t.about.description2}</p>
+              <p className="text-base text-muted-foreground leading-[1.8]">{t.about.description1}</p>
+              <p className="text-base text-muted-foreground/80 leading-[1.8]">{t.about.description2}</p>
 
               <div className="pt-4">
                 <a
@@ -71,12 +71,12 @@ export function About() {
                     key={i}
                     className="vercel-card p-6 flex items-start gap-5 group"
                   >
-                    <div className="p-3 bg-blue-500/8 border border-blue-500/10 rounded-xl flex-shrink-0 transition-colors duration-300 group-hover:bg-blue-500/12">
-                      <Icon className="h-5 w-5 text-blue-400" />
+                    <div className="p-3 bg-blue-500/8 border border-blue-500/10 rounded-xl flex-shrink-0 transition-colors duration-300 group-hover:bg-blue-500/12 dark:bg-blue-500/8 dark:border-blue-500/10">
+                      <Icon className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                     </div>
                     <div className="space-y-1.5">
-                      <h3 className="font-semibold text-[0.9375rem] text-white tracking-[-0.01em]">{item.title}</h3>
-                      <p className="text-sm text-zinc-500 leading-relaxed">{item.description}</p>
+                      <h3 className="font-semibold text-[0.9375rem] text-foreground tracking-[-0.01em]">{item.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                     </div>
                   </div>
                 )

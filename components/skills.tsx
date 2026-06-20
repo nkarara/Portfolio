@@ -41,7 +41,7 @@ export function Skills() {
           {/* Section Header */}
           <div className="max-w-2xl">
             <span className="section-label">{t.skills.title}</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-white mt-2">{t.skills.title}</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-foreground mt-2">{t.skills.title}</h2>
           </div>
 
           {/* Skills Grid */}
@@ -54,10 +54,10 @@ export function Skills() {
                   className="vercel-card p-7 group"
                 >
                   <div className="flex items-center gap-3.5 mb-6">
-                    <div className="p-2.5 bg-blue-500/8 border border-blue-500/10 rounded-xl transition-colors duration-300 group-hover:bg-blue-500/12">
-                      <Icon className="h-5 w-5 text-blue-400" />
+                    <div className="p-2.5 bg-blue-500/8 border border-blue-500/10 rounded-xl transition-colors duration-300 group-hover:bg-blue-500/12 dark:bg-blue-500/8 dark:border-blue-500/10">
+                      <Icon className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                     </div>
-                    <h3 className="font-semibold text-[0.9375rem] text-white tracking-[-0.01em]">{category.title}</h3>
+                    <h3 className="font-semibold text-[0.9375rem] text-foreground tracking-[-0.01em]">{category.title}</h3>
                   </div>
 
                   <div className="flex flex-wrap gap-2">

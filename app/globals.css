@@ -41,14 +41,24 @@
   --content-max: 72rem;
 }
 
-.dark, .light {
+.dark {
   --background: #0A0A0A;
   --foreground: #FFFFFF;
-  --card: #111111;
+  --card: rgba(17, 17, 17, 0.85);
   --card-foreground: #FFFFFF;
   --primary: #3B82F6;
   --muted-foreground: #A1A1AA;
-  --border: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+.light {
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+  --card: rgba(255, 255, 255, 0.85);
+  --card-foreground: #0F172A;
+  --primary: #2563EB;
+  --muted-foreground: #64748B;
+  --border: rgba(15, 23, 42, 0.08);
 }
 
 @theme inline {
@@ -83,8 +93,9 @@
   }
   body {
     @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
-    background-color: #0A0A0A;
+    background-color: var(--background);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    transition: background-color 1.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.6s ease;
   }
 }
 
@@ -128,8 +139,8 @@ html {
 
 /* ─── Premium Cards ────────────────────────────────── */
 .vercel-card {
-  background-color: rgba(17, 17, 17, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: var(--card);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
@@ -148,11 +159,11 @@ html {
 }
 
 .vercel-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: var(--primary);
   box-shadow: 
-    0 0 0 1px rgba(255, 255, 255, 0.04),
-    0 20px 50px -12px rgba(0, 0, 0, 0.5),
-    0 0 40px -8px rgba(59, 130, 246, 0.06);
+    0 0 0 1px rgba(59, 130, 246, 0.08),
+    0 20px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 40px -8px rgba(59, 130, 246, 0.08);
   transform: translateY(-3px);
 }
 
@@ -178,27 +189,26 @@ html {
 }
 
 .vercel-btn-primary {
-  background-color: #FFFFFF;
-  color: #0A0A0A;
+  background-color: var(--primary);
+  color: #FFFFFF;
   font-weight: 600;
 }
 
 .vercel-btn-primary:hover {
-  background-color: #F0F0F0;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+  filter: brightness(1.15);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
   transform: translateY(-1px);
 }
 
 .vercel-btn-secondary {
-  background-color: rgba(255, 255, 255, 0.04);
-  color: #D4D4D8;
-  border-color: rgba(255, 255, 255, 0.08);
+  background-color: var(--card);
+  color: var(--muted-foreground);
+  border-color: var(--border);
 }
 
 .vercel-btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.16);
-  color: #FFFFFF;
+  border-color: var(--primary);
+  color: var(--foreground);
   transform: translateY(-1px);
 }
 
@@ -216,10 +226,10 @@ html {
 
 /* ─── Premium Inputs ───────────────────────────────── */
 .vercel-input {
-  background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: var(--card);
+  border: 1px solid var(--border);
   border-radius: 10px;
-  color: #FFFFFF;
+  color: var(--foreground);
   font-size: 0.875rem;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -230,7 +240,6 @@ html {
     0 0 0 3px rgba(59, 130, 246, 0.1),
     0 0 20px rgba(59, 130, 246, 0.05);
   outline: none;
-  background-color: rgba(255, 255, 255, 0.05);
 }
 
 /* ─── Scroll Animations ────────────────────────────── */
@@ -296,7 +305,7 @@ html {
 }
 
 .gradient-text-hero {
-  background: linear-gradient(135deg, #FFFFFF 0%, #A1A1AA 50%, #71717A 100%);
+  background: linear-gradient(135deg, var(--foreground) 0%, var(--muted-foreground) 50%, var(--muted-foreground) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -305,7 +314,7 @@ html {
 /* ─── Premium Section Divider ──────────────────────── */
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
   margin: 0 auto;
   max-width: 80%;
 }
@@ -351,26 +360,26 @@ html {
 /* ─── Tag / Badge System ───────────────────────────── */
 .tech-tag {
   padding: 0.375rem 0.875rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 8px;
   font-size: 0.8125rem;
   font-weight: 500;
-  color: #A1A1AA;
+  color: var(--muted-foreground);
   transition: all 0.2s ease;
   cursor: default;
 }
 
 .tech-tag:hover {
-  color: #FFFFFF;
-  border-color: rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.06);
+  color: var(--foreground);
+  border-color: var(--primary);
+  background: var(--card);
 }
 
-/* Hide legacy glass classes */
+/* Legacy glass classes */
 .glass-depth-1, .glass-depth-2, .glass-depth-3, .glass, .glass-card, .liquid-glass {
-  background-color: rgba(17, 17, 17, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: var(--card);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -385,10 +394,30 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--border);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.2);
 }
+
+/* ─── Custom Sky Theme Animations ──────────────────── */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.15; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+.animate-pulse-subtle {
+  animation: pulse-subtle 4s infinite ease-in-out;
+}
+
+@keyframes float-particles {
+  0% { transform: translateY(0px) translateX(0px); opacity: 0; }
+  25% { opacity: 0.45; }
+  75% { opacity: 0.45; }
+  100% { transform: translateY(-80px) translateX(15px); opacity: 0; }
+}
+.animate-float-particles {
+  animation: float-particles 8s infinite linear;
+}
+

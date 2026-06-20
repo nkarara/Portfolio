@@ -87,8 +87,8 @@ export function Projects() {
           {/* Section Header */}
           <div className="max-w-2xl">
             <span className="section-label">{t.projects.title}</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-white mt-2">{t.projects.title}</h2>
-            <p className="text-base text-zinc-500 mt-4 leading-relaxed">{t.projects.description}</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-foreground mt-2">{t.projects.title}</h2>
+            <p className="text-base text-muted-foreground mt-4 leading-relaxed">{t.projects.description}</p>
           </div>
 
           {/* Projects Grid */}
@@ -104,7 +104,7 @@ export function Projects() {
                 >
                   {/* Image */}
                   <div
-                    className={`relative h-52 overflow-hidden bg-zinc-950 ${project.gallery ? "cursor-pointer" : ""}`}
+                    className={`relative h-52 overflow-hidden bg-muted/30 ${project.gallery ? "cursor-pointer" : ""}`}
                     onClick={() => project.gallery && openGallery(index, 0)}
                   >
                     {project.image ? (
@@ -125,16 +125,16 @@ export function Projects() {
                         <ImageIcon className="h-10 w-10 text-zinc-800" />
                       </div>
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent pointer-events-none" />
                   </div>
 
                   {/* Content */}
                   <div className="p-6 sm:p-7 flex flex-col justify-between flex-1 space-y-5">
                     <div className="space-y-4">
-                      <h3 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors duration-300 tracking-[-0.01em]">
+                      <h3 className="text-lg font-bold text-foreground group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 tracking-[-0.01em]">
                         {projTrans.title}
                       </h3>
-                      <p className="text-sm text-zinc-500 leading-relaxed">{projTrans.description}</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{projTrans.description}</p>
                       
                       {/* Tech Tags */}
                       <div className="flex flex-wrap gap-1.5">
@@ -146,26 +146,26 @@ export function Projects() {
                       </div>
 
                       {/* Expandable Details */}
-                      <details className="group/details border-t border-white/6 pt-4 mt-2">
-                        <summary className="flex items-center justify-between text-xs font-semibold text-zinc-500 hover:text-white cursor-pointer select-none py-1 transition-colors duration-200">
+                      <details className="group/details border-t border-border pt-4 mt-2">
+                        <summary className="flex items-center justify-between text-xs font-semibold text-muted-foreground hover:text-foreground cursor-pointer select-none py-1 transition-colors duration-200">
                           <span>{t.projects.keyFeatures} & Details</span>
                           <ChevronDown className="h-3.5 w-3.5 transition-transform duration-300 group-open/details:rotate-180" />
                         </summary>
                         
                         <div className="mt-4 space-y-4 text-sm">
                           <div>
-                            <h4 className="text-xs font-bold text-white uppercase tracking-[0.15em] mb-1.5">{t.projects.challenge}</h4>
-                            <p className="text-zinc-500 leading-relaxed text-[0.8125rem]">{projTrans.challenge}</p>
+                            <h4 className="text-xs font-bold text-foreground uppercase tracking-[0.15em] mb-1.5">{t.projects.challenge}</h4>
+                            <p className="text-muted-foreground leading-relaxed text-[0.8125rem]">{projTrans.challenge}</p>
                           </div>
                           <div>
-                            <h4 className="text-xs font-bold text-white uppercase tracking-[0.15em] mb-1.5">{t.projects.solution}</h4>
-                            <p className="text-zinc-500 leading-relaxed text-[0.8125rem]">{projTrans.solution}</p>
+                            <h4 className="text-xs font-bold text-foreground uppercase tracking-[0.15em] mb-1.5">{t.projects.solution}</h4>
+                            <p className="text-muted-foreground leading-relaxed text-[0.8125rem]">{projTrans.solution}</p>
                           </div>
                           <div>
-                            <h4 className="text-xs font-bold text-white uppercase tracking-[0.15em] mb-1.5">{t.projects.keyFeatures}</h4>
+                            <h4 className="text-xs font-bold text-foreground uppercase tracking-[0.15em] mb-1.5">{t.projects.keyFeatures}</h4>
                             <ul className="space-y-1.5 mt-2">
                               {projTrans.features && projTrans.features.map((feat: string, i: number) => (
-                                <li key={i} className="flex items-center gap-2.5 text-zinc-500 text-[0.8125rem]">
+                                <li key={i} className="flex items-center gap-2.5 text-muted-foreground text-[0.8125rem]">
                                   <span className="w-1 h-1 rounded-full bg-blue-500 flex-shrink-0" />
                                   {feat}
                                 </li>
@@ -177,7 +177,7 @@ export function Projects() {
                     </div>
 
                     {/* CTA */}
-                    <div className="flex gap-3 pt-4 border-t border-white/6">
+                    <div className="flex gap-3 pt-4 border-t border-border">
                       <a
                         href={project.github}
                         target="_blank"

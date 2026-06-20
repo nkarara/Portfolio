@@ -10,14 +10,14 @@ export function Footer() {
   ]
 
   return (
-    <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-white/6 bg-background">
+    <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-border bg-background">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
 
           {/* Brand */}
           <div className="text-center md:text-left">
-            <p className="text-sm font-semibold text-white tracking-[-0.01em]">Nabil Karara</p>
-            <p className="text-xs text-zinc-600 mt-1">
+            <p className="text-sm font-semibold text-foreground tracking-[-0.01em]">Nabil Karara</p>
+            <p className="text-xs text-muted-foreground/60 mt-1">
               © {currentYear} — All rights reserved.
             </p>
           </div>
@@ -31,7 +31,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="p-2.5 border border-white/6 hover:border-white/12 bg-white/3 hover:bg-white/6 rounded-xl text-zinc-500 hover:text-white transition-all duration-300"
+                className="p-2.5 border border-border hover:border-muted-foreground/30 bg-card hover:bg-muted rounded-xl text-muted-foreground hover:text-foreground transition-all duration-300"
               >
                 <Icon className="h-4 w-4" />
               </a>

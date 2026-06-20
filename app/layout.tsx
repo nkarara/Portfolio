@@ -51,6 +51,8 @@ export const metadata: Metadata = {
   },
 }
 
+import { SkyBackground } from "@/components/sky-background"
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -59,9 +61,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <div className="liquid-bg" aria-hidden="true" />
-        <div className="liquid-orb-cyan" aria-hidden="true" />
         <Providers>
+          <SkyBackground />
           <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
         </Providers>
       </body>
