@@ -84,8 +84,8 @@ export function Hero() {
               {/* 3D character illustration */}
               <img
                 src={getImagePath("/hero-3d-character.png")}
-                alt="3D software engineer character at a modern coding desk"
-                className="relative z-10 w-full h-auto hero-3d-float"
+                alt="3D software engineer character"
+                className="relative z-10 w-full h-auto hero-3d-float hero-3d-avatar"
                 loading="eager"
               />
             </div>

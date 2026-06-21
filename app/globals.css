@@ -329,6 +329,19 @@ html {
   z-index: 0;
 }
 
+/* Dark mode: screen blend makes near-black pixels transparent */
+.dark .hero-3d-avatar {
+  mix-blend-mode: screen;
+  filter: brightness(1.05) contrast(1.0);
+}
+
+/* Light mode: multiply blend makes near-black pixels transparent against white */
+.light .hero-3d-avatar,
+:root:not(.dark) .hero-3d-avatar {
+  mix-blend-mode: multiply;
+  filter: brightness(1.0) contrast(1.05);
+}
+
 @keyframes hero3dFloat {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(-8px); }
