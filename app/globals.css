@@ -329,16 +329,14 @@ html {
   z-index: 0;
 }
 
-/* Dark mode: screen blend makes near-black pixels transparent */
+/* Dark mode adjustments */
 .dark .hero-3d-avatar {
-  mix-blend-mode: screen;
   filter: brightness(1.05) contrast(1.0);
 }
 
-/* Light mode: multiply blend makes near-black pixels transparent against white */
+/* Light mode adjustments */
 .light .hero-3d-avatar,
 :root:not(.dark) .hero-3d-avatar {
-  mix-blend-mode: multiply;
   filter: brightness(1.0) contrast(1.05);
 }
 
@@ -406,3 +404,205 @@ html {
   -webkit-backdrop-filter: blur(20px) saturate(1.6);
   transition: background 1.8s ease, border-color 1.8s ease;
 }
+
+/* ─── 3D Orbiting System ─────────────────────────── */
+.orbit-system-container {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 2000px;
+  transform-style: preserve-3d;
+}
+
+.orbit-center-avatar-wrapper {
+  position: absolute;
+  z-index: 10;
+  width: 44%;
+  max-width: 210px;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 3D rings */
+.orbit-ring-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+
+.orbit-svg-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+
+.orbit-ellipse-line {
+  fill: none;
+  stroke: rgba(147, 197, 253, 0.16);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 6;
+  animation: orbitRingPulse 8s infinite linear;
+}
+
+.light .orbit-ellipse-line {
+  stroke: rgba(59, 130, 246, 0.12);
+}
+
+@keyframes orbitRingPulse {
+  0% { stroke-dashoffset: 0; opacity: 0.5; }
+  50% { opacity: 0.8; }
+  100% { stroke-dashoffset: 20; opacity: 0.5; }
+}
+
+/* Specific tilts for the 3 orbital planes */
+.orbit-ring-1 {
+  transform: rotateX(66deg) rotateY(-12deg);
+}
+.orbit-ring-2 {
+  transform: rotateX(62deg) rotateY(14deg);
+}
+.orbit-ring-3 {
+  transform: rotateX(68deg) rotateY(-24deg);
+}
+
+/* Orbit Path Animations */
+.orbit-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.8rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.15), 0 0 15px -2px rgba(59, 130, 246, 0.08);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--foreground);
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
+  transform-style: preserve-3d;
+  pointer-events: auto;
+  user-select: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.orbit-card:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 20px 2px rgba(59, 130, 246, 0.2);
+  background: rgba(59, 130, 246, 0.05);
+}
+
+/* Ring 1 Orbit (React, MySQL) - Radius ~125px */
+@keyframes orbit-ring-1-alpha {
+  0% { transform: rotate(0deg) translateX(125px) rotate(0deg) rotateY(12deg) rotateX(-66deg); z-index: 15; opacity: 1; filter: drop-shadow(0 0 10px rgba(59,130,246,0.1)); }
+  25% { z-index: 15; }
+  26% { z-index: 5; }
+  50% { transform: rotate(180deg) translateX(125px) rotate(-180deg) rotateY(12deg) rotateX(-66deg); z-index: 5; opacity: 0.65; scale: 0.85; filter: brightness(0.7) drop-shadow(0 0 0px transparent); }
+  75% { z-index: 5; }
+  76% { z-index: 15; }
+  100% { transform: rotate(360deg) translateX(125px) rotate(-360deg) rotateY(12deg) rotateX(-66deg); z-index: 15; opacity: 1; filter: drop-shadow(0 0 10px rgba(59,130,246,0.1)); }
+}
+
+@keyframes orbit-ring-1-beta {
+  0% { transform: rotate(180deg) translateX(125px) rotate(-180deg) rotateY(12deg) rotateX(-66deg); z-index: 5; opacity: 0.65; scale: 0.85; filter: brightness(0.7); }
+  25% { z-index: 5; }
+  26% { z-index: 15; }
+  50% { transform: rotate(360deg) translateX(125px) rotate(-360deg) rotateY(12deg) rotateX(-66deg); z-index: 15; opacity: 1; filter: drop-shadow(0 0 10px rgba(59,130,246,0.1)); }
+  75% { z-index: 15; }
+  76% { z-index: 5; }
+  100% { transform: rotate(540deg) translateX(125px) rotate(-540deg) rotateY(12deg) rotateX(-66deg); z-index: 5; opacity: 0.65; scale: 0.85; filter: brightness(0.7); }
+}
+
+/* Ring 2 Orbit (Java, Spring Boot, MongoDB) - Radius ~185px */
+@keyframes orbit-ring-2-alpha {
+  0% { transform: rotate(0deg) translateX(185px) rotate(0deg) rotateY(-14deg) rotateX(-62deg); z-index: 15; opacity: 1; }
+  25% { z-index: 15; }
+  26% { z-index: 5; }
+  50% { transform: rotate(180deg) translateX(185px) rotate(-180deg) rotateY(-14deg) rotateX(-62deg); z-index: 5; opacity: 0.62; scale: 0.82; filter: brightness(0.68); }
+  75% { z-index: 5; }
+  76% { z-index: 15; }
+  100% { transform: rotate(360deg) translateX(185px) rotate(-360deg) rotateY(-14deg) rotateX(-62deg); z-index: 15; opacity: 1; }
+}
+
+@keyframes orbit-ring-2-beta {
+  0% { transform: rotate(120deg) translateX(185px) rotate(-120deg) rotateY(-14deg) rotateX(-62deg); z-index: 5; opacity: 0.62; scale: 0.82; filter: brightness(0.68); }
+  15% { z-index: 5; }
+  16% { z-index: 15; }
+  65% { z-index: 15; }
+  66% { z-index: 5; }
+  100% { transform: rotate(480deg) translateX(185px) rotate(-480deg) rotateY(-14deg) rotateX(-62deg); z-index: 5; opacity: 0.62; scale: 0.82; filter: brightness(0.68); }
+}
+
+@keyframes orbit-ring-2-gamma {
+  0% { transform: rotate(240deg) translateX(185px) rotate(-240deg) rotateY(-14deg) rotateX(-62deg); z-index: 5; opacity: 0.62; scale: 0.82; filter: brightness(0.68); }
+  40% { z-index: 5; }
+  41% { z-index: 15; }
+  90% { z-index: 15; }
+  91% { z-index: 5; }
+  100% { transform: rotate(600deg) translateX(185px) rotate(-600deg) rotateY(-14deg) rotateX(-62deg); z-index: 5; opacity: 0.62; scale: 0.82; filter: brightness(0.68); }
+}
+
+/* Ring 3 Orbit (ASP.NET, GitHub) - Radius ~245px */
+@keyframes orbit-ring-3-alpha {
+  0% { transform: rotate(0deg) translateX(245px) rotate(0deg) rotateY(24deg) rotateX(-68deg); z-index: 15; opacity: 1; }
+  25% { z-index: 15; }
+  26% { z-index: 5; }
+  50% { transform: rotate(180deg) translateX(245px) rotate(-180deg) rotateY(24deg) rotateX(-68deg); z-index: 5; opacity: 0.6; scale: 0.8; filter: brightness(0.65); }
+  75% { z-index: 5; }
+  76% { z-index: 15; }
+  100% { transform: rotate(360deg) translateX(245px) rotate(-360deg) rotateY(24deg) rotateX(-68deg); z-index: 15; opacity: 1; }
+}
+
+@keyframes orbit-ring-3-beta {
+  0% { transform: rotate(180deg) translateX(245px) rotate(-180deg) rotateY(24deg) rotateX(-68deg); z-index: 5; opacity: 0.6; scale: 0.8; filter: brightness(0.65); }
+  25% { z-index: 5; }
+  26% { z-index: 15; }
+  50% { transform: rotate(360deg) translateX(245px) rotate(-360deg) rotateY(24deg) rotateX(-68deg); z-index: 15; opacity: 1; filter: drop-shadow(0 0 10px rgba(59,130,246,0.1)); }
+  75% { z-index: 15; }
+  76% { z-index: 5; }
+  100% { transform: rotate(540deg) translateX(245px) rotate(-540deg) rotateY(24deg) rotateX(-68deg); z-index: 5; opacity: 0.6; scale: 0.8; filter: brightness(0.65); }
+}
+
+/* Animation triggers */
+.orbit-card-ring1-1 {
+  animation: orbit-ring-1-alpha 18s infinite linear;
+}
+.orbit-card-ring1-2 {
+  animation: orbit-ring-1-beta 18s infinite linear;
+}
+
+.orbit-card-ring2-1 {
+  animation: orbit-ring-2-alpha 28s infinite linear;
+}
+.orbit-card-ring2-2 {
+  animation: orbit-ring-2-beta 28s infinite linear;
+}
+.orbit-card-ring2-3 {
+  animation: orbit-ring-2-gamma 28s infinite linear;
+}
+
+.orbit-card-ring3-1 {
+  animation: orbit-ring-3-alpha 38s infinite linear;
+}
+.orbit-card-ring3-2 {
+  animation: orbit-ring-3-beta 38s infinite linear;
+}
+
+.orbit-icon-glow {
+  filter: drop-shadow(0 0 3px var(--primary));
+}
+
