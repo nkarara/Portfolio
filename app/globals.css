@@ -421,8 +421,8 @@ html {
 .orbit-center-avatar-wrapper {
   position: absolute;
   z-index: 10;
-  width: 52%;
-  max-width: 240px;
+  width: 40%;
+  max-width: 180px;
   transform-style: preserve-3d;
   display: flex;
   justify-content: center;
