@@ -6,6 +6,7 @@
     "skills": "Compétences",
     "experience": "Expérience",
     "education": "Formation",
+    "certifications": "Certifications",
     "contact": "Contact"
   },
   "hero": {
@@ -185,9 +186,56 @@
     "locationLabel": "Localisation",
     "locationValue": "Casablanca, Maroc"
   },
+  "certifications": {
+    "title": "Certifications",
+    "description": "Certifications professionnelles validant une expertise pratique sur les plateformes cloud et le développement moderne.",
+    "viewCertification": "Vérifier le certificat",
+    "oracle": {
+      "title": "Oracle Cloud Infrastructure 2025 Certified DevOps Professional",
+      "issuer": "Oracle",
+      "date": "2025",
+      "description": "Expertise validée en pipelines CI/CD, automatisation d'infrastructure et pratiques DevOps sur Oracle Cloud Infrastructure."
+    },
+    "javaOOP": {
+      "title": "Introduction to Java and Object-Oriented Programming",
+      "issuer": "Coursera",
+      "date": "2023",
+      "description": "Principes fondamentaux de la programmation orientée objet et bases de Java pour le développement backend d'entreprise."
+    },
+    "reactBasics": {
+      "title": "React Basics",
+      "issuer": "Coursera",
+      "date": "2023",
+      "description": "Architecture UI par composants, gestion d'état et bases du développement React moderne."
+    },
+    "azureNetworks": {
+      "title": "Virtual Networks in Azure",
+      "issuer": "Coursera",
+      "date": "2024",
+      "description": "Conception et sécurisation d'infrastructures de réseaux virtuels sur Microsoft Azure."
+    }
+  },
+  "learning": {
+    "title": "En cours d'apprentissage",
+    "description": "Les technologies que j'approfondis actuellement, au-delà des cours et des stages.",
+    "docker": {
+      "title": "Docker",
+      "description": "Conteneurisation d'applications pour des déploiements cohérents et portables entre environnements."
+    },
+    "cicd": {
+      "title": "CI/CD",
+      "description": "Automatisation des pipelines de build, test et déploiement pour livrer plus vite et plus sûrement."
+    },
+    "cloud": {
+      "title": "AWS / Cloud",
+      "description": "Infrastructures et services cloud, en complément de mes bases Azure et Oracle Cloud."
+    }
+  },
   "footer": {
     "rights": "Tous droits réservés.",
     "madeWith": "Fait avec",
-    "by": "par"
+    "by": "par",
+    "backToTop": "Retour en haut",
+    "quickNav": "Liens rapides"
   }
 }

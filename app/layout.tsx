@@ -7,36 +7,54 @@ import { Suspense } from "react"
 import { Providers } from "@/components/providers"
 import { SkyBackground } from "@/components/sky-background"
 
+const SITE_URL = "https://nkarara.github.io/Portfolio"
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nkarara.github.io/Portfolio"),
-  title: "Nabil KARARA – Portfolio Web & Mobile Developer",
+  metadataBase: new URL(SITE_URL),
+  title: "Nabil KARARA – Software Engineer & Full Stack Developer",
   description:
-    "Portfolio personnel de Nabil KARARA, développeur web et mobile passionné. Découvrez mes projets en React, Node.js, Java et plus.",
-  keywords: ["développeur web", "développeur mobile", "React", "Node.js", "Java", "portfolio", "Nabil KARARA"],
-  authors: [{ name: "Nabil KARARA" }],
-  creator: "Nabil KARARA",
-  publisher: "Nabil KARARA",
+    "Portfolio of Nabil Karara, a Software Engineer and Full Stack Developer specializing in Java, Spring Boot, ASP.NET, and Android. Explore projects, experience, and certifications.",
+  keywords: [
+    "Nabil Karara",
+    "software engineer",
+    "full stack developer",
+    "Java developer",
+    "Spring Boot",
+    "ASP.NET",
+    "Android developer",
+    "MIAGE",
+    "portfolio",
+  ],
+  authors: [{ name: "Nabil Karara", url: SITE_URL }],
+  creator: "Nabil Karara",
+  publisher: "Nabil Karara",
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
-    title: "Nabil KARARA – Portfolio Web & Mobile Developer",
-    description: "Portfolio personnel de Nabil KARARA, développeur web et mobile passionné.",
-    url: "https://nkarara.github.io/Portfolio",
-    siteName: "Nabil KARARA Portfolio",
+    title: "Nabil KARARA – Software Engineer & Full Stack Developer",
+    description:
+      "Portfolio of Nabil Karara, a Software Engineer and Full Stack Developer specializing in Java, Spring Boot, ASP.NET, and Android.",
+    url: SITE_URL,
+    siteName: "Nabil Karara Portfolio",
     images: [
       {
-        url: "/Portfolio/NABIL_Profil.jpg",
+        url: "/Portfolio/hero-3d-character.png",
         width: 1200,
-        height: 630,
-        alt: "Nabil KARARA - Portfolio",
+        height: 1200,
+        alt: "Nabil Karara - Software Engineer & Full Stack Developer",
       },
     ],
     locale: "fr_FR",
+    alternateLocale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nabil KARARA – Portfolio Web & Mobile Developer",
-    description: "Portfolio personnel de Nabil KARARA, développeur web et mobile passionné.",
-    images: ["/Portfolio/NABIL_Profil.jpg"],
+    title: "Nabil KARARA – Software Engineer & Full Stack Developer",
+    description:
+      "Portfolio of Nabil Karara, a Software Engineer and Full Stack Developer specializing in Java, Spring Boot, ASP.NET, and Android.",
+    images: ["/Portfolio/hero-3d-character.png"],
     creator: "@nabilkarara",
   },
   robots: {
@@ -52,14 +70,55 @@ export const metadata: Metadata = {
   },
 }
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Nabil Karara",
+  url: SITE_URL,
+  jobTitle: "Full Stack Developer",
+  description:
+    "Software Engineer and Full Stack Developer specializing in Java, Spring Boot, ASP.NET, and Android development.",
+  image: `${SITE_URL}/hero-3d-character.png`,
+  sameAs: [
+    "https://github.com/nkarara",
+    "https://www.linkedin.com/in/nabil-karara-374552372/",
+  ],
+  knowsAbout: [
+    "Java",
+    "Spring Boot",
+    "ASP.NET",
+    "Android",
+    "React",
+    "SQL",
+    "Software Engineering",
+  ],
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "University of Picardie Jules Verne",
+  },
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2.5 focus:rounded-xl focus:bg-primary focus:text-primary-foreground focus:text-sm focus:font-semibold focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
         <Providers>
           {/* Living sky background — fixed, z-index -20, behind everything */}
           <SkyBackground />

@@ -6,6 +6,7 @@
     "skills": "Skills",
     "experience": "Experience",
     "education": "Education",
+    "certifications": "Certifications",
     "contact": "Contact"
   },
   "hero": {
@@ -185,9 +186,56 @@
     "locationLabel": "Location",
     "locationValue": "Casablanca, Morocco"
   },
+  "certifications": {
+    "title": "Certifications",
+    "description": "Professional certifications validating hands-on expertise across cloud platforms and modern development.",
+    "viewCertification": "Verify Certificate",
+    "oracle": {
+      "title": "Oracle Cloud Infrastructure 2025 Certified DevOps Professional",
+      "issuer": "Oracle",
+      "date": "2025",
+      "description": "Validated expertise in CI/CD pipelines, infrastructure automation, and DevOps practices on Oracle Cloud Infrastructure."
+    },
+    "javaOOP": {
+      "title": "Introduction to Java and Object-Oriented Programming",
+      "issuer": "Coursera",
+      "date": "2023",
+      "description": "Core object-oriented programming principles and Java fundamentals underpinning enterprise backend development."
+    },
+    "reactBasics": {
+      "title": "React Basics",
+      "issuer": "Coursera",
+      "date": "2023",
+      "description": "Component-based UI architecture, state management, and modern React development fundamentals."
+    },
+    "azureNetworks": {
+      "title": "Virtual Networks in Azure",
+      "issuer": "Coursera",
+      "date": "2024",
+      "description": "Designing and securing virtual network infrastructure on Microsoft Azure."
+    }
+  },
+  "learning": {
+    "title": "Currently Learning",
+    "description": "Technologies I'm actively deepening my skills in beyond the classroom and internships.",
+    "docker": {
+      "title": "Docker",
+      "description": "Containerizing applications for consistent, portable deployments across environments."
+    },
+    "cicd": {
+      "title": "CI/CD",
+      "description": "Automating build, test, and deployment pipelines to ship reliably and faster."
+    },
+    "cloud": {
+      "title": "AWS / Cloud",
+      "description": "Cloud infrastructure and services, building on my Azure and Oracle Cloud foundations."
+    }
+  },
   "footer": {
     "rights": "All rights reserved.",
     "madeWith": "Made with",
-    "by": "by"
+    "by": "by",
+    "backToTop": "Back to top",
+    "quickNav": "Quick Links"
   }
 }

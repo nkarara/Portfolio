@@ -41,6 +41,7 @@ export function FeaturedProject() {
               <img
                 src={getImagePath(springRHInfo.image)}
                 alt={springRHInfo.title}
+                decoding="async"
                 className="w-full h-full object-cover select-none transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent pointer-events-none" />

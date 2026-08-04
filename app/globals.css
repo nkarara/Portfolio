@@ -187,6 +187,13 @@ html {
   color: #FFFFFF;
   font-weight: 600;
 }
+.vercel-btn:focus-visible,
+a.vercel-card:focus-visible,
+.tech-tag:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79, 142, 247, 0.5);
+}
+
 .vercel-btn-primary:hover {
   filter: brightness(1.15);
   box-shadow: 0 0 24px rgba(79, 142, 247, 0.3);
