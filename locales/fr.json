@@ -11,8 +11,8 @@
   },
   "hero": {
     "greeting": "Bonjour, je suis",
-    "title": "Ingénieur Logiciel",
-    "subtitle": "Développeur Full Stack",
+    "title": "Étudiant MIAGE",
+    "subtitle": "Développeur Web & Mobile",
     "description": "Je conçois et développe des applications web et mobiles scalables avec Java, Spring Boot, ASP.NET, Android et les technologies web modernes.",
     "downloadCV": "Télécharger CV",
     "contactMe": "Me Contacter",
@@ -20,13 +20,13 @@
   },
   "about": {
     "title": "À propos",
-    "description1": "Je suis Nabil Karara, Ingénieur Logiciel et Développeur Full Stack en Master MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises). Je fais le lien entre le développement technique et les besoins fonctionnels, en concevant des systèmes sécurisés et hautement performants.",
+    "description1": "Je suis Nabil Karara, étudiant MIAGE et Développeur Web & Mobile, en Master Méthodes Informatiques Appliquées à la Gestion des Entreprises (MIAGE). Je fais le lien entre le développement technique et les besoins fonctionnels, en concevant des systèmes sécurisés et hautement performants.",
     "description2": "Orienté vers la conception de solutions logicielles propres, maintenables et évolutives. Je suis spécialisé dans les architectures backend, la modélisation de bases de données et le développement d'applications mobiles et web intuitives.",
     "downloadCV": "Télécharger mon CV",
     "education": "Formation",
     "educationDesc": "Master MIAGE - Spécialisation en développement d'applications et gestion de projets",
     "expertise": "Expertise",
-    "expertiseDesc": "Développement Full-Stack avec Java, Spring Boot, ASP.NET et outils front-end modernes",
+    "expertiseDesc": "Développement full-stack avec Spring Boot, ASP.NET MVC, Django, Laravel, et des frameworks frontend modernes comme React et Angular",
     "objective": "Objectif",
     "objectiveDesc": "Stage PFE 2025 - Développement Web/Mobile dans une entreprise innovante"
   },
@@ -40,9 +40,9 @@
     "solution": "Solution",
     "keyFeatures": "Caractéristiques Clés",
     "techStack": "Technologies Utilisées",
-    "springRH": {
-      "title": "SpringRH",
-      "description": "Portail d'entreprise bilingue de gestion des ressources humaines pour digitaliser le recrutement et l'onboarding.",
+    "employeeSpringBoot": {
+      "title": "Gestion des Employés – Spring Boot",
+      "description": "Plateforme d'entreprise de gestion des ressources humaines développée avec Spring Boot et une interface HTML/CSS sur mesure pour digitaliser le recrutement et l'onboarding.",
       "challenge": "Les processus de recrutement et de ressources humaines étaient papier, entraînant des lenteurs de traitement et des frictions lors de l'intégration des candidats.",
       "solution": "Développement d'une plateforme RH performante avec tableaux de bord modulaires, gestion numérique des dossiers et flux automatisé de validation des congés.",
       "features": [
@@ -52,8 +52,8 @@
         "Notifications automatiques par email pour les managers"
       ]
     },
-    "employeeManagement": {
-      "title": "Employee Management System",
+    "employeeAspNet": {
+      "title": "Gestion des Employés – ASP.NET MVC",
       "description": "Console administrative d'entreprise pour la gestion de l'annuaire interne et le contrôle d'accès basé sur les rôles.",
       "challenge": "Le stockage fragmenté des données des employés rendait difficile le suivi de l'assiduité et la gestion des permissions par les administrateurs.",
       "solution": "Mise en place d'un système centralisé comprenant des tableaux de bord par rôle, une connexion sécurisée par JWT et des API CRUD robustes pour gérer le cycle de vie des employés.",
@@ -64,11 +64,11 @@
         "Journal d'audit système traçant les modifications administratives"
       ]
     },
-    "socialNetwork": {
-      "title": "Application Réseau Social (Connectify)",
-      "description": "Espace de collaboration et fil d'actualité en temps réel avec messagerie interactive et UI adaptative.",
+    "connectify": {
+      "title": "Connectify",
+      "description": "Espace de collaboration et fil d'actualité en temps réel avec messagerie interactive et UI adaptative, propulsé par Supabase.",
       "challenge": "Créer une interface utilisateur réactive en temps réel et une messagerie instantanée fluide capable de supporter des pics d'activité.",
-      "solution": "Conception d'une application React Single Page connectée à une API Node.js, utilisant des connexions WebSocket pour des communications instantanées.",
+      "solution": "Conception d'une application React Single Page connectée à une API Node.js et à Supabase pour les données et le stockage en temps réel, avec une messagerie instantanée.",
       "features": [
         "Messagerie instantanée avec statuts de distribution en temps réel",
         "Moteur de fil d'actualité dynamique avec partage de posts",
@@ -76,36 +76,62 @@
         "Design adaptatif optimisé pour mobile et bureau"
       ]
     },
-    "androidFirebase": {
-      "title": "Gestionnaire d'Employés Android Firebase",
-      "description": "Application Android native de gestion du personnel synchronisée avec Firebase et supportant le mode hors ligne.",
-      "challenge": "Les managers de terrain travaillant dans des zones à faible connectivité avaient besoin d'une continuité de service et d'une synchronisation fiable.",
-      "solution": "Développement d'une application mobile native en Java avec le SDK Android, intégrant Firebase Realtime Database et activant la persistance locale sur le disque.",
+    "employeeAndroid": {
+      "title": "App Mobile Gestion des Employés",
+      "description": "Application Android native pour gérer les dossiers des employés en déplacement.",
+      "challenge": "Les managers de terrain avaient besoin d'un moyen simple et fiable de consulter et gérer les dossiers des employés sans dépendre d'un système de bureau.",
+      "solution": "Développement d'une application Android native en Java avec une base de données SQLite locale, offrant un accès rapide et hors ligne aux données des employés.",
       "features": [
-        "Synchronisation bidirectionnelle en temps réel",
-        "Persistance locale permettant une utilisation complète hors ligne",
+        "Répertoire d'employés avec recherche et filtres",
+        "Persistance locale des données pour un accès hors ligne",
         "Raccourcis d'appels et d'envoi d'emails depuis les profils",
         "Interface moderne suivant les directives Material Design 3"
       ]
     },
-    "appRO": {
-      "title": "Application RO (Algorithmes de Graphes)",
-      "description": "Tableau de bord de modélisation en Recherche Opérationnelle simulant les algorithmes d'optimisation de chemins.",
-      "challenge": "Les modèles d'optimisation logistique et de routage sont complexes à visualiser et à déboguer sans graphes interactifs.",
-      "solution": "Développement d'un outil Java de bureau avec éditeur de graphes interactif implémentant les algorithmes de Dijkstra, Kruskal et Prim.",
+    "transRoto": {
+      "title": "Trans Roto",
+      "description": "Application web de gestion du transport et des itinéraires pour planifier, assigner et suivre les trajets des véhicules.",
+      "challenge": "La coordination manuelle des itinéraires, des chauffeurs et des plannings ralentissait les opérations de transport et générait des erreurs.",
+      "solution": "Développement d'un front-end React connecté à une base de données MySQL pour centraliser la planification des itinéraires, l'affectation des véhicules et le suivi des trajets.",
       "features": [
-        "Zone de dessin interactive (drag & drop de nœuds et d'arêtes)",
-        "Résolveur visuel du chemin le plus court via Dijkstra",
-        "Calculateurs d'arbres couvrants minimaux (Kruskal et Prim)",
-        "Débogueur pas-à-pas pour suivre l'exécution des algorithmes"
+        "Tableau de bord de création et d'affectation d'itinéraires",
+        "Gestion des véhicules et des chauffeurs",
+        "Suivi du statut des trajets en temps réel",
+        "Historique et données persistantes via MySQL"
+      ]
+    },
+    "weatherApp": {
+      "title": "Application Météo",
+      "description": "Application web météo affichant les conditions actuelles et les prévisions pour n'importe quelle ville.",
+      "challenge": "Les utilisateurs avaient besoin d'un moyen rapide et clair de consulter des données météo fiables, sans interface surchargée.",
+      "solution": "Développement d'une application web Django qui récupère et met en cache les données météo, affichées via une interface claire et responsive.",
+      "features": [
+        "Recherche de ville avec conditions actuelles et prévisions sur plusieurs jours",
+        "Mise en cache côté serveur pour réduire les appels API",
+        "Interface claire et responsive sur tous les appareils",
+        "Gestion des erreurs pour les villes invalides ou indisponibles"
+      ]
+    },
+    "hospitalManagement": {
+      "title": "Gestion des Hospitalisations",
+      "description": "Application de bureau en C++ pour gérer les admissions des patients, l'affectation des lits et les sorties.",
+      "challenge": "Le suivi manuel des admissions et des affectations de lits était source d'erreurs et difficile à auditer.",
+      "solution": "Développement d'une application C++ structurée pour gérer les dossiers des patients, les admissions et les sorties avec un stockage de données organisé.",
+      "features": [
+        "Enregistrement des patients et suivi des admissions",
+        "Gestion de l'affectation des services et des lits",
+        "Génération de résumés de sortie et de facturation",
+        "Stockage structuré et auditable des dossiers"
       ]
     }
   },
   "skills": {
     "title": "Compétences",
-    "backend": "Développement Backend",
     "frontend": "Développement Frontend",
+    "backend": "Développement Backend",
+    "mobile": "Développement Mobile",
     "database": "Bases de Données",
+    "cloud": "Cloud & DevOps",
     "tools": "Outils de Développement",
     "problemSolving": "Résolution de Problèmes",
     "problemSolvingDesc": "Conception d'algorithmes et de structures de données pour optimiser l'efficacité des traitements.",
@@ -199,13 +225,13 @@
     "javaOOP": {
       "title": "Introduction to Java and Object-Oriented Programming",
       "issuer": "Coursera",
-      "date": "2023",
+      "date": "2024",
       "description": "Principes fondamentaux de la programmation orientée objet et bases de Java pour le développement backend d'entreprise."
     },
     "reactBasics": {
       "title": "React Basics",
       "issuer": "Coursera",
-      "date": "2023",
+      "date": "2024",
       "description": "Architecture UI par composants, gestion d'état et bases du développement React moderne."
     },
     "azureNetworks": {
@@ -213,6 +239,22 @@
       "issuer": "Coursera",
       "date": "2024",
       "description": "Conception et sécurisation d'infrastructures de réseaux virtuels sur Microsoft Azure."
+    }
+  },
+  "languages": {
+    "title": "Langues",
+    "description": "Les langues que j'utilise pour communiquer et collaborer en équipe.",
+    "arabic": {
+      "name": "Arabe",
+      "level": "Langue maternelle"
+    },
+    "french": {
+      "name": "Français",
+      "level": "Intermédiaire"
+    },
+    "english": {
+      "name": "Anglais",
+      "level": "Avancé"
     }
   },
   "learning": {

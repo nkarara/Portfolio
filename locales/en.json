@@ -11,8 +11,8 @@
   },
   "hero": {
     "greeting": "Hello, I'm",
-    "title": "Software Engineer",
-    "subtitle": "Full Stack Developer",
+    "title": "MIAGE Student",
+    "subtitle": "Web & Mobile Developer",
     "description": "I build scalable web and mobile applications using Java, Spring Boot, ASP.NET, Android and modern web technologies.",
     "downloadCV": "Download CV",
     "contactMe": "Contact Me",
@@ -20,13 +20,13 @@
   },
   "about": {
     "title": "About",
-    "description1": "I am Nabil Karara, a Software Engineer and Full Stack Developer studying MIAGE (Computer Methods Applied to Business Management). I bridge the gap between technical execution and business needs, building secure, high-performance systems.",
+    "description1": "I am Nabil Karara, a MIAGE student and Web & Mobile Developer pursuing my Master's in Computer Methods Applied to Business Management (MIAGE). I bridge the gap between technical execution and business needs, building secure, high-performance systems.",
     "description2": "Focused on engineering clean, maintainable, and scalable software solutions. I specialize in backend architectures, database design, and intuitive mobile/web client development.",
     "downloadCV": "Download my CV",
     "education": "Education",
     "educationDesc": "MIAGE Master's - Specialization in application development and project management",
     "expertise": "Expertise",
-    "expertiseDesc": "Full-Stack Development with Java, Spring Boot, ASP.NET, and modern frontend tools",
+    "expertiseDesc": "Full-stack development across Spring Boot, ASP.NET MVC, Django, Laravel, and modern frontend frameworks like React and Angular",
     "objective": "Objective",
     "objectiveDesc": "PFE Internship 2025 - Web/Mobile Development in an innovative company"
   },
@@ -40,9 +40,9 @@
     "solution": "Solution",
     "keyFeatures": "Key Features",
     "techStack": "Technologies Used",
-    "springRH": {
-      "title": "SpringRH",
-      "description": "Bilingual enterprise human resource portal designed to digitalize recruiting and onboarding pipelines.",
+    "employeeSpringBoot": {
+      "title": "Gestion des Employés – Spring Boot",
+      "description": "Enterprise human resource management platform built with Spring Boot and a custom HTML/CSS interface to digitalize recruiting and onboarding pipelines.",
       "challenge": "HR and recruitment processes were heavily paper-based, leading to high processing latency and onboarding friction for candidates.",
       "solution": "Developed a high-performance HR platform with modular dashboards, digital records management, and automated leave request workflows.",
       "features": [
@@ -52,9 +52,9 @@
         "Direct manager email notification systems"
       ]
     },
-    "employeeManagement": {
-      "title": "Employee Management System",
-      "description": "Enterprise-level multi-platform administrative console for corporate directory and role-based access control.",
+    "employeeAspNet": {
+      "title": "Gestion des Employés – ASP.NET MVC",
+      "description": "Enterprise-level administrative console for corporate directory and role-based access control.",
       "challenge": "Fragmented employee records made tracking attendance and managing custom permissions difficult for administrators.",
       "solution": "Built a centralized system featuring role-based dashboards, secure JWT login, and robust CRUD endpoints for employee lifecycle management.",
       "features": [
@@ -64,11 +64,11 @@
         "System audit trails tracking administrative changes"
       ]
     },
-    "socialNetwork": {
-      "title": "Social Network App (Connectify)",
-      "description": "Real-time visual feed and collaboration space featuring interactive messaging and responsive UI.",
+    "connectify": {
+      "title": "Connectify",
+      "description": "Real-time visual feed and collaboration space featuring interactive messaging and responsive UI, powered by Supabase.",
       "challenge": "Designing a real-time reactive feed and instant messaging interface that scales gracefully under concurrent user traffic.",
-      "solution": "Crafted a React single page application backed by a Node.js API with custom WebSocket channels to deliver instant feedback.",
+      "solution": "Crafted a React single page application backed by a Node.js API and Supabase for realtime data and storage, delivering instant messaging feedback.",
       "features": [
         "Instant messaging with real-time delivery status",
         "Dynamic feed engine with post sharing",
@@ -76,36 +76,62 @@
         "Fully responsive layout built for mobile & desktop"
       ]
     },
-    "androidFirebase": {
-      "title": "Android Firebase Employee Manager",
-      "description": "Native Android directory application backed by Firebase for live operations and offline caching.",
-      "challenge": "Field managers working in areas with poor mobile networks needed continuous app availability and offline data synchronization.",
-      "solution": "Engineered a native Android application integrated with Firebase Realtime Database, implementing offline disk persistence and local cache sync.",
+    "employeeAndroid": {
+      "title": "App Mobile Gestion des Employés",
+      "description": "Native Android directory application for managing employee records on the go.",
+      "challenge": "Field managers needed a lightweight, reliable way to browse and manage employee records without depending on a desktop system.",
+      "solution": "Engineered a native Android application in Java with a local SQLite database, giving managers fast, offline-friendly access to employee data.",
       "features": [
-        "Real-time bidirectional database synchronization",
-        "Local database cache supporting full offline functionality",
+        "Employee directory with search and filters",
+        "Local database persistence for offline access",
         "Direct contact calling and email shortcuts from profiles",
         "Modern Material Design 3 user interface"
       ]
     },
-    "appRO": {
-      "title": "Application RO (Graph Algorithms)",
-      "description": "Operations Research modeling dashboard simulating graph theory pathfinding and optimization.",
-      "challenge": "Logistics and routing optimization models are difficult to visualize and debug without interactive graphs.",
-      "solution": "Created a Java desktop utility with interactive graphical node editors running Dijkstra, Kruskal, and Prim algorithms to compute path minimizations.",
+    "transRoto": {
+      "title": "Trans Roto",
+      "description": "Transport and route management web app for planning, assigning, and tracking vehicle routes.",
+      "challenge": "Coordinating vehicle routes, driver assignments, and schedules manually made transport operations slow and error-prone.",
+      "solution": "Built a React front-end backed by a MySQL database to centralize route planning, vehicle assignment, and trip tracking.",
       "features": [
-        "Interactive canvas to draw, drag, and connect graph nodes",
-        "Visual Dijkstra shortest path pathfinding solver",
-        "Kruskal & Prim minimum spanning tree visualizers",
-        "Step-by-step algorithm execution debugger"
+        "Route creation and assignment dashboard",
+        "Vehicle and driver management",
+        "Trip status tracking in real time",
+        "MySQL-backed persistent records and history"
+      ]
+    },
+    "weatherApp": {
+      "title": "Application Météo",
+      "description": "Weather forecasting web application delivering current conditions and forecasts for any city.",
+      "challenge": "Users needed a fast, clean way to check accurate weather data without sifting through cluttered weather sites.",
+      "solution": "Built a Django-powered web app that fetches and caches weather data, rendering it through a clean, responsive interface.",
+      "features": [
+        "City search with current conditions and multi-day forecast",
+        "Server-side data caching to reduce API calls",
+        "Clean, responsive interface across devices",
+        "Error handling for invalid or unavailable locations"
+      ]
+    },
+    "hospitalManagement": {
+      "title": "Gestion des Hospitalisations",
+      "description": "C++ desktop application for managing patient admissions, ward assignments, and discharge records.",
+      "challenge": "Manual tracking of patient admissions and bed assignments was error-prone and hard to audit.",
+      "solution": "Developed a structured C++ application to manage patient records, admissions, and discharge workflows with organized data storage.",
+      "features": [
+        "Patient registration and admission tracking",
+        "Ward and bed assignment management",
+        "Discharge and billing summary generation",
+        "Structured, auditable record storage"
       ]
     }
   },
   "skills": {
     "title": "Skills",
-    "backend": "Backend Development",
     "frontend": "Frontend Development",
+    "backend": "Backend Development",
+    "mobile": "Mobile Development",
     "database": "Databases",
+    "cloud": "Cloud & DevOps",
     "tools": "Developer Tools",
     "problemSolving": "Problem Solving",
     "problemSolvingDesc": "Designing algorithms and data structures to optimize processing efficiency.",
@@ -199,13 +225,13 @@
     "javaOOP": {
       "title": "Introduction to Java and Object-Oriented Programming",
       "issuer": "Coursera",
-      "date": "2023",
+      "date": "2024",
       "description": "Core object-oriented programming principles and Java fundamentals underpinning enterprise backend development."
     },
     "reactBasics": {
       "title": "React Basics",
       "issuer": "Coursera",
-      "date": "2023",
+      "date": "2024",
       "description": "Component-based UI architecture, state management, and modern React development fundamentals."
     },
     "azureNetworks": {
@@ -213,6 +239,22 @@
       "issuer": "Coursera",
       "date": "2024",
       "description": "Designing and securing virtual network infrastructure on Microsoft Azure."
+    }
+  },
+  "languages": {
+    "title": "Languages",
+    "description": "Languages I use to communicate and collaborate across teams.",
+    "arabic": {
+      "name": "Arabic",
+      "level": "Native"
+    },
+    "french": {
+      "name": "French",
+      "level": "Intermediate"
+    },
+    "english": {
+      "name": "English",
+      "level": "Advanced"
     }
   },
   "learning": {

@@ -52,39 +52,46 @@ export function Projects() {
 
   const projects = [
     {
-      key: "springRH",
-      image: "/employee-management-dashboard.png",
-      technologies: ["Java", "Spring Boot", "MySQL", "Thymeleaf"],
-      github: "https://github.com/nkarara/employee-management-jee",
-      demo: null
-    },
-    {
-      key: "employeeManagement",
+      key: "employeeAspNet",
       image: "/asp.png",
-      technologies: ["C#", "ASP.NET Core", "SQL Server", "Entity Framework"],
+      technologies: ["C#", "ASP.NET MVC", "SQL Server"],
       github: "https://github.com/nkarara/employee-management-dotnet",
       demo: null
     },
     {
-      key: "socialNetwork",
+      key: "connectify",
       image: "/connectify1.jpg",
       gallery: ["/connectify1.jpg", "/connectify2.jpg", "/connectify3.jpg", "/connectify4.jpg", "/connectify5.jpg", "/connectify6.jpg", "/connectify7.jpg", "/connectify8.jpg", "/connectify9.jpg"],
-      technologies: ["React", "Node.js", "Express", "MySQL", "WebSockets"],
+      technologies: ["React", "Node.js", "Supabase"],
       github: "https://github.com/nkarara/Social-Medial-APP",
       demo: null
     },
     {
-      key: "androidFirebase",
+      key: "employeeAndroid",
       image: "/employee-management-dashboard.png",
-      technologies: ["Java", "Android SDK", "Firebase RTDB"],
+      technologies: ["Java", "Android"],
       github: "https://github.com/nkarara/employee-management-app",
       demo: null
     },
     {
-      key: "appRO",
+      key: "transRoto",
       image: "/logistics-tracking-app.png",
-      technologies: ["Java", "JavaFX", "Operations Research", "Graph Theory"],
+      technologies: ["React", "MySQL"],
       github: "https://github.com/nkarara/trans-roto",
+      demo: null
+    },
+    {
+      key: "weatherApp",
+      image: null,
+      technologies: ["Python", "Django"],
+      github: null,
+      demo: null
+    },
+    {
+      key: "hospitalManagement",
+      image: null,
+      technologies: ["C++"],
+      github: null,
       demo: null
     }
   ]
@@ -203,15 +210,17 @@ export function Projects() {
 
                     {/* CTA */}
                     <div className="flex gap-3 pt-4 border-t border-border">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="vercel-btn vercel-btn-secondary text-xs py-2.5 px-5 flex-1"
-                      >
-                        <Github className="h-3.5 w-3.5" />
-                        <span>{t.projects.github}</span>
-                      </a>
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="vercel-btn vercel-btn-secondary text-xs py-2.5 px-5 flex-1"
+                        >
+                          <Github className="h-3.5 w-3.5" />
+                          <span>{t.projects.github}</span>
+                        </a>
+                      )}
                       {project.demo && (
                         <a
                           href={project.demo}

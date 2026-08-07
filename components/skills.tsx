@@ -1,6 +1,6 @@
 "use client"
 
-import { Code2, Database, Laptop, Wrench } from "lucide-react"
+import { Code2, Database, Laptop, Wrench, Smartphone, Cloud } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
@@ -10,24 +10,34 @@ export function Skills() {
 
   const categories = [
     {
-      title: t.skills.backend,
-      icon: Code2,
-      skills: ["Java", "Spring Boot", "ASP.NET", "Node.js"],
-    },
-    {
       title: t.skills.frontend,
       icon: Laptop,
-      skills: ["HTML", "CSS", "JavaScript", "React"],
+      skills: ["React", "Angular", "HTML", "CSS", "Bootstrap"],
+    },
+    {
+      title: t.skills.backend,
+      icon: Code2,
+      skills: ["Node.js", "Spring Boot", "ASP.NET MVC", "Django", "Laravel"],
+    },
+    {
+      title: t.skills.mobile,
+      icon: Smartphone,
+      skills: ["Java Android"],
     },
     {
       title: t.skills.database,
       icon: Database,
-      skills: ["MySQL", "MongoDB"],
+      skills: ["MySQL", "SQL Server", "MongoDB"],
+    },
+    {
+      title: t.skills.cloud,
+      icon: Cloud,
+      skills: ["Oracle Cloud", "AWS", "Azure", "Git/GitHub", "Docker"],
     },
     {
       title: t.skills.tools,
       icon: Wrench,
-      skills: ["Git", "GitHub", "Firebase", "Docker"],
+      skills: ["Figma", "Agile Scrum", "Solidity", "Smart Contracts"],
     },
   ]
 

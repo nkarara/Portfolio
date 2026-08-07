@@ -34,7 +34,7 @@ export function Hero() {
             {/* Role */}
             <div className="animate-fade-in-up animate-delay-200" style={{ animationFillMode: 'both' }}>
               <p className="text-lg sm:text-xl font-medium text-muted-foreground tracking-[-0.01em]">
-                {t.hero.title} <span className="opacity-40">&</span> {t.hero.subtitle}
+                {t.hero.title} <span className="opacity-40">–</span> {t.hero.subtitle}
               </p>
             </div>
 
