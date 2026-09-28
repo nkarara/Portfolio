@@ -9,6 +9,13 @@ export function Experience() {
 
   const items = [
     {
+      key: "atos",
+      role: t.experience.atos.role,
+      company: t.experience.atos.company,
+      date: t.experience.atos.date,
+      points: t.experience.atos.points,
+    },
+    {
       key: "tgv",
       role: t.experience.tgv.role,
       company: t.experience.tgv.company,

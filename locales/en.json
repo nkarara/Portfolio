@@ -10,24 +10,24 @@
   },
   "hero": {
     "greeting": "Hello, I'm",
-    "title": "Software Engineer",
-    "subtitle": "Full Stack Developer",
-    "description": "I build scalable web and mobile applications using Java, Spring Boot, ASP.NET, Android and modern web technologies.",
+    "title": "Software Engineer in Computer Science & Networks",
+    "subtitle": "Web/Mobile Developer & Automation Engineer",
+    "description": "Recent MIAGE Engineering graduate from EMSI, with PFE internship experience at Atos Maroc. Seeking a first role in web/mobile development or test automation.",
     "downloadCV": "Download CV",
     "contactMe": "Contact Me",
     "viewProjects": "View Projects"
   },
   "about": {
     "title": "About",
-    "description1": "I am Nabil Karara, a Software Engineer and Full Stack Developer studying MIAGE (Computer Methods Applied to Business Management). I bridge the gap between technical execution and business needs, building secure, high-performance systems.",
-    "description2": "Focused on engineering clean, maintainable, and scalable software solutions. I specialize in backend architectures, database design, and intuitive mobile/web client development.",
+    "description1": "I am Nabil Karara, a recent MIAGE Engineering graduate (Computer Science & Networks) from EMSI, with end-of-studies internship (PFE) experience at Atos Maroc. I design secure, automated, and high-performance systems, bridging the gap between technical execution and business needs.",
+    "description2": "Motivated to apply my skills in web/mobile development and automation on concrete, innovative projects. I specialize in backend architectures, browser automation via CDP/MCP, and the design of hybrid AI agents.",
     "downloadCV": "Download my CV",
     "education": "Education",
-    "educationDesc": "MIAGE Master's - Specialization in application development and project management",
+    "educationDesc": "Engineering Degree in MIAGE — EMSI, Casablanca — Computer Science & Networks",
     "expertise": "Expertise",
-    "expertiseDesc": "Full-Stack Development with Java, Spring Boot, ASP.NET, and modern frontend tools",
+    "expertiseDesc": "Web/Mobile Development, E2E test automation, hybrid AI agents and modern tooling",
     "objective": "Objective",
-    "objectiveDesc": "PFE Internship 2025 - Web/Mobile Development in an innovative company"
+    "objectiveDesc": "Seeking a first job in web/mobile development or automation"
   },
   "projects": {
     "title": "Projects",
@@ -113,7 +113,18 @@
   },
   "experience": {
     "title": "Experience",
-    "description": "My professional journey, combining engineering internships with business methods.",
+    "description": "My professional journey, combining software engineering, AI-driven automation, and business methods.",
+    "atos": {
+      "role": "Software Engineering Intern — E2E Test Automation via AI Agent (PFE)",
+      "company": "Atos Maroc, Casablanca",
+      "date": "2026",
+      "points": [
+        "Designed and developed a hybrid AI agent (deterministic scripts + LLM execution) automating 14+ complex B2B sales journeys on the Salesforce Lightning CRM for client inwi (telecom operator).",
+        "Architected an orchestrator driven by a declarative flow file (error recovery, anti-timeout checkpoints, state persistence) and controlled the browser via Chrome DevTools Protocol (CDP) and the MCP protocol.",
+        "Migrated the agent between two AI assistants: diagnosed behavioral divergences and rewrote orchestration rules, validated end-to-end on a full sales journey.",
+        "Built a Python supervision dashboard deployed continuously on server, with automatic detailed report generation at the end of each execution run."
+      ]
+    },
     "tgv": {
       "role": "Full Stack Developer Intern",
       "company": "TGV Services",
@@ -137,7 +148,7 @@
     "studies": {
       "role": "MIAGE Software Engineering Studies",
       "company": "University Projects",
-      "date": "2022 - Present",
+      "date": "2022 - 2026",
       "points": [
         "Mastered advanced concepts in software architecture, design patterns, and system design.",
         "Developed full-stack web and mobile apps following test-driven development (TDD).",
@@ -149,22 +160,22 @@
     "title": "Education",
     "description": "Academic studies bridging computer science, software engineering, and business management.",
     "master": {
-      "title": "Master's Degree in MIAGE",
-      "school": "University of Amiens",
-      "date": "2023 - 2025",
-      "description": "Computer Methods Applied to Business Management. Focus on software architecture, enterprise database administration, agile project management, and business intelligence."
+      "title": "Engineering Degree — Computer Science & Networks (MIAGE)",
+      "school": "EMSI, Casablanca",
+      "date": "2021 - 2026",
+      "description": "Engineering degree in Computer Science and Networks, MIAGE specialization (Computer Methods Applied to Business Management). Focus on software architecture, web/mobile development, automation, and agile project management."
     },
     "licence": {
-      "title": "Bachelor's Degree in MIAGE / Computer Science",
-      "school": "University of Amiens",
-      "date": "2020 - 2023",
-      "description": "Foundational computer science studies covering object-oriented programming (Java/C++), web development, databases (SQL), and enterprise management."
+      "title": "Preparatory Classes — Mathematics & Computer Science",
+      "school": "EMSI, Casablanca",
+      "date": "2019 - 2021",
+      "description": "Foundational studies in mathematics, algorithms, and object-oriented programming (Java/C++). Intensive preparation for competitive engineering school entrance exams."
     }
   },
   "contact": {
     "title": "Contact",
     "description": "Do you have an opportunity or a project? Let's connect!",
-    "status": "Open to internships and junior developer roles",
+    "status": "Open to first job opportunities in web/mobile development or automation",
     "contactMeButton": "Send an Email",
     "orUseForm": "Or send a message directly",
     "name": "Name",

@@ -10,24 +10,24 @@
   },
   "hero": {
     "greeting": "Bonjour, je suis",
-    "title": "Ingénieur Logiciel",
-    "subtitle": "Développeur Full Stack",
-    "description": "Je conçois et développe des applications web et mobiles scalables avec Java, Spring Boot, ASP.NET, Android et les technologies web modernes.",
+    "title": "Ingénieur en Informatique et Réseaux",
+    "subtitle": "Développeur Web/Mobile & Automatisation",
+    "description": "Jeune diplômé Ingénieur MIAGE de l'EMSI, avec une expérience PFE chez Atos Maroc. À la recherche d'un premier emploi en développement web/mobile ou automatisation.",
     "downloadCV": "Télécharger CV",
     "contactMe": "Me Contacter",
     "viewProjects": "Voir Projets"
   },
   "about": {
     "title": "À propos",
-    "description1": "Je suis Nabil Karara, Ingénieur Logiciel et Développeur Full Stack en Master MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises). Je fais le lien entre le développement technique et les besoins fonctionnels, en concevant des systèmes sécurisés et hautement performants.",
-    "description2": "Orienté vers la conception de solutions logicielles propres, maintenables et évolutives. Je suis spécialisé dans les architectures backend, la modélisation de bases de données et le développement d'applications mobiles et web intuitives.",
+    "description1": "Je suis Nabil Karara, jeune diplômé Ingénieur en Informatique et Réseaux (MIAGE) de l'EMSI, avec une expérience de stage de fin d'études (PFE) chez Atos Maroc. Je conçois des systèmes sécurisés, automatisés et hautement performants, en faisant le lien entre la technique et les besoins métier.",
+    "description2": "Motivé à mettre en pratique mes compétences en développement web/mobile et automatisation sur des projets concrets et innovants. Spécialisé dans les architectures backend, le pilotage de navigateur par CDP/MCP, et la conception d'agents IA hybrides.",
     "downloadCV": "Télécharger mon CV",
     "education": "Formation",
-    "educationDesc": "Master MIAGE - Spécialisation en développement d'applications et gestion de projets",
+    "educationDesc": "Ingénieur MIAGE — EMSI, Casablanca — Informatique et Réseaux",
     "expertise": "Expertise",
-    "expertiseDesc": "Développement Full-Stack avec Java, Spring Boot, ASP.NET et outils front-end modernes",
+    "expertiseDesc": "Développement Web/Mobile, automatisation de tests E2E, agents IA hybrides et outils modernes",
     "objective": "Objectif",
-    "objectiveDesc": "Stage PFE 2025 - Développement Web/Mobile dans une entreprise innovante"
+    "objectiveDesc": "Recherche d'un premier emploi en développement web/mobile ou automatisation"
   },
   "projects": {
     "title": "Projets",
@@ -113,7 +113,18 @@
   },
   "experience": {
     "title": "Expérience",
-    "description": "Mon parcours professionnel, alliant stages d'ingénierie et méthodes informatiques.",
+    "description": "Mon parcours professionnel, alliant ingénierie logicielle, automatisation IA et méthodes informatiques.",
+    "atos": {
+      "role": "Stagiaire Ingénieur — Automatisation de tests E2E par agent IA (PFE)",
+      "company": "Atos Maroc, Casablanca",
+      "date": "2026",
+      "points": [
+        "Conception et développement d'un agent IA hybride (scripts déterministes + LLM) automatisant 14+ parcours de vente B2B complexes sur le CRM Salesforce Lightning du client inwi.",
+        "Architecture d'un orchestrateur piloté par fichier de flux déclaratif (reprise sur erreur, points de contrôle anti-timeout, persistance d'état) et pilotage du navigateur via Chrome DevTools Protocol (CDP) et le protocole MCP.",
+        "Migration de l'agent entre deux assistants IA : diagnostic des divergences de comportement et réécriture des règles d'orchestration, validée sur un parcours complet de bout en bout.",
+        "Développement d'un tableau de bord de supervision (Python) déployé en continu sur serveur, avec génération automatique d'un rapport détaillé à l'issue de chaque exécution."
+      ]
+    },
     "tgv": {
       "role": "Stagiaire Développeur Full Stack",
       "company": "TGV Services",
@@ -137,7 +148,7 @@
     "studies": {
       "role": "Études en Ingénierie Logicielle MIAGE",
       "company": "Projets Universitaires",
-      "date": "2022 - Présent",
+      "date": "2022 - 2026",
       "points": [
         "Maîtrise de l'architecture logicielle, des patrons de conception (design patterns) et du design système.",
         "Développement d'applications web et mobiles en suivant le développement piloté par les tests (TDD).",
@@ -149,22 +160,22 @@
     "title": "Formation",
     "description": "Parcours académique alliant informatique, ingénierie logicielle et gestion d'entreprise.",
     "master": {
-      "title": "Master MIAGE",
-      "school": "Université de Picardie Jules Verne",
-      "date": "2023 - 2025",
-      "description": "Méthodes Informatiques Appliquées à la Gestion des Entreprises. Spécialisation en architecture logicielle, administration de bases de données d'entreprise, gestion de projets agiles et business intelligence."
+      "title": "Diplôme Ingénieur — Informatique et Réseaux (MIAGE)",
+      "school": "EMSI, Casablanca",
+      "date": "2021 - 2026",
+      "description": "Formation d'ingénieur en Informatique et Réseaux, spécialité MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises). Spécialisation en architecture logicielle, développement web/mobile, automatisation et gestion de projets agiles."
     },
     "licence": {
-      "title": "Licence Informatique / MIAGE",
-      "school": "Université de Picardie Jules Verne",
-      "date": "2020 - 2023",
-      "description": "Bases fondamentales en informatique : programmation orientée objet (Java/C++), développement web, bases de données relationnelles (SQL) et gestion d'entreprise."
+      "title": "Classes Préparatoires — Mathématiques et Informatique",
+      "school": "EMSI, Casablanca",
+      "date": "2019 - 2021",
+      "description": "Bases fondamentales en mathématiques, algorithmique et programmation orientée objet (Java/C++). Préparation intensive aux concours d'entrée aux grandes écoles d'ingénieurs."
     }
   },
   "contact": {
     "title": "Contact",
-    "description": "Vous avez un projet ou une opportunité de stage ? N'hésitez pas à me contacter !",
-    "status": "Disponible pour des stages et des postes de développeur junior",
+    "description": "Vous avez un projet ou une opportunité d'emploi ? N'hésitez pas à me contacter !",
+    "status": "Disponible pour un premier emploi en développement web/mobile ou automatisation",
     "contactMeButton": "Me contacter par email",
     "orUseForm": "Ou utilisez le formulaire ci-dessous",
     "name": "Nom",
