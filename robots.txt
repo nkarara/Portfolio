@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://nkarara.github.io/Portfolio/sitemap.xml
