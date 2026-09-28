@@ -3,7 +3,7 @@
 import { Github, ImageIcon, X, ChevronLeft, ChevronRight, ChevronDown, ExternalLink } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 import { getImagePath } from "@/lib/utils"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 export function Projects() {
@@ -38,41 +38,60 @@ export function Projects() {
     }
   }
 
+  useEffect(() => {
+    if (selectedProject === null) return
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeGallery()
+      if (e.key === "ArrowRight") nextImage()
+      if (e.key === "ArrowLeft") prevImage()
+    }
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedProject, currentImageIndex])
+
   const projects = [
     {
-      key: "springRH",
-      image: "/employee-management-dashboard.png",
-      technologies: ["Java", "Spring Boot", "MySQL", "Thymeleaf"],
-      github: "https://github.com/nkarara/employee-management-jee",
-      demo: null
-    },
-    {
-      key: "employeeManagement",
+      key: "employeeAspNet",
       image: "/asp.png",
-      technologies: ["C#", "ASP.NET Core", "SQL Server", "Entity Framework"],
+      technologies: ["C#", "ASP.NET MVC", "SQL Server"],
       github: "https://github.com/nkarara/employee-management-dotnet",
       demo: null
     },
     {
-      key: "socialNetwork",
+      key: "connectify",
       image: "/connectify1.jpg",
       gallery: ["/connectify1.jpg", "/connectify2.jpg", "/connectify3.jpg", "/connectify4.jpg", "/connectify5.jpg", "/connectify6.jpg", "/connectify7.jpg", "/connectify8.jpg", "/connectify9.jpg"],
-      technologies: ["React", "Node.js", "Express", "MySQL", "WebSockets"],
+      technologies: ["React", "Node.js", "Supabase"],
       github: "https://github.com/nkarara/Social-Medial-APP",
       demo: null
     },
     {
-      key: "androidFirebase",
+      key: "employeeAndroid",
       image: "/employee-management-dashboard.png",
-      technologies: ["Java", "Android SDK", "Firebase RTDB"],
+      technologies: ["Java", "Android"],
       github: "https://github.com/nkarara/employee-management-app",
       demo: null
     },
     {
-      key: "appRO",
+      key: "transRoto",
       image: "/logistics-tracking-app.png",
-      technologies: ["Java", "JavaFX", "Operations Research", "Graph Theory"],
+      technologies: ["React", "MySQL"],
       github: "https://github.com/nkarara/trans-roto",
+      demo: null
+    },
+    {
+      key: "weatherApp",
+      image: null,
+      technologies: ["Python", "Django"],
+      github: null,
+      demo: null
+    },
+    {
+      key: "hospitalManagement",
+      image: null,
+      technologies: ["C++"],
+      github: null,
       demo: null
     }
   ]
@@ -103,30 +122,43 @@ export function Projects() {
                   className="vercel-card rounded-2xl overflow-hidden group flex flex-col h-full"
                 >
                   {/* Image */}
-                  <div
-                    className={`relative h-52 overflow-hidden bg-muted/30 ${project.gallery ? "cursor-pointer" : ""}`}
-                    onClick={() => project.gallery && openGallery(index, 0)}
-                  >
-                    {project.image ? (
-                      <>
+                  {project.gallery ? (
+                    <button
+                      type="button"
+                      className="relative h-52 overflow-hidden bg-muted/30 cursor-pointer w-full text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-inset"
+                      onClick={() => openGallery(index, 0)}
+                      aria-label={`Open image gallery for ${projTrans.title}`}
+                    >
+                      <img
+                        src={getImagePath(project.image)}
+                        alt={projTrans.title}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                        <ImageIcon className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent pointer-events-none" />
+                    </button>
+                  ) : (
+                    <div className="relative h-52 overflow-hidden bg-muted/30">
+                      {project.image ? (
                         <img
                           src={getImagePath(project.image)}
                           alt={projTrans.title}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
-                        {project.gallery && (
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
-                            <ImageIcon className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                          </div>
-                        )}
-                      </>
-                    ) : (
-                      <div className="flex items-center justify-center h-full">
-                        <ImageIcon className="h-10 w-10 text-zinc-800" />
-                      </div>
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent pointer-events-none" />
-                  </div>
+                      ) : (
+                        <div className="flex items-center justify-center h-full">
+                          <ImageIcon className="h-10 w-10 text-zinc-800" aria-hidden="true" />
+                        </div>
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent pointer-events-none" />
+                    </div>
+                  )}
 
                   {/* Content */}
                   <div className="p-6 sm:p-7 flex flex-col justify-between flex-1 space-y-5">
@@ -178,15 +210,17 @@ export function Projects() {
 
                     {/* CTA */}
                     <div className="flex gap-3 pt-4 border-t border-border">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="vercel-btn vercel-btn-secondary text-xs py-2.5 px-5 flex-1"
-                      >
-                        <Github className="h-3.5 w-3.5" />
-                        <span>{t.projects.github}</span>
-                      </a>
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="vercel-btn vercel-btn-secondary text-xs py-2.5 px-5 flex-1"
+                        >
+                          <Github className="h-3.5 w-3.5" />
+                          <span>{t.projects.github}</span>
+                        </a>
+                      )}
                       {project.demo && (
                         <a
                           href={project.demo}
@@ -210,19 +244,24 @@ export function Projects() {
       {/* Gallery Modal */}
       {selectedProject !== null && projects[selectedProject].gallery && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Project image gallery"
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95 backdrop-blur-xl"
           onClick={closeGallery}
         >
           <button
-            className="absolute top-6 right-6 p-2.5 bg-white/5 border border-white/8 rounded-full text-white hover:bg-white/10 transition-all"
+            className="absolute top-6 right-6 p-2.5 bg-white/5 border border-white/8 rounded-full text-white hover:bg-white/10 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
             onClick={closeGallery}
+            aria-label="Close gallery"
           >
             <X className="h-5 w-5" />
           </button>
 
           <button
-            className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 p-3 bg-white/5 border border-white/8 rounded-full text-white hover:bg-white/10 transition-all"
+            className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 p-3 bg-white/5 border border-white/8 rounded-full text-white hover:bg-white/10 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
             onClick={(e) => { e.stopPropagation(); prevImage() }}
+            aria-label="Previous image"
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
@@ -239,7 +278,8 @@ export function Projects() {
           </div>
 
           <button
-            className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 p-3 bg-white/5 border border-white/8 rounded-full text-white hover:bg-white/10 transition-all"
+            className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 p-3 bg-white/5 border border-white/8 rounded-full text-white hover:bg-white/10 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+            aria-label="Next image"
             onClick={(e) => { e.stopPropagation(); nextImage() }}
           >
             <ChevronRight className="h-6 w-6" />

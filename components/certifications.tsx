@@ -1,15 +1,24 @@
 "use client"
 
-import { ExternalLink, ImageIcon, X } from "lucide-react"
+import { ExternalLink, ImageIcon, X, Award } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 import { getImagePath } from "@/lib/utils"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 export function Certifications() {
   const { t } = useLanguage()
   const ref = useScrollAnimation()
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (!selectedImage) return
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedImage(null)
+    }
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [selectedImage])
 
   const certifications = [
     {
@@ -47,84 +56,94 @@ export function Certifications() {
   ]
 
   return (
-    <section id="certifications" className="py-24 px-4 sm:px-6 lg:px-8 fade-in-view" ref={ref}>
-      <div className="container mx-auto max-w-5xl space-y-14">
+    <section id="certifications" className="py-32 px-4 sm:px-6 lg:px-8 fade-in-view sky-section" ref={ref}>
+      <div className="container mx-auto max-w-6xl">
 
-        {/* Section Header */}
-        <div>
-          <span className="section-label">{t.certifications.title}</span>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mt-1">{t.certifications.title}</h2>
-          <p className="text-base text-muted-foreground mt-3 max-w-2xl">{t.certifications.description}</p>
-        </div>
+        <div className="section-divider mb-24" />
 
-        {/* Certifications Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
-          {certifications.map((cert, index) => (
-            <div
-              key={index}
-              className="glass-depth-2 p-6 rounded-2xl group hover:border-primary/30 transition-all duration-300 relative overflow-hidden"
-            >
-              <div className="liquid-glass-sheen" aria-hidden="true" />
-              <div className="flex gap-4 relative z-10">
-                {/* Thumbnail */}
-                <div className="flex-shrink-0">
-                  <div
-                    className="w-28 h-28 rounded-xl overflow-hidden border border-white/10 cursor-pointer hover:border-primary/50 transition-colors"
+        <div className="space-y-16">
+          {/* Section Header */}
+          <div className="max-w-2xl">
+            <span className="section-label">{t.certifications.title}</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-foreground mt-2">
+              {t.certifications.title}
+            </h2>
+            <p className="text-base text-muted-foreground mt-4 leading-relaxed">{t.certifications.description}</p>
+          </div>
+
+          {/* Certifications Grid */}
+          <div className="grid sm:grid-cols-2 gap-5">
+            {certifications.map((cert, index) => (
+              <div key={index} className="vercel-card p-6 group">
+                <div className="flex gap-4">
+                  {/* Thumbnail */}
+                  <button
+                    type="button"
+                    className="flex-shrink-0 w-24 h-24 rounded-xl overflow-hidden border border-border cursor-pointer transition-colors duration-300 hover:border-primary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
                     onClick={() => cert.image && setSelectedImage(cert.image)}
+                    aria-label={`${t.certifications.viewCertification}: ${cert.title}`}
                   >
                     {cert.image ? (
                       <img
                         src={getImagePath(cert.image)}
-                        alt={cert.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        alt={`${cert.title} certificate`}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     ) : (
                       <div className="flex items-center justify-center h-full bg-muted">
-                        <ImageIcon className="h-6 w-6 text-muted-foreground/30" />
+                        <ImageIcon className="h-6 w-6 text-muted-foreground/30" aria-hidden="true" />
                       </div>
                     )}
+                  </button>
+
+                  {/* Content */}
+                  <div className="flex-1 min-w-0 space-y-2">
+                    <div className="flex items-start gap-2">
+                      <Award className="h-4 w-4 text-blue-500 dark:text-blue-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                      <div>
+                        <h3 className="font-bold text-sm text-foreground leading-snug tracking-[-0.01em]">
+                          {cert.title}
+                        </h3>
+                        <p className="text-xs text-muted-foreground mt-0.5">
+                          {cert.issuer} · {cert.date}
+                        </p>
+                      </div>
+                    </div>
+
+                    <p className="text-xs text-muted-foreground leading-relaxed">{cert.description}</p>
+
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded"
+                    >
+                      {t.certifications.viewCertification}
+                      <ExternalLink className="h-3 w-3" aria-hidden="true" />
+                    </a>
                   </div>
-                </div>
-
-                {/* Content */}
-                <div className="flex-1 space-y-2.5">
-                  <div>
-                    <h3 className="font-bold text-sm sm:text-base text-foreground group-hover:text-primary transition-colors leading-snug">
-                      {cert.title}
-                    </h3>
-                    <p className="text-xs text-muted-foreground mt-0.5">
-                      {cert.issuer} · {cert.date}
-                    </p>
-                  </div>
-
-                  <p className="text-xs text-muted-foreground leading-relaxed">{cert.description}</p>
-
-                  <a
-                    href={cert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline transition-colors"
-                  >
-                    {t.certifications.viewCertification}
-                    <ExternalLink className="h-3 w-3" />
-                  </a>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Image Lightbox Modal */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-6"
-          style={{ background: "rgba(0,0,0,0.92)", backdropFilter: "blur(24px)" }}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Certificate preview"
+          className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/90 backdrop-blur-xl"
           onClick={() => setSelectedImage(null)}
         >
           <button
-            className="absolute top-5 right-5 p-2.5 glass-depth-2 rounded-full text-white hover:border-white/30 transition-all"
+            className="absolute top-5 right-5 p-2.5 bg-white/5 border border-white/10 rounded-full text-white hover:bg-white/10 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
             onClick={() => setSelectedImage(null)}
+            aria-label="Close certificate preview"
           >
             <X className="h-5 w-5" />
           </button>
@@ -132,7 +151,7 @@ export function Certifications() {
           <div className="max-w-4xl max-h-[90vh] w-full" onClick={(e) => e.stopPropagation()}>
             <img
               src={getImagePath(selectedImage)}
-              alt="Certification"
+              alt="Certificate"
               className="w-full h-full object-contain rounded-2xl"
             />
           </div>

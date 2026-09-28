@@ -17,7 +17,7 @@ export function Navigation() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 30)
 
-      const sections = ["about", "projects", "skills", "experience", "education", "contact"]
+      const sections = ["about", "projects", "skills", "experience", "education", "certifications", "contact"]
       const scrollY = window.scrollY + 160
 
       for (const id of sections) {
@@ -41,6 +41,7 @@ export function Navigation() {
     { name: t.nav.skills,     href: getNavPath("/#skills") },
     { name: t.nav.experience, href: getNavPath("/#experience") },
     { name: t.nav.education,  href: getNavPath("/#education") },
+    { name: t.nav.certifications, href: getNavPath("/#certifications") },
     { name: t.nav.contact,    href: getNavPath("/#contact") },
   ]
 
@@ -56,6 +57,7 @@ export function Navigation() {
       }`}
     >
       <motion.nav
+        aria-label="Main navigation"
         className={`w-full max-w-4xl rounded-2xl flex items-center justify-between px-5 py-2.5 transition-all duration-500 ${
           isScrolled ? "nav-glass shadow-lg shadow-black/20" : "bg-transparent"
         }`}
@@ -79,7 +81,8 @@ export function Navigation() {
               <a
                 key={item.name}
                 href={item.href}
-                className={`text-[0.8125rem] font-medium px-3 py-1.5 rounded-lg transition-all duration-200 ${
+                aria-current={active ? "page" : undefined}
+                className={`text-[0.8125rem] font-medium px-3 py-1.5 rounded-lg transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 ${
                   active
                     ? "text-foreground bg-foreground/10"
                     : "text-muted-foreground hover:text-foreground hover:bg-foreground/6"
@@ -108,8 +111,11 @@ export function Navigation() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-foreground/6 md:hidden transition-all duration-200"
+            className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-foreground/6 md:hidden transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
             title="Toggle menu"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-nav-menu"
           >
             {isMobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
@@ -120,6 +126,7 @@ export function Navigation() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            id="mobile-nav-menu"
             className="absolute top-[72px] left-4 right-4 z-40 nav-glass p-4 rounded-2xl md:hidden flex flex-col gap-1 shadow-2xl"
             initial={{ opacity: 0, y: -8, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -132,7 +139,8 @@ export function Navigation() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`w-full py-2.5 px-4 rounded-xl text-sm font-medium transition-all duration-200 ${
+                  aria-current={active ? "page" : undefined}
+                  className={`w-full py-2.5 px-4 rounded-xl text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 ${
                     active
                       ? "bg-foreground/10 text-foreground"
                       : "text-muted-foreground hover:text-foreground hover:bg-foreground/6"

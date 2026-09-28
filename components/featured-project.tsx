@@ -10,13 +10,13 @@ export function FeaturedProject() {
   const ref = useScrollAnimation()
 
   const springRHInfo = {
-    title: t.projects.springRH.title,
-    description: t.projects.springRH.description,
-    challenge: t.projects.springRH.challenge,
-    solution: t.projects.springRH.solution,
-    features: t.projects.springRH.features || [],
+    title: t.projects.employeeSpringBoot.title,
+    description: t.projects.employeeSpringBoot.description,
+    challenge: t.projects.employeeSpringBoot.challenge,
+    solution: t.projects.employeeSpringBoot.solution,
+    features: t.projects.employeeSpringBoot.features || [],
     image: "/employee-management-dashboard.png",
-    technologies: ["Java", "Spring Boot", "MySQL", "Spring Security", "Thymeleaf"],
+    technologies: ["Java", "Spring Boot", "HTML", "CSS"],
     github: "https://github.com/nkarara/employee-management-jee",
   }
 
@@ -41,6 +41,7 @@ export function FeaturedProject() {
               <img
                 src={getImagePath(springRHInfo.image)}
                 alt={springRHInfo.title}
+                decoding="async"
                 className="w-full h-full object-cover select-none transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent pointer-events-none" />
