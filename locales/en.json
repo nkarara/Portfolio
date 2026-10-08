@@ -131,8 +131,8 @@
     "backend": "Backend Development",
     "mobile": "Mobile Development",
     "database": "Databases",
-    "cloud": "Cloud & DevOps",
-    "tools": "Developer Tools",
+    "automationAi": "Automation & AI",
+    "aiAgents": "AI Agents (GitHub Copilot)",
     "problemSolving": "Problem Solving",
     "problemSolvingDesc": "Designing algorithms and data structures to optimize processing efficiency.",
     "continuousLearning": "Continuous Learning",
@@ -144,7 +144,7 @@
     "atos": {
       "role": "Software Engineering Intern — E2E Test Automation via AI Agent (PFE)",
       "company": "Atos Maroc, Casablanca",
-      "date": "2026",
+      "date": "Feb. – Aug. 2026",
       "points": [
         "Designed and developed a hybrid AI agent (deterministic scripts + LLM execution) automating 14+ complex B2B sales journeys on the Salesforce Lightning CRM for client inwi (telecom operator).",
         "Architected an orchestrator driven by a declarative flow file (error recovery, anti-timeout checkpoints, state persistence) and controlled the browser via Chrome DevTools Protocol (CDP) and the MCP protocol.",
@@ -152,34 +152,20 @@
         "Built a Python supervision dashboard deployed continuously on server, with automatic detailed report generation at the end of each execution run."
       ]
     },
+    "transRoto": {
+      "role": "Software Developer Intern — Transport & Logistics Management System",
+      "company": "Trans Roto, Casablanca",
+      "date": "Jul. – Sep. 2025",
+      "points": [
+        "Development of a web application (React + MySQL) for transport and goods management"
+      ]
+    },
     "tgv": {
-      "role": "Full Stack Developer Intern",
-      "company": "TGV Services",
-      "date": "2024",
+      "role": "Laravel Developer Intern",
+      "company": "TGV Service, Casablanca",
+      "date": "Jul. – Aug. 2024",
       "points": [
-        "Designed and implemented clean, responsive interfaces for administrative dashboards.",
-        "Refactored legacy REST APIs and optimized SQL database queries, improving performance by 25%.",
-        "Collaborated with project managers in an Agile (Scrum) workflow to deliver production-ready features."
-      ]
-    },
-    "academic": {
-      "role": "Lead Software Developer",
-      "company": "Academic Projects (MIAGE)",
-      "date": "2023 - 2024",
-      "points": [
-        "Architected enterprise projects using Spring Boot, C#, and React.",
-        "Created custom solvers for operations research models, graphing pathfinding algorithms in Java.",
-        "Engineered secure relational databases (MySQL/PostgreSQL) with advanced audit triggers."
-      ]
-    },
-    "studies": {
-      "role": "MIAGE Software Engineering Studies",
-      "company": "University Projects",
-      "date": "2022 - 2026",
-      "points": [
-        "Mastered advanced concepts in software architecture, design patterns, and system design.",
-        "Developed full-stack web and mobile apps following test-driven development (TDD).",
-        "Managed team repositories with strict Git branching strategies and continuous integration (CI)."
+        "Development of a stock management application with Laravel (PHP): product management, stock entries and exits"
       ]
     }
   },

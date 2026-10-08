@@ -1,6 +1,6 @@
 "use client"
 
-import { Code2, Database, Laptop, Wrench, Smartphone, Cloud } from "lucide-react"
+import { Code2, Database, Laptop, Smartphone, Bot } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
@@ -22,7 +22,7 @@ export function Skills() {
     {
       title: t.skills.mobile,
       icon: Smartphone,
-      skills: ["Java Android"],
+      skills: ["Flutter", "Java Android"],
     },
     {
       title: t.skills.database,
@@ -30,14 +30,9 @@ export function Skills() {
       skills: ["MySQL", "SQL Server", "MongoDB"],
     },
     {
-      title: t.skills.cloud,
-      icon: Cloud,
-      skills: ["Oracle Cloud", "AWS", "Azure", "Git/GitHub", "Docker"],
-    },
-    {
-      title: t.skills.tools,
-      icon: Wrench,
-      skills: ["Figma", "Agile Scrum", "Solidity", "Smart Contracts"],
+      title: t.skills.automationAi,
+      icon: Bot,
+      skills: ["Python", "Playwright", (t.skills as any).aiAgents || "Agents IA (GitHub Copilot)"],
     },
   ]
 

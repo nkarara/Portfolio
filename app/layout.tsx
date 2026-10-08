@@ -11,18 +11,19 @@ const SITE_URL = "https://nkarara.github.io/Portfolio"
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Nabil KARARA – Étudiant MIAGE, Développeur Web & Mobile",
+  title: "Nabil KARARA – Jeune diplômé Ingénieur MIAGE, Développeur Web & Mobile",
   description:
-    "Portfolio of Nabil Karara, a MIAGE student and Web & Mobile Developer specializing in Java, Spring Boot, ASP.NET, Django, Laravel, and Android. Explore projects, experience, and certifications.",
+    "Portfolio of Nabil Karara, a MIAGE engineering graduate and Web & Mobile Developer specializing in Java, Spring Boot, React, Node.js, Flutter, and Android. Explore projects, experience, and certifications.",
   keywords: [
     "Nabil Karara",
-    "MIAGE student",
+    "Jeune diplômé Ingénieur MIAGE",
+    "MIAGE engineering graduate",
     "web and mobile developer",
+    "test automation",
+    "AI agents",
     "Java developer",
     "Spring Boot",
-    "ASP.NET",
-    "Django",
-    "Laravel",
+    "Flutter developer",
     "Android developer",
     "MIAGE",
     "portfolio",
@@ -34,9 +35,9 @@ export const metadata: Metadata = {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "Nabil KARARA – Étudiant MIAGE, Développeur Web & Mobile",
+    title: "Nabil KARARA – Jeune diplômé Ingénieur MIAGE, Développeur Web & Mobile",
     description:
-      "Portfolio of Nabil Karara, a MIAGE student and Web & Mobile Developer specializing in Java, Spring Boot, ASP.NET, Django, Laravel, and Android.",
+      "Portfolio of Nabil Karara, a MIAGE engineering graduate and Web & Mobile Developer specializing in Java, Spring Boot, Flutter, and Android.",
     url: SITE_URL,
     siteName: "Nabil Karara Portfolio",
     images: [
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
         url: "/Portfolio/hero-3d-character.png",
         width: 1200,
         height: 1200,
-        alt: "Nabil Karara - MIAGE Student & Web & Mobile Developer",
+        alt: "Nabil Karara - MIAGE Engineering Graduate & Web & Mobile Developer",
       },
     ],
     locale: "fr_FR",
@@ -53,9 +54,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nabil KARARA – Étudiant MIAGE, Développeur Web & Mobile",
+    title: "Nabil KARARA – Jeune diplômé Ingénieur MIAGE, Développeur Web & Mobile",
     description:
-      "Portfolio of Nabil Karara, a MIAGE student and Web & Mobile Developer specializing in Java, Spring Boot, ASP.NET, Django, Laravel, and Android.",
+      "Portfolio of Nabil Karara, a MIAGE engineering graduate and Web & Mobile Developer specializing in Java, Spring Boot, Flutter, and Android.",
     images: ["/Portfolio/hero-3d-character.png"],
     creator: "@nabilkarara",
   },
@@ -79,7 +80,7 @@ const personJsonLd = {
   url: SITE_URL,
   jobTitle: "Web & Mobile Developer",
   description:
-    "MIAGE student and Web & Mobile Developer specializing in Java, Spring Boot, ASP.NET, Django, Laravel, and Android development.",
+    "MIAGE engineering graduate and Web & Mobile Developer specializing in Java, Spring Boot, React, Flutter, and Android development.",
   image: `${SITE_URL}/hero-3d-character.png`,
   sameAs: [
     "https://github.com/nkarara",
@@ -88,19 +89,15 @@ const personJsonLd = {
   knowsAbout: [
     "Java",
     "Spring Boot",
-    "ASP.NET MVC",
-    "Django",
-    "Laravel",
     "Node.js",
     "Android",
+    "Flutter",
     "React",
-    "Angular",
     "SQL",
-    "MongoDB",
-    "AWS",
-    "Azure",
-    "Oracle Cloud",
-    "Docker",
+    "Python",
+    "Playwright",
+    "Test Automation",
+    "AI Agents",
     "Software Engineering",
   ],
   alumniOf: {

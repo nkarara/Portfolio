@@ -16,25 +16,18 @@ export function Experience() {
       points: t.experience.atos.points,
     },
     {
+      key: "transRoto",
+      role: t.experience.transRoto.role,
+      company: t.experience.transRoto.company,
+      date: t.experience.transRoto.date,
+      points: t.experience.transRoto.points,
+    },
+    {
       key: "tgv",
       role: t.experience.tgv.role,
       company: t.experience.tgv.company,
       date: t.experience.tgv.date,
       points: t.experience.tgv.points,
-    },
-    {
-      key: "academic",
-      role: t.experience.academic.role,
-      company: t.experience.academic.company,
-      date: t.experience.academic.date,
-      points: t.experience.academic.points,
-    },
-    {
-      key: "studies",
-      role: t.experience.studies.role,
-      company: t.experience.studies.company,
-      date: t.experience.studies.date,
-      points: t.experience.studies.points,
     },
   ]
 

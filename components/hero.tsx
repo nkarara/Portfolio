@@ -56,8 +56,8 @@ export function Hero() {
               </a>
 
               <a
-                href={getImagePath("/CV_Nabil_KARARA.pdf")}
-                download="CV_Nabil_KARARA.pdf"
+                href={getImagePath("/CV_Nabil_Karara.pdf")}
+                download="CV_Nabil_Karara.pdf"
                 className="vercel-btn vercel-btn-secondary py-3 px-6"
               >
                 <Download className="h-4 w-4" />
@@ -133,10 +133,10 @@ export function Hero() {
                   <span>Spring Boot</span>
                 </div>
                 <div className="orbit-card orbit-card-ring2-3">
-                  <svg viewBox="0 0 24 24" className="h-4 w-4 text-[#47A248] orbit-icon-glow" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 1.5c-.3 0-.5.2-.6.4C10.5 4.3 6 10 6 13.5c0 3.3 2.7 6 6 6s6-2.7 6-6c0-3.5-4.5-9.2-5.4-11.6-.1-.2-.3-.4-.6-.4zm0 2.2c.7 2 3.8 6.9 3.8 9.8 0 2.1-1.7 3.8-3.8 3.8s-3.8-1.7-3.8-3.8c0-2.9 3.1-7.8 3.8-9.8z"/>
+                  <svg viewBox="0 0 24 24" className="h-4 w-4 text-[#02569B] orbit-icon-glow" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.314 0L2.3 12 6 15.7 21.7 0h-7.386zM14.314 8.7L9.5 13.514l4.814 4.814h7.386L14.314 8.7z"/>
                   </svg>
-                  <span>MongoDB</span>
+                  <span>Flutter</span>
                 </div>
               </div>
 
@@ -147,10 +147,10 @@ export function Hero() {
                 </svg>
                 {/* Orbiting Cards for Ring 3 */}
                 <div className="orbit-card orbit-card-ring3-1">
-                  <svg viewBox="0 0 24 24" className="h-4 w-4 text-[#512BD4] orbit-icon-glow" fill="none" stroke="currentColor" strokeWidth="2.2" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg viewBox="0 0 24 24" className="h-4 w-4 text-[#3776AB] orbit-icon-glow" fill="none" stroke="currentColor" strokeWidth="2.2" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2c-4 0-4 2-4 2v2h4v1H6s-2 0-2 4 2 4 2 4h1v-2c0-1.5 1-2 2-2h4c1.5 0 2-1 2-2V4s0-2-3-2zM9 4a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 18c4 0 4-2 4-2v-2h-4v-1h6s2 0 2-4-2-4-2-4h-1v2c0 1.5-1 2-2 2h-4c-1.5 0-2 1-2 2v2s0 2 3 2zm3-2a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                  <span>ASP.NET</span>
+                  <span>Python</span>
                 </div>
                 <div className="orbit-card orbit-card-ring3-2">
                   <Github className="h-4 w-4 text-foreground/80 orbit-icon-glow" />

@@ -131,8 +131,8 @@
     "backend": "Développement Backend",
     "mobile": "Développement Mobile",
     "database": "Bases de Données",
-    "cloud": "Cloud & DevOps",
-    "tools": "Outils de Développement",
+    "automationAi": "Automatisation & IA",
+    "aiAgents": "Agents IA (GitHub Copilot)",
     "problemSolving": "Résolution de Problèmes",
     "problemSolvingDesc": "Conception d'algorithmes et de structures de données pour optimiser l'efficacité des traitements.",
     "continuousLearning": "Apprentissage Continu",
@@ -144,7 +144,7 @@
     "atos": {
       "role": "Stagiaire Ingénieur — Automatisation de tests E2E par agent IA (PFE)",
       "company": "Atos Maroc, Casablanca",
-      "date": "2026",
+      "date": "Févr. – Août 2026",
       "points": [
         "Conception et développement d'un agent IA hybride (scripts déterministes + LLM) automatisant 14+ parcours de vente B2B complexes sur le CRM Salesforce Lightning du client inwi.",
         "Architecture d'un orchestrateur piloté par fichier de flux déclaratif (reprise sur erreur, points de contrôle anti-timeout, persistance d'état) et pilotage du navigateur via Chrome DevTools Protocol (CDP) et le protocole MCP.",
@@ -152,34 +152,20 @@
         "Développement d'un tableau de bord de supervision (Python) déployé en continu sur serveur, avec génération automatique d'un rapport détaillé à l'issue de chaque exécution."
       ]
     },
+    "transRoto": {
+      "role": "Stagiaire Développeur — Système de gestion du transport et de la logistique",
+      "company": "Trans Roto, Casablanca",
+      "date": "Juil. – Sept. 2025",
+      "points": [
+        "Développement d'une application web (React + MySQL) pour la gestion du transport et des marchandises"
+      ]
+    },
     "tgv": {
-      "role": "Stagiaire Développeur Full Stack",
-      "company": "TGV Services",
-      "date": "2024",
+      "role": "Stagiaire Développeur Laravel",
+      "company": "TGV Service, Casablanca",
+      "date": "Juil. – Août 2024",
       "points": [
-        "Conception et intégration d'interfaces web réactives pour les tableaux de bord clients.",
-        "Refactoring d'API REST existantes et optimisation de requêtes SQL, améliorant les performances de 25%.",
-        "Collaboration au sein d'une équipe Agile (Scrum) pour livrer des fonctionnalités prêtes pour la production."
-      ]
-    },
-    "academic": {
-      "role": "Développeur Logiciel Principal",
-      "company": "Projets Académiques (MIAGE)",
-      "date": "2023 - 2024",
-      "points": [
-        "Architecture et développement de projets d'études avec Spring Boot, C# et React.",
-        "Création de résolveurs personnalisés en recherche opérationnelle avec visualisation en Java.",
-        "Modélisation de bases de données relationnelles sécurisées (MySQL/PostgreSQL) avec triggers d'audit."
-      ]
-    },
-    "studies": {
-      "role": "Études en Ingénierie Logicielle MIAGE",
-      "company": "Projets Universitaires",
-      "date": "2022 - 2026",
-      "points": [
-        "Maîtrise de l'architecture logicielle, des patrons de conception (design patterns) et du design système.",
-        "Développement d'applications web et mobiles en suivant le développement piloté par les tests (TDD).",
-        "Gestion des dépôts Git d'équipe avec des stratégies de branches strictes et de l'intégration continue (CI)."
+        "Développement d'une application de gestion de stock avec Laravel (PHP) : gestion des produits, des entrées et sorties de stock"
       ]
     }
   },
